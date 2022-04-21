@@ -67,7 +67,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     imageUrl: imageUsersRecord.photoUrl,
                     width: 30,
                     height: 30,
-                    fit: BoxFit.contain,
+                    fit: BoxFit.cover,
                   ),
                 ),
               );
@@ -201,23 +201,27 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               expanded: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Text(
-                                    columnMeditacaoRecord.texto,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyText1
-                                        .override(
-                                          fontFamily: 'Lexend Deca',
-                                          color: Color(0x8A151515),
-                                        ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        5, 0, 5, 0),
+                                    child: Text(
+                                      columnMeditacaoRecord.texto,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: 'Lexend Deca',
+                                            color: Color(0x8A151515),
+                                          ),
+                                    ),
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 4, 0, 0),
-                                    child: Image.network(
-                                      columnMeditacaoRecord.img,
+                                        5, 4, 5, 0),
+                                    child: CachedNetworkImage(
+                                      imageUrl: columnMeditacaoRecord.img,
                                       width: MediaQuery.of(context).size.width,
                                       height: 100,
-                                      fit: BoxFit.cover,
+                                      fit: BoxFit.contain,
                                     ),
                                   ),
                                 ],
