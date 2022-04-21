@@ -21,6 +21,8 @@ import '../../view_profile_page_other/view_profile_page_other_widget.dart';
 import '../../chat_page/chat_page_widget.dart';
 import '../../add_chat_users/add_chat_users_widget.dart';
 import '../../create_group_chat/create_group_chat_widget.dart';
+import '../../page_videos_sala57/page_videos_sala57_widget.dart';
+import '../../meditacoes/meditacoes_widget.dart';
 
 class PushNotificationsHandler extends StatefulWidget {
   const PushNotificationsHandler(
@@ -119,6 +121,8 @@ final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
         chat: await getDocumentParameter(data, 'chat', ChatsRecord.serializer),
       ),
   'createGroupChat': (data) async => CreateGroupChatWidget(),
+  'page_videos_sala57': (data) async => PageVideosSala57Widget(),
+  'meditacoes': (data) async => MeditacoesWidget(),
 };
 
 bool hasMatchingParameters(Map<String, dynamic> data, Set<String> params) =>

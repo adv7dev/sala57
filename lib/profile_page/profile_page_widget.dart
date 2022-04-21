@@ -342,7 +342,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                     if (socialFeedUserPostsRecordList.isEmpty) {
                                       return Center(
                                         child: Image.asset(
-                                          'assets/images/emptyPosts@2x.png',
+                                          'assets/images/03.png',
                                           width: MediaQuery.of(context)
                                                   .size
                                                   .width *

@@ -6,6 +6,8 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_youtube_player.dart';
 import '../main.dart';
+import '../meditacoes/meditacoes_widget.dart';
+import '../page_videos_sala57/page_videos_sala57_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
@@ -140,6 +142,26 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       backgroundColor: Color(0xFFF1F5F8),
       endDrawer: Drawer(
         elevation: 16,
+        child: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                    child: Text(
+                      'Em Breve...',
+                      style: FlutterFlowTheme.of(context).bodyText1,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
       ),
       body: SafeArea(
         child: StreamBuilder<List<MeditacaoRecord>>(
@@ -175,60 +197,79 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 children: [
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(10, 20, 0, 0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Text(
-                          FFLocalizations.of(context).getText(
-                            '9pexqdzk' /* MEDITAÇÃO |  */,
+                    child: InkWell(
+                      onTap: () async {
+                        await Navigator.push(
+                          context,
+                          PageTransition(
+                            type: PageTransitionType.rightToLeft,
+                            duration: Duration(milliseconds: 300),
+                            reverseDuration: Duration(milliseconds: 300),
+                            child: MeditacoesWidget(),
                           ),
-                          style:
-                              FlutterFlowTheme.of(context).subtitle1.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
+                        );
+                      },
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Text(
+                            FFLocalizations.of(context).getText(
+                              '9pexqdzk' /* MEDITAÇÃO |  */,
+                            ),
+                            style:
+                                FlutterFlowTheme.of(context).subtitle1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                          ),
+                          Text(
+                            dateTimeFormat('MMMMEEEEd', getCurrentTimestamp),
+                            style:
+                                FlutterFlowTheme.of(context).subtitle1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      fontSize: 15,
+                                      fontStyle: FontStyle.italic,
+                                    ),
+                          ),
+                          if (currentUserDocument?.adm ?? true)
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                              child: AuthUserStreamWidget(
+                                child: InkWell(
+                                  onTap: () async {
+                                    await showModalBottomSheet(
+                                      isScrollControlled: true,
+                                      backgroundColor:
+                                          FlutterFlowTheme.of(context)
+                                              .tertiaryColor,
+                                      context: context,
+                                      builder: (context) {
+                                        return Padding(
+                                          padding:
+                                              MediaQuery.of(context).viewInsets,
+                                          child: Container(
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                0.7,
+                                            child: AddMeditacaoWidget(),
+                                          ),
+                                        );
+                                      },
+                                    );
+                                  },
+                                  child: Icon(
+                                    Icons.add_circle,
+                                    color: Color(0xFFD2393C),
+                                    size: 24,
                                   ),
-                        ),
-                        Text(
-                          dateTimeFormat('MMMMEEEEd', getCurrentTimestamp),
-                          style:
-                              FlutterFlowTheme.of(context).subtitle1.override(
-                                    fontFamily: 'Lexend Deca',
-                                    fontSize: 15,
-                                    fontStyle: FontStyle.italic,
-                                  ),
-                        ),
-                        if (currentUserDocument?.adm ?? true)
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                            child: AuthUserStreamWidget(
-                              child: InkWell(
-                                onTap: () async {
-                                  await showModalBottomSheet(
-                                    isScrollControlled: true,
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context)
-                                            .tertiaryColor,
-                                    context: context,
-                                    builder: (context) {
-                                      return Padding(
-                                        padding:
-                                            MediaQuery.of(context).viewInsets,
-                                        child: AddMeditacaoWidget(),
-                                      );
-                                    },
-                                  );
-                                },
-                                child: Icon(
-                                  Icons.add_circle,
-                                  color: Color(0xFFD2393C),
-                                  size: 24,
                                 ),
                               ),
                             ),
-                          ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                   Divider(
@@ -307,51 +348,84 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(5, 20, 0, 0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          FFLocalizations.of(context).getText(
-                            'cweka8av' /* ÚLTIMA SALA 57 - AO VIVO  */,
+                    child: InkWell(
+                      onTap: () async {
+                        await Navigator.push(
+                          context,
+                          PageTransition(
+                            type: PageTransitionType.rightToLeft,
+                            duration: Duration(milliseconds: 300),
+                            reverseDuration: Duration(milliseconds: 300),
+                            child: PageVideosSala57Widget(),
                           ),
-                          style:
-                              FlutterFlowTheme.of(context).subtitle1.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Colors.black,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
+                        );
+                      },
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            FFLocalizations.of(context).getText(
+                              'cweka8av' /* ÚLTIMA SALA 57 - AO VIVO  */,
+                            ),
+                            style:
+                                FlutterFlowTheme.of(context).subtitle1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Colors.black,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                          ),
+                          if (currentUserDocument?.adm ?? true)
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                              child: AuthUserStreamWidget(
+                                child: InkWell(
+                                  onTap: () async {
+                                    await showModalBottomSheet(
+                                      isScrollControlled: true,
+                                      backgroundColor:
+                                          FlutterFlowTheme.of(context)
+                                              .background,
+                                      context: context,
+                                      builder: (context) {
+                                        return Padding(
+                                          padding:
+                                              MediaQuery.of(context).viewInsets,
+                                          child: Container(
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                0.7,
+                                            child: AddMeditacaoWidget(),
+                                          ),
+                                        );
+                                      },
+                                    );
+                                  },
+                                  child: Icon(
+                                    Icons.add_circle,
+                                    color: Color(0xFFD2393C),
+                                    size: 24,
                                   ),
-                        ),
-                        if (currentUserDocument?.adm ?? true)
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                            child: AuthUserStreamWidget(
-                              child: InkWell(
-                                onTap: () async {
-                                  await showModalBottomSheet(
-                                    isScrollControlled: true,
-                                    backgroundColor: Colors.transparent,
-                                    context: context,
-                                    builder: (context) {
-                                      return Padding(
-                                        padding:
-                                            MediaQuery.of(context).viewInsets,
-                                        child: AddMeditacaoWidget(),
-                                      );
-                                    },
-                                  );
-                                },
-                                child: Icon(
-                                  Icons.add_circle,
-                                  color: Color(0xFFD2393C),
-                                  size: 24,
                                 ),
                               ),
                             ),
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                            child: InkWell(
+                              onTap: () async {},
+                              child: Icon(
+                                Icons.chevron_right,
+                                color: Color(0xFFD2393C),
+                                size: 30,
+                              ),
+                            ),
                           ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                   Row(
@@ -431,7 +505,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 builder: (context) {
                                   return Padding(
                                     padding: MediaQuery.of(context).viewInsets,
-                                    child: AddPedidoOracaoWidget(),
+                                    child: Container(
+                                      height:
+                                          MediaQuery.of(context).size.height *
+                                              0.8,
+                                      child: AddPedidoOracaoWidget(),
+                                    ),
                                   );
                                 },
                               );
