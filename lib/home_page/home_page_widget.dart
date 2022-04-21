@@ -2,6 +2,7 @@ import '../backend/backend.dart';
 import '../components/add_meditacao_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../flutter_flow/flutter_flow_youtube_player.dart';
 import '../main.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:expandable/expandable.dart';
@@ -201,7 +202,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       .override(
                                         fontFamily: 'Lexend Deca',
                                         color: Colors.black,
-                                        fontSize: 18,
+                                        fontSize: 15,
                                       ),
                                 ),
                               ),
@@ -211,19 +212,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 decoration: BoxDecoration(
                                   color: Color(0xFFE1E1E1),
                                 ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10, 8, 10, 10),
-                                  child: Text(
-                                    columnMeditacaoRecord.texto,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyText1
-                                        .override(
-                                          fontFamily: 'Lexend Deca',
-                                          color: Color(0x8A000000),
-                                          fontSize: 17,
-                                        ),
-                                  ),
+                                child: Html(
+                                  data: columnMeditacaoRecord.texto,
                                 ),
                               ),
                               expanded: Column(
@@ -245,6 +235,76 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             ),
                           ),
                         ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(5, 20, 0, 0),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Text(
+                            FFLocalizations.of(context).getText(
+                              'cweka8av' /* ÚLTIMA SALA 57 - AO VIVO |  */,
+                            ),
+                            style:
+                                FlutterFlowTheme.of(context).subtitle1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Colors.black,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                          ),
+                          Text(
+                            dateTimeFormat('MMMMEEEEd', getCurrentTimestamp),
+                            style:
+                                FlutterFlowTheme.of(context).subtitle1.override(
+                                      fontFamily: 'Lexend Deca',
+                                      fontSize: 15,
+                                      fontStyle: FontStyle.italic,
+                                    ),
+                          ),
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                            child: InkWell(
+                              onTap: () async {
+                                await showModalBottomSheet(
+                                  isScrollControlled: true,
+                                  backgroundColor: Colors.transparent,
+                                  context: context,
+                                  builder: (context) {
+                                    return Padding(
+                                      padding:
+                                          MediaQuery.of(context).viewInsets,
+                                      child: AddMeditacaoWidget(),
+                                    );
+                                  },
+                                );
+                              },
+                              child: Icon(
+                                Icons.add_circle,
+                                color: Color(0xFFD2393C),
+                                size: 24,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      FlutterFlowYoutubePlayer(
+                        url: 'https://www.youtube.com/watch?v=C30hQ0ZSFoM',
+                        autoPlay: false,
+                        looping: true,
+                        mute: false,
+                        showControls: true,
+                        showFullScreen: true,
                       ),
                     ],
                   ),

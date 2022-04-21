@@ -166,6 +166,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'MEDITAÇÃO | ',
       'en': 'MEDITATION |',
     },
+    'cweka8av': {
+      'pt': 'ÚLTIMA SALA 57 - AO VIVO | ',
+      'en': 'MEDITATION |',
+    },
     'mtarxfqn': {
       'pt': 'Home',
       'en': 'home',
@@ -542,19 +546,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // add_meditacao
   {
-    'kkk4hnh8': {
+    'csv2utoz': {
       'pt': 'Titulo',
       'en': '',
     },
-    'cym4s1zg': {
+    'vquc4p5q': {
       'pt': 'Texto',
       'en': '',
     },
-    'c3uhg92j': {
+    'mtd47o4k': {
       'pt': 'url',
       'en': '',
     },
-    '3rqbn8pr': {
+    'lno7vhb3': {
       'pt': 'ADD',
       'en': '',
     },
