@@ -95,7 +95,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       body: SafeArea(
         child: StreamBuilder<List<MeditacaoRecord>>(
           stream: queryMeditacaoRecord(
-            queryBuilder: (meditacaoRecord) => meditacaoRecord.orderBy('data'),
+            queryBuilder: (meditacaoRecord) => meditacaoRecord
+                .where('data', isEqualTo: getCurrentTimestamp)
+                .orderBy('data', descending: true),
             singleRecord: true,
           ),
           builder: (context, snapshot) {
@@ -136,6 +138,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               FlutterFlowTheme.of(context).subtitle1.override(
                                     fontFamily: 'Lexend Deca',
                                     color: Colors.black,
+                                    fontWeight: FontWeight.bold,
                                   ),
                         ),
                         Text(
@@ -146,6 +149,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     fontSize: 15,
                                     fontStyle: FontStyle.italic,
                                   ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                          child: Icon(
+                            Icons.add_circle,
+                            color: Color(0xFFD2393C),
+                            size: 24,
+                          ),
                         ),
                       ],
                     ),
@@ -174,13 +185,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       .override(
                                         fontFamily: 'Lexend Deca',
                                         color: Colors.black,
-                                        fontSize: 15,
+                                        fontSize: 20,
                                       ),
                                 ),
                               ),
                               collapsed: Container(
                                 width: MediaQuery.of(context).size.width,
-                                height: 60,
+                                height: 40,
                                 decoration: BoxDecoration(
                                   color: Color(0xFFE1E1E1),
                                 ),
@@ -194,6 +205,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         .override(
                                           fontFamily: 'Lexend Deca',
                                           color: Color(0x8A000000),
+                                          fontSize: 17,
                                         ),
                                   ),
                                 ),
@@ -211,6 +223,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           .override(
                                             fontFamily: 'Lexend Deca',
                                             color: Color(0x8A151515),
+                                            fontSize: 16,
                                           ),
                                     ),
                                   ),
