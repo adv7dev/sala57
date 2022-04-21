@@ -419,8 +419,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                   if (user == null) {
                                                     return;
                                                   }
-                                                  await Navigator
-                                                      .pushAndRemoveUntil(
+                                                  await Navigator.push(
                                                     context,
                                                     MaterialPageRoute(
                                                       builder: (context) =>
@@ -428,7 +427,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                               initialPage:
                                                                   'homePage'),
                                                     ),
-                                                    (r) => false,
                                                   );
                                                 },
                                                 child: Container(
@@ -863,16 +861,12 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                   if (user == null) {
                                                     return;
                                                   }
-                                                  await Navigator
-                                                      .pushAndRemoveUntil(
+                                                  await Navigator.push(
                                                     context,
                                                     MaterialPageRoute(
                                                       builder: (context) =>
-                                                          NavBarPage(
-                                                              initialPage:
-                                                                  'homePage'),
+                                                          CreateYourProfileWidget(),
                                                     ),
-                                                    (r) => false,
                                                   );
                                                 },
                                                 child: Container(
