@@ -415,13 +415,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           Padding(
                             padding:
                                 EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                            child: InkWell(
-                              onTap: () async {},
-                              child: Icon(
-                                Icons.chevron_right,
-                                color: Color(0xFFD2393C),
-                                size: 30,
-                              ),
+                            child: Icon(
+                              Icons.chevron_right,
+                              color: Color(0xFFD2393C),
+                              size: 30,
                             ),
                           ),
                         ],

@@ -59,138 +59,113 @@ class _MeditacoesWidgetState extends State<MeditacoesWidget> {
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Expanded(
-                    child: PagedListView<DocumentSnapshot<Object>,
-                        MeditacaoRecord>(
-                      pagingController: _pagingController,
-                      padding: EdgeInsets.zero,
-                      shrinkWrap: true,
-                      scrollDirection: Axis.vertical,
-                      builderDelegate:
-                          PagedChildBuilderDelegate<MeditacaoRecord>(
-                        // Customize what your widget looks like when it's loading the first page.
-                        firstPageProgressIndicatorBuilder: (_) => Center(
-                          child: SizedBox(
-                            width: 50,
-                            height: 50,
-                            child: CircularProgressIndicator(
-                              color: FlutterFlowTheme.of(context).primaryColor,
-                            ),
-                          ),
-                        ),
+          child: PagedListView<DocumentSnapshot<Object>, MeditacaoRecord>(
+            pagingController: _pagingController,
+            padding: EdgeInsets.zero,
+            shrinkWrap: true,
+            scrollDirection: Axis.vertical,
+            builderDelegate: PagedChildBuilderDelegate<MeditacaoRecord>(
+              // Customize what your widget looks like when it's loading the first page.
+              firstPageProgressIndicatorBuilder: (_) => Center(
+                child: SizedBox(
+                  width: 50,
+                  height: 50,
+                  child: CircularProgressIndicator(
+                    color: FlutterFlowTheme.of(context).primaryColor,
+                  ),
+                ),
+              ),
 
-                        itemBuilder: (context, _, listViewIndex) {
-                          final listViewMeditacaoRecord =
-                              _pagingController.itemList[listViewIndex];
-                          return Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      5, 5, 5, 5),
-                                  child: Container(
-                                    width: double.infinity,
-                                    color: Color(0xFFE1E1E1),
-                                    child: ExpandableNotifier(
-                                      initialExpanded: false,
-                                      child: ExpandablePanel(
-                                        header: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  5, 0, 0, 0),
-                                          child: Text(
-                                            listViewMeditacaoRecord.titulo,
-                                            style: FlutterFlowTheme.of(context)
-                                                .title1
-                                                .override(
-                                                  fontFamily: 'Lexend Deca',
-                                                  color: Colors.black,
-                                                  fontSize: 15,
-                                                ),
-                                          ),
-                                        ),
-                                        collapsed: Container(
-                                          width:
-                                              MediaQuery.of(context).size.width,
-                                          height: 40,
-                                          decoration: BoxDecoration(
-                                            color: Color(0xFFE1E1E1),
-                                          ),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Expanded(
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(5, 0, 5, 0),
-                                                  child: Text(
-                                                    'Toque para visulizar a meditação de hoje...',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyText1
-                                                        .override(
-                                                          fontFamily:
-                                                              'Lexend Deca',
-                                                          color:
-                                                              Color(0xFF636363),
-                                                          fontSize: 15,
-                                                        ),
-                                                  ),
-                                                ),
+              itemBuilder: (context, _, listViewIndex) {
+                final listViewMeditacaoRecord =
+                    _pagingController.itemList[listViewIndex];
+                return Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
+                        child: Container(
+                          width: double.infinity,
+                          color: Color(0xFFE1E1E1),
+                          child: ExpandableNotifier(
+                            initialExpanded: false,
+                            child: ExpandablePanel(
+                              header: Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                                child: Text(
+                                  listViewMeditacaoRecord.titulo,
+                                  style: FlutterFlowTheme.of(context)
+                                      .title1
+                                      .override(
+                                        fontFamily: 'Lexend Deca',
+                                        color: Colors.black,
+                                        fontSize: 15,
+                                      ),
+                                ),
+                              ),
+                              collapsed: Container(
+                                width: MediaQuery.of(context).size.width,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFE1E1E1),
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Expanded(
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            5, 0, 5, 0),
+                                        child: Text(
+                                          'Toque para visulizar a meditação de hoje...',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText1
+                                              .override(
+                                                fontFamily: 'Lexend Deca',
+                                                color: Color(0xFF636363),
+                                                fontSize: 15,
                                               ),
-                                              Expanded(
-                                                child: Text(
-                                                  dateTimeFormat(
-                                                      'MMMMEEEEd',
-                                                      listViewMeditacaoRecord
-                                                          .data),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyText1,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        expanded: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Html(
-                                              data:
-                                                  listViewMeditacaoRecord.texto,
-                                            ),
-                                          ],
-                                        ),
-                                        theme: ExpandableThemeData(
-                                          tapHeaderToExpand: true,
-                                          tapBodyToExpand: false,
-                                          tapBodyToCollapse: false,
-                                          headerAlignment:
-                                              ExpandablePanelHeaderAlignment
-                                                  .center,
-                                          hasIcon: true,
                                         ),
                                       ),
                                     ),
-                                  ),
+                                    Expanded(
+                                      child: Text(
+                                        dateTimeFormat('MMMMEEEEd',
+                                            listViewMeditacaoRecord.data),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
-                            ],
-                          );
-                        },
+                              expanded: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Html(
+                                    data: listViewMeditacaoRecord.texto,
+                                  ),
+                                ],
+                              ),
+                              theme: ExpandableThemeData(
+                                tapHeaderToExpand: true,
+                                tapBodyToExpand: false,
+                                tapBodyToCollapse: false,
+                                headerAlignment:
+                                    ExpandablePanelHeaderAlignment.center,
+                                hasIcon: true,
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                );
+              },
+            ),
           ),
         ),
       ),
