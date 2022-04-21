@@ -15,6 +15,7 @@ import 'schema/chats_record.dart';
 import 'schema/chat_messages_record.dart';
 import 'schema/meditacao_record.dart';
 import 'schema/pedido_oracao_record.dart';
+import 'schema/videos_sala57_record.dart';
 import 'schema/serializers.dart';
 
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -32,6 +33,7 @@ export 'schema/chats_record.dart';
 export 'schema/chat_messages_record.dart';
 export 'schema/meditacao_record.dart';
 export 'schema/pedido_oracao_record.dart';
+export 'schema/videos_sala57_record.dart';
 
 /// Functions to query UserPostsRecords (as a Stream and as a Future).
 Stream<List<UserPostsRecord>> queryUserPostsRecord(
@@ -318,6 +320,34 @@ Future<FFFirestorePage<PedidoOracaoRecord>> queryPedidoOracaoRecordPage({
 }) =>
     queryCollectionPage(
         PedidoOracaoRecord.collection, PedidoOracaoRecord.serializer,
+        queryBuilder: queryBuilder,
+        nextPageMarker: nextPageMarker,
+        pageSize: pageSize);
+
+/// Functions to query VideosSala57Records (as a Stream and as a Future).
+Stream<List<VideosSala57Record>> queryVideosSala57Record(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollection(
+        VideosSala57Record.collection, VideosSala57Record.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+Future<List<VideosSala57Record>> queryVideosSala57RecordOnce(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollectionOnce(
+        VideosSala57Record.collection, VideosSala57Record.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+Future<FFFirestorePage<VideosSala57Record>> queryVideosSala57RecordPage({
+  Query Function(Query) queryBuilder,
+  DocumentSnapshot nextPageMarker,
+  int pageSize,
+}) =>
+    queryCollectionPage(
+        VideosSala57Record.collection, VideosSala57Record.serializer,
         queryBuilder: queryBuilder,
         nextPageMarker: nextPageMarker,
         pageSize: pageSize);

@@ -11,6 +11,7 @@ import 'chats_record.dart';
 import 'chat_messages_record.dart';
 import 'meditacao_record.dart';
 import 'pedido_oracao_record.dart';
+import 'videos_sala57_record.dart';
 
 import 'index.dart';
 
@@ -32,6 +33,7 @@ const kDocumentReferenceField = 'Document__Reference__Field';
   ChatMessagesRecord,
   MeditacaoRecord,
   PedidoOracaoRecord,
+  VideosSala57Record,
 ])
 final Serializers serializers = (_$serializers.toBuilder()
       ..add(DocumentReferenceSerializer())

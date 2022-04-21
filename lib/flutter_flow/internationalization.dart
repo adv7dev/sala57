@@ -166,7 +166,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'MEDITAÇÃO | ',
       'en': 'MEDITATION |',
     },
-    'glzb7hl4': {
+    'h4h72wbp': {
       'pt': 'Toque para visulizar a meditação de hoje...',
       'en': '',
     },
@@ -554,20 +554,35 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // add_meditacao
   {
-    'fe3znh0i': {
+    'puyqti9o': {
       'pt': 'Titulo',
       'en': '',
     },
-    'f4i5rd26': {
+    '4fpd9yff': {
       'pt': 'Texto',
       'en': '',
     },
-    'tsuk00q3': {
+    'f1fmiejz': {
       'pt': 'url',
       'en': '',
     },
-    'lye261mm': {
+    'pmz2tv2e': {
       'pt': 'ADD',
+      'en': '',
+    },
+  },
+  // add_Pedido_oracao
+  {
+    '6c44tf5y': {
+      'pt': 'Pedido de Oração',
+      'en': '',
+    },
+    'x94n2m16': {
+      'pt': 'Detalhes do Pedido',
+      'en': '',
+    },
+    '31cf55f2': {
+      'pt': 'Enviar Pedido',
       'en': '',
     },
   },

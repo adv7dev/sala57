@@ -21,6 +21,9 @@ abstract class PedidoOracaoRecord
   String get pedido;
 
   @nullable
+  DateTime get data;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
@@ -54,10 +57,12 @@ Map<String, dynamic> createPedidoOracaoRecordData({
   DocumentReference nome,
   String titulo,
   String pedido,
+  DateTime data,
 }) =>
     serializers.toFirestore(
         PedidoOracaoRecord.serializer,
         PedidoOracaoRecord((p) => p
           ..nome = nome
           ..titulo = titulo
-          ..pedido = pedido));
+          ..pedido = pedido
+          ..data = data));

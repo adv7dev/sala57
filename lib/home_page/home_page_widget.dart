@@ -1,6 +1,7 @@
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../components/add_meditacao_widget.dart';
+import '../components/add_pedido_oracao_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_youtube_player.dart';
@@ -179,7 +180,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             onTap: () async {
                               await showModalBottomSheet(
                                 isScrollControlled: true,
-                                backgroundColor: Colors.transparent,
+                                backgroundColor:
+                                    FlutterFlowTheme.of(context).tertiaryColor,
                                 context: context,
                                 builder: (context) {
                                   return Padding(
@@ -320,13 +322,47 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      FlutterFlowYoutubePlayer(
-                        url: 'https://www.youtube.com/watch?v=C30hQ0ZSFoM',
-                        autoPlay: false,
-                        looping: true,
-                        mute: false,
-                        showControls: true,
-                        showFullScreen: true,
+                      StreamBuilder<List<VideosSala57Record>>(
+                        stream: queryVideosSala57Record(
+                          queryBuilder: (videosSala57Record) =>
+                              videosSala57Record.orderBy('data',
+                                  descending: true),
+                          singleRecord: true,
+                        ),
+                        builder: (context, snapshot) {
+                          // Customize what your widget looks like when it's loading.
+                          if (!snapshot.hasData) {
+                            return Center(
+                              child: SizedBox(
+                                width: 50,
+                                height: 50,
+                                child: CircularProgressIndicator(
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
+                                ),
+                              ),
+                            );
+                          }
+                          List<VideosSala57Record>
+                              youtubePlayerVideosSala57RecordList =
+                              snapshot.data;
+                          // Return an empty Container when the document does not exist.
+                          if (snapshot.data.isEmpty) {
+                            return Container();
+                          }
+                          final youtubePlayerVideosSala57Record =
+                              youtubePlayerVideosSala57RecordList.isNotEmpty
+                                  ? youtubePlayerVideosSala57RecordList.first
+                                  : null;
+                          return FlutterFlowYoutubePlayer(
+                            url: youtubePlayerVideosSala57Record.video,
+                            autoPlay: false,
+                            looping: true,
+                            mute: false,
+                            showControls: true,
+                            showFullScreen: true,
+                          );
+                        },
                       ),
                     ],
                   ),
@@ -354,12 +390,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             onTap: () async {
                               await showModalBottomSheet(
                                 isScrollControlled: true,
-                                backgroundColor: Colors.transparent,
+                                backgroundColor:
+                                    FlutterFlowTheme.of(context).gray200,
                                 context: context,
                                 builder: (context) {
                                   return Padding(
                                     padding: MediaQuery.of(context).viewInsets,
-                                    child: AddMeditacaoWidget(),
+                                    child: AddPedidoOracaoWidget(),
                                   );
                                 },
                               );
@@ -467,24 +504,36 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.end,
                                             children: [
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 0, 10, 0),
-                                                child: AuthUserStreamWidget(
-                                                  child: Text(
-                                                    currentUserDisplayName,
-                                                    textAlign: TextAlign.start,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyText1
-                                                        .override(
-                                                          fontFamily:
-                                                              'Lexend Deca',
-                                                          color:
-                                                              Color(0xFF616161),
-                                                        ),
+                                              Expanded(
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(0, 0, 10, 0),
+                                                  child: AuthUserStreamWidget(
+                                                    child: Text(
+                                                      currentUserDisplayName,
+                                                      textAlign: TextAlign.end,
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyText1
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Lexend Deca',
+                                                                color: Color(
+                                                                    0xFF616161),
+                                                              ),
+                                                    ),
                                                   ),
                                                 ),
+                                              ),
+                                              Text(
+                                                dateTimeFormat(
+                                                    'd/M h:mm a',
+                                                    listViewPedidoOracaoRecord
+                                                        .data),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyText1,
                                               ),
                                             ],
                                           ),

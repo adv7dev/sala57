@@ -7,17 +7,16 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class AddMeditacaoWidget extends StatefulWidget {
-  const AddMeditacaoWidget({Key key}) : super(key: key);
+class AddPedidoOracaoWidget extends StatefulWidget {
+  const AddPedidoOracaoWidget({Key key}) : super(key: key);
 
   @override
-  _AddMeditacaoWidgetState createState() => _AddMeditacaoWidgetState();
+  _AddPedidoOracaoWidgetState createState() => _AddPedidoOracaoWidgetState();
 }
 
-class _AddMeditacaoWidgetState extends State<AddMeditacaoWidget> {
+class _AddPedidoOracaoWidgetState extends State<AddPedidoOracaoWidget> {
   TextEditingController textController1;
   TextEditingController textController2;
-  TextEditingController textController3;
   final formKey = GlobalKey<FormState>();
 
   @override
@@ -25,7 +24,6 @@ class _AddMeditacaoWidgetState extends State<AddMeditacaoWidget> {
     super.initState();
     textController1 = TextEditingController();
     textController2 = TextEditingController();
-    textController3 = TextEditingController();
   }
 
   @override
@@ -54,29 +52,31 @@ class _AddMeditacaoWidgetState extends State<AddMeditacaoWidget> {
                                 controller: textController1,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  hintText: 'Titulo',
+                                  hintText: 'Pedido de Oração',
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0x00000000),
                                       width: 1,
                                     ),
-                                    borderRadius: const BorderRadius.only(
-                                      topLeft: Radius.circular(4.0),
-                                      topRight: Radius.circular(4.0),
-                                    ),
+                                    borderRadius: BorderRadius.circular(5),
                                   ),
                                   focusedBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0x00000000),
                                       width: 1,
                                     ),
-                                    borderRadius: const BorderRadius.only(
-                                      topLeft: Radius.circular(4.0),
-                                      topRight: Radius.circular(4.0),
-                                    ),
+                                    borderRadius: BorderRadius.circular(5),
                                   ),
+                                  filled: true,
+                                  fillColor:
+                                      FlutterFlowTheme.of(context).primaryColor,
                                 ),
-                                style: FlutterFlowTheme.of(context).bodyText1,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Colors.white,
+                                    ),
                               ),
                             ),
                           ],
@@ -92,68 +92,32 @@ class _AddMeditacaoWidgetState extends State<AddMeditacaoWidget> {
                                 controller: textController2,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  hintText: 'Texto',
+                                  hintText: 'Detalhes do Pedido',
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0x00000000),
                                       width: 1,
                                     ),
-                                    borderRadius: const BorderRadius.only(
-                                      topLeft: Radius.circular(4.0),
-                                      topRight: Radius.circular(4.0),
-                                    ),
+                                    borderRadius: BorderRadius.circular(5),
                                   ),
                                   focusedBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0x00000000),
                                       width: 1,
                                     ),
-                                    borderRadius: const BorderRadius.only(
-                                      topLeft: Radius.circular(4.0),
-                                      topRight: Radius.circular(4.0),
-                                    ),
+                                    borderRadius: BorderRadius.circular(5),
                                   ),
+                                  filled: true,
+                                  fillColor:
+                                      FlutterFlowTheme.of(context).primaryColor,
                                 ),
-                                style: FlutterFlowTheme.of(context).bodyText1,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Colors.white,
+                                    ),
                                 maxLines: 10,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Expanded(
-                              child: TextFormField(
-                                controller: textController3,
-                                obscureText: false,
-                                decoration: InputDecoration(
-                                  hintText: 'url',
-                                  enabledBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0x00000000),
-                                      width: 1,
-                                    ),
-                                    borderRadius: const BorderRadius.only(
-                                      topLeft: Radius.circular(4.0),
-                                      topRight: Radius.circular(4.0),
-                                    ),
-                                  ),
-                                  focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0x00000000),
-                                      width: 1,
-                                    ),
-                                    borderRadius: const BorderRadius.only(
-                                      topLeft: Radius.circular(4.0),
-                                      topRight: Radius.circular(4.0),
-                                    ),
-                                  ),
-                                ),
-                                style: FlutterFlowTheme.of(context).bodyText1,
                               ),
                             ),
                           ],
@@ -166,20 +130,20 @@ class _AddMeditacaoWidgetState extends State<AddMeditacaoWidget> {
                           children: [
                             FFButtonWidget(
                               onPressed: () async {
-                                final meditacaoCreateData =
-                                    createMeditacaoRecordData(
+                                final pedidoOracaoCreateData =
+                                    createPedidoOracaoRecordData(
+                                  pedido: textController2.text,
                                   titulo: textController1.text,
-                                  texto: textController2.text,
-                                  img: textController3.text,
                                   data: getCurrentTimestamp,
+                                  nome: currentUserReference,
                                 );
-                                await MeditacaoRecord.collection
+                                await PedidoOracaoRecord.collection
                                     .doc()
-                                    .set(meditacaoCreateData);
+                                    .set(pedidoOracaoCreateData);
                               },
-                              text: 'ADD',
+                              text: 'Enviar Pedido',
                               options: FFButtonOptions(
-                                width: 130,
+                                width: 250,
                                 height: 40,
                                 color:
                                     FlutterFlowTheme.of(context).primaryColor,
@@ -188,7 +152,9 @@ class _AddMeditacaoWidgetState extends State<AddMeditacaoWidget> {
                                     .override(
                                       fontFamily: 'Lexend Deca',
                                       color: Colors.white,
+                                      fontSize: 20,
                                     ),
+                                elevation: 5,
                                 borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1,
