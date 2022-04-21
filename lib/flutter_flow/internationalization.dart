@@ -566,6 +566,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
+  // add_meditacao
+  {
+    'ofo389ew': {
+      'pt': 'Titulo',
+      'en': '',
+    },
+    'sv1q6nr5': {
+      'pt': 'Texto',
+      'en': '',
+    },
+    'c5xwy099': {
+      'pt': 'url',
+      'en': '',
+    },
+    '4eosze22': {
+      'pt': 'ADD',
+      'en': '',
+    },
+  },
   // Miscellaneous
   {
     '62mrjvfe': {

@@ -1,10 +1,12 @@
 import '../backend/backend.dart';
+import '../components/add_meditacao_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../main.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomePageWidget extends StatefulWidget {
@@ -151,10 +153,25 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                          child: Icon(
-                            Icons.add_circle,
-                            color: Color(0xFFD2393C),
-                            size: 24,
+                          child: InkWell(
+                            onTap: () async {
+                              await showModalBottomSheet(
+                                isScrollControlled: true,
+                                backgroundColor: Colors.transparent,
+                                context: context,
+                                builder: (context) {
+                                  return Padding(
+                                    padding: MediaQuery.of(context).viewInsets,
+                                    child: AddMeditacaoWidget(),
+                                  );
+                                },
+                              );
+                            },
+                            child: Icon(
+                              Icons.add_circle,
+                              color: Color(0xFFD2393C),
+                              size: 24,
+                            ),
                           ),
                         ),
                       ],
@@ -184,7 +201,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       .override(
                                         fontFamily: 'Lexend Deca',
                                         color: Colors.black,
-                                        fontSize: 20,
+                                        fontSize: 18,
                                       ),
                                 ),
                               ),
@@ -212,29 +229,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               expanded: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        5, 0, 5, 0),
-                                    child: Text(
-                                      columnMeditacaoRecord.texto,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyText1
-                                          .override(
-                                            fontFamily: 'Lexend Deca',
-                                            color: Color(0x8A151515),
-                                            fontSize: 16,
-                                          ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        5, 4, 5, 0),
-                                    child: CachedNetworkImage(
-                                      imageUrl: columnMeditacaoRecord.img,
-                                      width: MediaQuery.of(context).size.width,
-                                      height: 100,
-                                      fit: BoxFit.contain,
-                                    ),
+                                  Html(
+                                    data: columnMeditacaoRecord.texto,
                                   ),
                                 ],
                               ),
