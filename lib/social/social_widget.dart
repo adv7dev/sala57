@@ -193,7 +193,7 @@ class _SocialWidgetState extends State<SocialWidget>
                   if (socialFeedUserPostsRecordList.isEmpty) {
                     return Center(
                       child: Image.asset(
-                        'assets/images/emptyPosts@2x.png',
+                        'assets/images/sala.png',
                         width: MediaQuery.of(context).size.width * 0.5,
                         height: 400,
                       ),
