@@ -14,6 +14,7 @@ import 'schema/friends_record.dart';
 import 'schema/chats_record.dart';
 import 'schema/chat_messages_record.dart';
 import 'schema/meditacao_record.dart';
+import 'schema/pedido_oracao_record.dart';
 import 'schema/serializers.dart';
 
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -30,6 +31,7 @@ export 'schema/friends_record.dart';
 export 'schema/chats_record.dart';
 export 'schema/chat_messages_record.dart';
 export 'schema/meditacao_record.dart';
+export 'schema/pedido_oracao_record.dart';
 
 /// Functions to query UserPostsRecords (as a Stream and as a Future).
 Stream<List<UserPostsRecord>> queryUserPostsRecord(
@@ -288,6 +290,34 @@ Future<FFFirestorePage<MeditacaoRecord>> queryMeditacaoRecordPage({
   int pageSize,
 }) =>
     queryCollectionPage(MeditacaoRecord.collection, MeditacaoRecord.serializer,
+        queryBuilder: queryBuilder,
+        nextPageMarker: nextPageMarker,
+        pageSize: pageSize);
+
+/// Functions to query PedidoOracaoRecords (as a Stream and as a Future).
+Stream<List<PedidoOracaoRecord>> queryPedidoOracaoRecord(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollection(
+        PedidoOracaoRecord.collection, PedidoOracaoRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+Future<List<PedidoOracaoRecord>> queryPedidoOracaoRecordOnce(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollectionOnce(
+        PedidoOracaoRecord.collection, PedidoOracaoRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+Future<FFFirestorePage<PedidoOracaoRecord>> queryPedidoOracaoRecordPage({
+  Query Function(Query) queryBuilder,
+  DocumentSnapshot nextPageMarker,
+  int pageSize,
+}) =>
+    queryCollectionPage(
+        PedidoOracaoRecord.collection, PedidoOracaoRecord.serializer,
         queryBuilder: queryBuilder,
         nextPageMarker: nextPageMarker,
         pageSize: pageSize);

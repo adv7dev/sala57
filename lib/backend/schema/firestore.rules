@@ -71,5 +71,12 @@ service cloud.firestore {
       allow write: if true;
       allow delete: if true;
     }
+
+    match /pedido_oracao/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
   }
 }
