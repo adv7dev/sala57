@@ -95,9 +95,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       body: SafeArea(
         child: StreamBuilder<List<MeditacaoRecord>>(
           stream: queryMeditacaoRecord(
-            queryBuilder: (meditacaoRecord) => meditacaoRecord
-                .where('data', isEqualTo: getCurrentTimestamp)
-                .orderBy('data', descending: true),
+            queryBuilder: (meditacaoRecord) =>
+                meditacaoRecord.orderBy('data', descending: true),
             singleRecord: true,
           ),
           builder: (context, snapshot) {
