@@ -13,7 +13,6 @@ import '../../login/login_widget.dart';
 import '../../create_your_profile/create_your_profile_widget.dart';
 import '../../forgot_password/forgot_password_widget.dart';
 import '../../create_post/create_post_widget.dart';
-import '../../create_story/create_story_widget.dart';
 import '../../post_details/post_details_widget.dart';
 import '../../edit_settings/edit_settings_widget.dart';
 import '../../edit_user_profile/edit_user_profile_widget.dart';
@@ -98,7 +97,6 @@ final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
   'forgotPassword': (data) async => ForgotPasswordWidget(),
   'profilePage': (data) async => NavBarPage(initialPage: 'ProfilePageWidget'),
   'createPost': (data) async => CreatePostWidget(),
-  'createStory': (data) async => CreateStoryWidget(),
   'postDetails': (data) async => PostDetailsWidget(
         postReference: getParameter(data, 'postReference'),
         userRecord: await getDocumentParameter(

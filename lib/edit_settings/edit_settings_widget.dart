@@ -47,7 +47,7 @@ class _EditSettingsWidgetState extends State<EditSettingsWidget> {
               padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
               child: Text(
                 FFLocalizations.of(context).getText(
-                  'j1gaxnm5' /* Settings */,
+                  'j1gaxnm5' /* Configurações */,
                 ),
                 style: FlutterFlowTheme.of(context).title2,
               ),
@@ -128,7 +128,7 @@ class _EditSettingsWidgetState extends State<EditSettingsWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(24, 12, 0, 12),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        's4rc4p54' /* Account Settings */,
+                        's4rc4p54' /* Configurações da cnta */,
                       ),
                       style: FlutterFlowTheme.of(context).bodyText1.override(
                             fontFamily: 'Lexend Deca',
@@ -172,7 +172,7 @@ class _EditSettingsWidgetState extends State<EditSettingsWidget> {
                                     EdgeInsetsDirectional.fromSTEB(24, 0, 0, 0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'u0ab2zsq' /* Edit Profile */,
+                                    'u0ab2zsq' /* Editar Perfil */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
@@ -229,7 +229,7 @@ class _EditSettingsWidgetState extends State<EditSettingsWidget> {
                                       24, 0, 0, 0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'mdlzf3fn' /* Change Password */,
+                                      'mdlzf3fn' /* Mudar a Senha */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
@@ -278,7 +278,7 @@ class _EditSettingsWidgetState extends State<EditSettingsWidget> {
                         );
                       },
                       text: FFLocalizations.of(context).getText(
-                        'elifqk0u' /* Log Out */,
+                        'elifqk0u' /* Sair */,
                       ),
                       options: FFButtonOptions(
                         width: 90,

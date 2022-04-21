@@ -27,7 +27,7 @@ class _AllChatsPageWidgetState extends State<AllChatsPageWidget> {
         automaticallyImplyLeading: false,
         title: Text(
           FFLocalizations.of(context).getText(
-            '80ko590x' /* Messages */,
+            '80ko590x' /* Mensagens */,
           ),
           style: FlutterFlowTheme.of(context).title2,
         ),
@@ -79,7 +79,7 @@ class _AllChatsPageWidgetState extends State<AllChatsPageWidget> {
               if (listViewChatsRecordList.isEmpty) {
                 return Center(
                   child: Image.asset(
-                    'assets/images/messagesMainEmpty@2x.png',
+                    'assets/images/chat_(1).png',
                     width: MediaQuery.of(context).size.width * 0.76,
                   ),
                 );

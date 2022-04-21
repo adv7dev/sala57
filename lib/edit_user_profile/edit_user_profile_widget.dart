@@ -62,7 +62,7 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
             ),
             title: Text(
               FFLocalizations.of(context).getText(
-                'respmxkq' /* Your Profile */,
+                'respmxkq' /* Editar Perfil */,
               ),
               style: FlutterFlowTheme.of(context).title2,
             ),
@@ -88,7 +88,7 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                             Expanded(
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'h33ozyyv' /* Fill out your profile now in o... */,
+                                  'h33ozyyv' /* Altere as configurações do seu... */,
                                 ),
                                 style: FlutterFlowTheme.of(context).bodyText1,
                               ),
@@ -165,7 +165,7 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    'g9tuuqw7' /* Your Name */,
+                                    'g9tuuqw7' /* Seu Nome */,
                                   ),
                                   labelStyle:
                                       FlutterFlowTheme.of(context).subtitle1,
@@ -214,7 +214,7 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                                   decoration: InputDecoration(
                                     labelText:
                                         FFLocalizations.of(context).getText(
-                                      'el4i7z4u' /* UserName */,
+                                      'el4i7z4u' /* nome de usuário */,
                                     ),
                                     labelStyle:
                                         FlutterFlowTheme.of(context).bodyText1,
@@ -266,7 +266,7 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                                         FlutterFlowTheme.of(context).bodyText1,
                                     hintText:
                                         FFLocalizations.of(context).getText(
-                                      'wtevvp0a' /* Your Bio */,
+                                      'wtevvp0a' /* Sobre Você */,
                                     ),
                                     hintStyle:
                                         FlutterFlowTheme.of(context).bodyText1,
@@ -328,7 +328,7 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                               Navigator.pop(context);
                             },
                             text: FFLocalizations.of(context).getText(
-                              'v8g2ebgo' /* Save Changes */,
+                              'v8g2ebgo' /* Salvar Alterações */,
                             ),
                             options: FFButtonOptions(
                               width: 200,

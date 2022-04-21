@@ -112,6 +112,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'I\'m back with a super quick Instagram redesign just for the fan. Rounded corners and cute icons, what else do we need, haha.⁣ ',
       'en': '',
     },
+    '5pf8chlk': {
+      'pt': 'EXPERIÊNCIAS',
+      'en': '',
+    },
+    'fubc1g3d': {
+      'pt': 'Publique a sua aqui...',
+      'en': '',
+    },
     'ycp68zco': {
       'pt': 'Social',
       'en': '',
@@ -158,15 +166,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // homePage
   {
-    'qiw7q4wt': {
+    'wz0rht22': {
       'pt': 'SALA 57',
       'en': 'ROOM 57',
+    },
+    'i4ftmtmn': {
+      'pt': 'Das 5h às 7h...',
+      'en': '',
     },
     '9pexqdzk': {
       'pt': 'MEDITAÇÃO | ',
       'en': 'MEDITATION |',
     },
-    'h4h72wbp': {
+    'reifkwfz': {
       'pt': 'Toque para visulizar a meditação de hoje...',
       'en': '',
     },
@@ -210,19 +222,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // profilePage
   {
     '8jzc6qfv': {
-      'pt': 'Add a Dog',
+      'pt': 'Publicar',
       'en': '',
     },
     '5jqt5w76': {
-      'pt': 'Settings',
+      'pt': 'Configurações',
       'en': '',
     },
     'tgrv6mif': {
-      'pt': 'Dog Profiles',
+      'pt': 'Meus Pedidos de oração',
       'en': '',
     },
     'vbaahdnb': {
-      'pt': 'Posts',
+      'pt': 'Minhas Experiências',
       'en': '',
     },
     'rvzh60az': {
@@ -250,45 +262,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // createPost
   {
     'o9v9sg2i': {
-      'pt': 'Create Post',
+      'pt': 'Publicar Experiência',
       'en': '',
     },
     'mnrwdjj9': {
-      'pt': 'Comment....',
-      'en': '',
-    },
-    '0zk1y423': {
-      'pt': 'Location',
+      'pt': 'Comentário...',
       'en': '',
     },
     'zrp1kvg1': {
-      'pt': 'Create Post',
+      'pt': 'Publicar Experiência',
       'en': '',
     },
     '8pjo7crm': {
-      'pt': 'Home',
-      'en': '',
-    },
-  },
-  // createStory
-  {
-    '30jf62rb': {
-      'pt': 'Comment....',
-      'en': '',
-    },
-    'jlnqdbpu': {
-      'pt': 'Photo',
-      'en': '',
-    },
-    'cm7gp4uo': {
-      'pt': 'Video',
-      'en': '',
-    },
-    'cwif719l': {
-      'pt': 'Create Story',
-      'en': '',
-    },
-    'mfvft3fy': {
       'pt': 'Home',
       'en': '',
     },
@@ -319,23 +304,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // editSettings
   {
     's4rc4p54': {
-      'pt': 'Account Settings',
+      'pt': 'Configurações da cnta',
       'en': '',
     },
     'u0ab2zsq': {
-      'pt': 'Edit Profile',
+      'pt': 'Editar Perfil',
       'en': '',
     },
     'mdlzf3fn': {
-      'pt': 'Change Password',
+      'pt': 'Mudar a Senha',
       'en': '',
     },
     'elifqk0u': {
-      'pt': 'Log Out',
+      'pt': 'Sair',
       'en': '',
     },
     'j1gaxnm5': {
-      'pt': 'Settings',
+      'pt': 'Configurações',
       'en': '',
     },
     '9xmla108': {
@@ -346,28 +331,27 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // editUserProfile
   {
     'respmxkq': {
-      'pt': 'Your Profile',
+      'pt': 'Editar Perfil',
       'en': '',
     },
     'h33ozyyv': {
-      'pt':
-          'Fill out your profile now in order to complete setup of your profile.',
+      'pt': 'Altere as configurações do seu perfil...',
       'en': '',
     },
     'g9tuuqw7': {
-      'pt': 'Your Name',
+      'pt': 'Seu Nome',
       'en': '',
     },
     'el4i7z4u': {
-      'pt': 'UserName',
+      'pt': 'nome de usuário',
       'en': '',
     },
     'wtevvp0a': {
-      'pt': 'Your Bio',
+      'pt': 'Sobre Você',
       'en': '',
     },
     'v8g2ebgo': {
-      'pt': 'Save Changes',
+      'pt': 'Salvar Alterações',
       'en': '',
     },
     'qvf0hf1e': {
@@ -402,15 +386,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // viewProfilePageOther
   {
     'vkeuv7ij': {
-      'pt': 'Message',
+      'pt': 'Enviar Mensagem',
       'en': '',
     },
     'nr8uwwgl': {
-      'pt': 'Dog Profiles',
+      'pt': 'Pedidos de Orações',
       'en': '',
     },
     'nu16yc6o': {
-      'pt': 'Posts',
+      'pt': 'Experiências',
       'en': '',
     },
     'yoz1wjk1': {
@@ -449,7 +433,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // allChatsPage
   {
     '80ko590x': {
-      'pt': 'Messages',
+      'pt': 'Mensagens',
       'en': '',
     },
     '3qig93fq': {
@@ -460,19 +444,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // addChatUsers
   {
     'durb8bgz': {
-      'pt': 'Add Friends to chat',
+      'pt': 'Converar com Alguém',
       'en': '',
     },
     '09q918fy': {
-      'pt': 'Select the friends to add to chat.',
+      'pt': 'Selecione com quem você deseja conversar.',
       'en': '',
     },
     'zdesyxlo': {
-      'pt': 'Search for friends...',
+      'pt': 'Pesquisar',
       'en': '',
     },
     'gbp444q7': {
-      'pt': 'Invite to Chat',
+      'pt': 'Chamar',
       'en': '',
     },
     '6kdxrpy6': {
@@ -483,19 +467,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // createGroupChat
   {
     'r4s04ya3': {
-      'pt': 'Create Group Chat',
+      'pt': 'Criar Grupo de Oração',
       'en': '',
     },
     'fxsjbgwh': {
-      'pt': 'Select the friends to add to chat.',
+      'pt': 'Selecione as pessoas para conversar...',
       'en': '',
     },
     'v60ngah2': {
-      'pt': 'Search for friends...',
+      'pt': 'Pesquisar...',
       'en': '',
     },
     'gwdpno24': {
-      'pt': 'Create Chat',
+      'pt': 'Criar Grupo',
       'en': '',
     },
     '80q2vqug': {
@@ -554,34 +538,34 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // add_meditacao
   {
-    'puyqti9o': {
+    'ttje8fax': {
       'pt': 'Titulo',
       'en': '',
     },
-    '4fpd9yff': {
+    '2c5yh1ec': {
       'pt': 'Texto',
       'en': '',
     },
-    'f1fmiejz': {
+    'b13r3vhp': {
       'pt': 'url',
       'en': '',
     },
-    'pmz2tv2e': {
+    'jvyypqey': {
       'pt': 'ADD',
       'en': '',
     },
   },
   // add_Pedido_oracao
   {
-    '6c44tf5y': {
+    '6l0634yw': {
       'pt': 'Pedido de Oração',
       'en': '',
     },
-    'x94n2m16': {
+    'xr7c3x4k': {
       'pt': 'Detalhes do Pedido',
       'en': '',
     },
-    '31cf55f2': {
+    '4ci7uih1': {
       'pt': 'Enviar Pedido',
       'en': '',
     },

@@ -3,15 +3,12 @@ import '../backend/backend.dart';
 import '../backend/firebase_storage/storage.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_media_display.dart';
-import '../flutter_flow/flutter_flow_place_picker.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_video_player.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../flutter_flow/place.dart';
 import '../flutter_flow/upload_media.dart';
 import '../main.dart';
-import 'dart:io';
 import '../flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +24,6 @@ class CreatePostWidget extends StatefulWidget {
 class _CreatePostWidgetState extends State<CreatePostWidget> {
   String uploadedFileUrl = '';
   TextEditingController textController;
-  var placePickerValue = FFPlace();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -45,7 +41,7 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
         automaticallyImplyLeading: false,
         title: Text(
           FFLocalizations.of(context).getText(
-            'o9v9sg2i' /* Create Post */,
+            'o9v9sg2i' /* Publicar Experiência */,
           ),
           style: FlutterFlowTheme.of(context).title2.override(
                 fontFamily: 'Lexend Deca',
@@ -162,7 +158,7 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                             image: DecorationImage(
                                               fit: BoxFit.cover,
                                               image: Image.asset(
-                                                'assets/images/emptyPost@2x.png',
+                                                'assets/images/gallery_(1).png',
                                               ).image,
                                             ),
                                             boxShadow: [
@@ -222,7 +218,7 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                         decoration: InputDecoration(
                                           hintText: FFLocalizations.of(context)
                                               .getText(
-                                            'mnrwdjj9' /* Comment.... */,
+                                            'mnrwdjj9' /* Comentário... */,
                                           ),
                                           hintStyle:
                                               FlutterFlowTheme.of(context)
@@ -279,44 +275,6 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                       ),
                     ],
                   ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      FlutterFlowPlacePicker(
-                        iOSGoogleMapsApiKey: '',
-                        androidGoogleMapsApiKey: '',
-                        webGoogleMapsApiKey: '',
-                        onSelect: (place) =>
-                            setState(() => placePickerValue = place),
-                        defaultText: FFLocalizations.of(context).getText(
-                          '0zk1y423' /* Location */,
-                        ),
-                        icon: Icon(
-                          Icons.place,
-                          color: FlutterFlowTheme.of(context).grayIcon,
-                          size: 24,
-                        ),
-                        buttonOptions: FFButtonOptions(
-                          width: 300,
-                          height: 60,
-                          color: Colors.white,
-                          textStyle:
-                              FlutterFlowTheme.of(context).subtitle2.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Color(0xFF95A1AC),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                          borderSide: BorderSide(
-                            color: Color(0xFFDBE2E7),
-                            width: 2,
-                          ),
-                          borderRadius: 8,
-                        ),
-                      ),
-                    ],
-                  ),
                 ],
               ),
             ),
@@ -353,7 +311,7 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                   );
                 },
                 text: FFLocalizations.of(context).getText(
-                  'zrp1kvg1' /* Create Post */,
+                  'zrp1kvg1' /* Publicar Experiência */,
                 ),
                 options: FFButtonOptions(
                   width: 270,

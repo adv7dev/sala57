@@ -99,15 +99,39 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             },
           ),
         ),
-        title: Text(
-          FFLocalizations.of(context).getText(
-            'qiw7q4wt' /* SALA 57 */,
-          ),
-          style: FlutterFlowTheme.of(context).title1.override(
-                fontFamily: 'Lexend Deca',
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
+        title: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  FFLocalizations.of(context).getText(
+                    'wz0rht22' /* SALA 57 */,
+                  ),
+                  style: FlutterFlowTheme.of(context).title1.override(
+                        fontFamily: 'Lexend Deca',
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Das 5h às 7h...',
+                  style: FlutterFlowTheme.of(context).bodyText1.override(
+                        fontFamily: 'Lexend Deca',
+                        color: Color(0xFF575757),
+                      ),
+                ),
+              ],
+            ),
+          ],
         ),
         actions: [],
         centerTitle: true,
@@ -174,30 +198,36 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     fontStyle: FontStyle.italic,
                                   ),
                         ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                          child: InkWell(
-                            onTap: () async {
-                              await showModalBottomSheet(
-                                isScrollControlled: true,
-                                backgroundColor:
-                                    FlutterFlowTheme.of(context).tertiaryColor,
-                                context: context,
-                                builder: (context) {
-                                  return Padding(
-                                    padding: MediaQuery.of(context).viewInsets,
-                                    child: AddMeditacaoWidget(),
+                        if (currentUserDocument?.adm ?? true)
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                            child: AuthUserStreamWidget(
+                              child: InkWell(
+                                onTap: () async {
+                                  await showModalBottomSheet(
+                                    isScrollControlled: true,
+                                    backgroundColor:
+                                        FlutterFlowTheme.of(context)
+                                            .tertiaryColor,
+                                    context: context,
+                                    builder: (context) {
+                                      return Padding(
+                                        padding:
+                                            MediaQuery.of(context).viewInsets,
+                                        child: AddMeditacaoWidget(),
+                                      );
+                                    },
                                   );
                                 },
-                              );
-                            },
-                            child: Icon(
-                              Icons.add_circle,
-                              color: Color(0xFFD2393C),
-                              size: 24,
+                                child: Icon(
+                                  Icons.add_circle,
+                                  color: Color(0xFFD2393C),
+                                  size: 24,
+                                ),
+                              ),
                             ),
                           ),
-                        ),
                       ],
                     ),
                   ),
@@ -293,29 +323,34 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     fontWeight: FontWeight.bold,
                                   ),
                         ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                          child: InkWell(
-                            onTap: () async {
-                              await showModalBottomSheet(
-                                isScrollControlled: true,
-                                backgroundColor: Colors.transparent,
-                                context: context,
-                                builder: (context) {
-                                  return Padding(
-                                    padding: MediaQuery.of(context).viewInsets,
-                                    child: AddMeditacaoWidget(),
+                        if (currentUserDocument?.adm ?? true)
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                            child: AuthUserStreamWidget(
+                              child: InkWell(
+                                onTap: () async {
+                                  await showModalBottomSheet(
+                                    isScrollControlled: true,
+                                    backgroundColor: Colors.transparent,
+                                    context: context,
+                                    builder: (context) {
+                                      return Padding(
+                                        padding:
+                                            MediaQuery.of(context).viewInsets,
+                                        child: AddMeditacaoWidget(),
+                                      );
+                                    },
                                   );
                                 },
-                              );
-                            },
-                            child: Icon(
-                              Icons.add_circle,
-                              color: Color(0xFFD2393C),
-                              size: 24,
+                                child: Icon(
+                                  Icons.add_circle,
+                                  color: Color(0xFFD2393C),
+                                  size: 24,
+                                ),
+                              ),
                             ),
                           ),
-                        ),
                       ],
                     ),
                   ),

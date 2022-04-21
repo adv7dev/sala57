@@ -80,7 +80,7 @@ class _PostDetailsWidgetState extends State<PostDetailsWidget> {
                                 child: CachedNetworkImage(
                                   imageUrl: valueOrDefault<String>(
                                     postDetailsUserPostsRecord.postPhoto,
-                                    'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-social-app-tx2kqp/assets/ot903vcfouv7/oscar-sutton-yihlaRCCvd4-unsplash.jpg',
+                                    'https://cdn.pixabay.com/photo/2016/04/05/03/18/prayer-1308663_960_720.jpg',
                                   ),
                                   width: 100,
                                   height: 430,
@@ -177,8 +177,11 @@ class _PostDetailsWidgetState extends State<PostDetailsWidget> {
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                     ),
-                                    child: Image.network(
-                                      widget.userRecord.photoUrl,
+                                    child: CachedNetworkImage(
+                                      imageUrl: valueOrDefault<String>(
+                                        widget.userRecord.photoUrl,
+                                        'https://d1fdloi71mui9q.cloudfront.net/uJv2AiP5TNOFHg9X2INW_equLQuE3E2cZTfk6',
+                                      ),
                                       fit: BoxFit.fitWidth,
                                     ),
                                   ),
@@ -291,12 +294,12 @@ class _PostDetailsWidgetState extends State<PostDetailsWidget> {
                                               .toList()
                                               .contains(currentUserReference),
                                           onIcon: Icon(
-                                            Icons.pets_rounded,
+                                            Icons.favorite,
                                             color: Color(0xFF4B39EF),
                                             size: 25,
                                           ),
                                           offIcon: Icon(
-                                            Icons.pets_outlined,
+                                            Icons.favorite_border,
                                             color: Color(0xFF95A1AC),
                                             size: 25,
                                           ),
@@ -514,7 +517,7 @@ class _PostDetailsWidgetState extends State<PostDetailsWidget> {
                                                               String>(
                                                             commentUsersRecord
                                                                 .photoUrl,
-                                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-social-app-tx2kqp/assets/pbp73skqv1ru/shayna-douglas-lgILhKUELg4-unsplash.jpg',
+                                                            'https://d1fdloi71mui9q.cloudfront.net/uJv2AiP5TNOFHg9X2INW_equLQuE3E2cZTfk6',
                                                           ),
                                                           fit: BoxFit.cover,
                                                         ),

@@ -1,5 +1,6 @@
 import '../backend/backend.dart';
 import '../chat_page/chat_page_widget.dart';
+import '../flutter_flow/flutter_flow_expanded_image_view.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_toggle_icon.dart';
@@ -10,6 +11,7 @@ import '../flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class ViewProfilePageOtherWidget extends StatefulWidget {
   const ViewProfilePageOtherWidget({
@@ -156,20 +158,58 @@ class _ViewProfilePageOtherWidgetState
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             4, 4, 4, 4),
-                                        child: Container(
-                                          width: 90,
-                                          height: 90,
-                                          clipBehavior: Clip.antiAlias,
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                          ),
-                                          child: Image.network(
-                                            valueOrDefault<String>(
+                                        child: InkWell(
+                                          onTap: () async {
+                                            await Navigator.push(
+                                              context,
+                                              PageTransition(
+                                                type: PageTransitionType.fade,
+                                                child:
+                                                    FlutterFlowExpandedImageView(
+                                                  image: CachedNetworkImage(
+                                                    imageUrl:
+                                                        valueOrDefault<String>(
+                                                      viewProfilePageOtherUsersRecord
+                                                          .photoUrl,
+                                                      'https://d1fdloi71mui9q.cloudfront.net/uJv2AiP5TNOFHg9X2INW_equLQuE3E2cZTfk6',
+                                                    ),
+                                                    fit: BoxFit.contain,
+                                                  ),
+                                                  allowRotation: false,
+                                                  tag: valueOrDefault<String>(
+                                                    viewProfilePageOtherUsersRecord
+                                                        .photoUrl,
+                                                    'https://d1fdloi71mui9q.cloudfront.net/uJv2AiP5TNOFHg9X2INW_equLQuE3E2cZTfk6',
+                                                  ),
+                                                  useHeroAnimation: true,
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                          child: Hero(
+                                            tag: valueOrDefault<String>(
                                               viewProfilePageOtherUsersRecord
                                                   .photoUrl,
-                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-social-app-tx2kqp/assets/5lywt4ult0tj/flouffy-qEO5MpLyOks-unsplash.jpg',
+                                              'https://d1fdloi71mui9q.cloudfront.net/uJv2AiP5TNOFHg9X2INW_equLQuE3E2cZTfk6',
                                             ),
-                                            fit: BoxFit.fitWidth,
+                                            transitionOnUserGestures: true,
+                                            child: Container(
+                                              width: 90,
+                                              height: 90,
+                                              clipBehavior: Clip.antiAlias,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                              ),
+                                              child: CachedNetworkImage(
+                                                imageUrl:
+                                                    valueOrDefault<String>(
+                                                  viewProfilePageOtherUsersRecord
+                                                      .photoUrl,
+                                                  'https://d1fdloi71mui9q.cloudfront.net/uJv2AiP5TNOFHg9X2INW_equLQuE3E2cZTfk6',
+                                                ),
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -199,7 +239,7 @@ class _ViewProfilePageOtherWidgetState
                                     );
                                   },
                                   text: FFLocalizations.of(context).getText(
-                                    'vkeuv7ij' /* Message */,
+                                    'vkeuv7ij' /* Enviar Mensagem */,
                                   ),
                                   options: FFButtonOptions(
                                     width: 270,
@@ -246,12 +286,12 @@ class _ViewProfilePageOtherWidgetState
                           tabs: [
                             Tab(
                               text: FFLocalizations.of(context).getText(
-                                'nr8uwwgl' /* Dog Profiles */,
+                                'nr8uwwgl' /* Pedidos de Orações */,
                               ),
                             ),
                             Tab(
                               text: FFLocalizations.of(context).getText(
-                                'nu16yc6o' /* Posts */,
+                                'nu16yc6o' /* Experiências */,
                               ),
                             ),
                           ],
@@ -335,10 +375,11 @@ class _ViewProfilePageOtherWidgetState
                                                     topRight:
                                                         Radius.circular(0),
                                                   ),
-                                                  child: Image.network(
-                                                    valueOrDefault<String>(
+                                                  child: CachedNetworkImage(
+                                                    imageUrl:
+                                                        valueOrDefault<String>(
                                                       columnDogsRecord.dogPhoto,
-                                                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-social-app-tx2kqp/assets/gu4akoa3hju1/victor-grabarczyk-N04FIfHhv_k-unsplash.jpg',
+                                                      'https://d1fdloi71mui9q.cloudfront.net/uJv2AiP5TNOFHg9X2INW_equLQuE3E2cZTfk6',
                                                     ),
                                                     width: 100,
                                                     height: 100,
@@ -586,7 +627,7 @@ class _ViewProfilePageOtherWidgetState
                                                                           String>(
                                                                         userPostUsersRecord
                                                                             .photoUrl,
-                                                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-social-app-tx2kqp/assets/wn636nykq7im/lucrezia-carnelos-0liYTl4dJxk-unsplash.jpg',
+                                                                        'https://d1fdloi71mui9q.cloudfront.net/uJv2AiP5TNOFHg9X2INW_equLQuE3E2cZTfk6',
                                                                       ),
                                                                       fit: BoxFit
                                                                           .fitWidth,

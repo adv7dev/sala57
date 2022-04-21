@@ -1,6 +1,8 @@
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
+import '../create_post/create_post_widget.dart';
 import '../edit_settings/edit_settings_widget.dart';
+import '../flutter_flow/flutter_flow_expanded_image_view.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_toggle_icon.dart';
@@ -11,6 +13,7 @@ import '../flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class ProfilePageWidget extends StatefulWidget {
   const ProfilePageWidget({Key key}) : super(key: key);
@@ -135,19 +138,55 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           4, 4, 4, 4),
-                                      child: Container(
-                                        width: 90,
-                                        height: 90,
-                                        clipBehavior: Clip.antiAlias,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: Image.network(
-                                          valueOrDefault<String>(
+                                      child: InkWell(
+                                        onTap: () async {
+                                          await Navigator.push(
+                                            context,
+                                            PageTransition(
+                                              type: PageTransitionType.fade,
+                                              child:
+                                                  FlutterFlowExpandedImageView(
+                                                image: CachedNetworkImage(
+                                                  imageUrl:
+                                                      valueOrDefault<String>(
+                                                    profilePageUsersRecord
+                                                        .photoUrl,
+                                                    'https://d1fdloi71mui9q.cloudfront.net/uJv2AiP5TNOFHg9X2INW_equLQuE3E2cZTfk6',
+                                                  ),
+                                                  fit: BoxFit.contain,
+                                                ),
+                                                allowRotation: false,
+                                                tag: valueOrDefault<String>(
+                                                  profilePageUsersRecord
+                                                      .photoUrl,
+                                                  'https://d1fdloi71mui9q.cloudfront.net/uJv2AiP5TNOFHg9X2INW_equLQuE3E2cZTfk6',
+                                                ),
+                                                useHeroAnimation: true,
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                        child: Hero(
+                                          tag: valueOrDefault<String>(
                                             profilePageUsersRecord.photoUrl,
-                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-social-app-tx2kqp/assets/5lywt4ult0tj/flouffy-qEO5MpLyOks-unsplash.jpg',
+                                            'https://d1fdloi71mui9q.cloudfront.net/uJv2AiP5TNOFHg9X2INW_equLQuE3E2cZTfk6',
                                           ),
-                                          fit: BoxFit.fitWidth,
+                                          transitionOnUserGestures: true,
+                                          child: Container(
+                                            width: 90,
+                                            height: 90,
+                                            clipBehavior: Clip.antiAlias,
+                                            decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+                                            ),
+                                            child: CachedNetworkImage(
+                                              imageUrl: valueOrDefault<String>(
+                                                profilePageUsersRecord.photoUrl,
+                                                'https://d1fdloi71mui9q.cloudfront.net/uJv2AiP5TNOFHg9X2INW_equLQuE3E2cZTfk6',
+                                              ),
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -168,11 +207,16 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
+                        onPressed: () async {
+                          await Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CreatePostWidget(),
+                            ),
+                          );
                         },
                         text: FFLocalizations.of(context).getText(
-                          '8jzc6qfv' /* Add a Dog */,
+                          '8jzc6qfv' /* Publicar */,
                         ),
                         options: FFButtonOptions(
                           width: 130,
@@ -206,7 +250,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                           );
                         },
                         text: FFLocalizations.of(context).getText(
-                          '5jqt5w76' /* Settings */,
+                          '5jqt5w76' /* Configurações */,
                         ),
                         options: FFButtonOptions(
                           width: 130,
@@ -243,12 +287,12 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                           tabs: [
                             Tab(
                               text: FFLocalizations.of(context).getText(
-                                'tgrv6mif' /* Dog Profiles */,
+                                'tgrv6mif' /* Meus Pedidos de oração */,
                               ),
                             ),
                             Tab(
                               text: FFLocalizations.of(context).getText(
-                                'vbaahdnb' /* Posts */,
+                                'vbaahdnb' /* Minhas Experiências */,
                               ),
                             ),
                           ],
@@ -262,193 +306,6 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                 decoration: BoxDecoration(
                                   color:
                                       FlutterFlowTheme.of(context).background,
-                                ),
-                                child: StreamBuilder<List<DogsRecord>>(
-                                  stream: queryDogsRecord(
-                                    queryBuilder: (dogsRecord) =>
-                                        dogsRecord.where('userAssociation',
-                                            isEqualTo: currentUserReference),
-                                  ),
-                                  builder: (context, snapshot) {
-                                    // Customize what your widget looks like when it's loading.
-                                    if (!snapshot.hasData) {
-                                      return Center(
-                                        child: SizedBox(
-                                          width: 50,
-                                          height: 50,
-                                          child: CircularProgressIndicator(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryColor,
-                                          ),
-                                        ),
-                                      );
-                                    }
-                                    List<DogsRecord> columnDogsRecordList =
-                                        snapshot.data;
-                                    if (columnDogsRecordList.isEmpty) {
-                                      return Center(
-                                        child: Image.asset(
-                                          'assets/images/emptyDog@2x.png',
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.8,
-                                        ),
-                                      );
-                                    }
-                                    return Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: List.generate(
-                                          columnDogsRecordList.length,
-                                          (columnIndex) {
-                                        final columnDogsRecord =
-                                            columnDogsRecordList[columnIndex];
-                                        return Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0, 12, 0, 0),
-                                          child: Container(
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                0.96,
-                                            height: 100,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .tertiaryColor,
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  blurRadius: 3,
-                                                  color: Color(0x32000000),
-                                                  offset: Offset(0, 1),
-                                                )
-                                              ],
-                                              borderRadius:
-                                                  BorderRadius.circular(8),
-                                            ),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.only(
-                                                    bottomLeft:
-                                                        Radius.circular(8),
-                                                    bottomRight:
-                                                        Radius.circular(0),
-                                                    topLeft: Radius.circular(8),
-                                                    topRight:
-                                                        Radius.circular(0),
-                                                  ),
-                                                  child: CachedNetworkImage(
-                                                    imageUrl:
-                                                        valueOrDefault<String>(
-                                                      columnDogsRecord.dogPhoto,
-                                                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-social-app-tx2kqp/assets/gu4akoa3hju1/victor-grabarczyk-N04FIfHhv_k-unsplash.jpg',
-                                                    ),
-                                                    width: 100,
-                                                    height: 100,
-                                                    fit: BoxFit.cover,
-                                                  ),
-                                                ),
-                                                Expanded(
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                12, 0, 0, 0),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      children: [
-                                                        Text(
-                                                          columnDogsRecord
-                                                              .dogName,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .title3,
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          children: [
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0,
-                                                                          4,
-                                                                          0,
-                                                                          0),
-                                                              child: Text(
-                                                                columnDogsRecord
-                                                                    .dogType,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyText1,
-                                                              ),
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          4,
-                                                                          4,
-                                                                          0,
-                                                                          0),
-                                                              child: Text(
-                                                                columnDogsRecord
-                                                                    .dogAge,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyText1,
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ),
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 12, 0),
-                                                  child: FlutterFlowIconButton(
-                                                    borderColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .gray200,
-                                                    borderRadius: 30,
-                                                    borderWidth: 2,
-                                                    buttonSize: 44,
-                                                    icon: Icon(
-                                                      Icons.edit_outlined,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .grayIcon,
-                                                      size: 24,
-                                                    ),
-                                                    onPressed: () {
-                                                      print(
-                                                          'IconButton pressed ...');
-                                                    },
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        );
-                                      }),
-                                    );
-                                  },
                                 ),
                               ),
                               Padding(
@@ -622,16 +479,16 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                                                         shape: BoxShape
                                                                             .circle,
                                                                       ),
-                                                                      child: Image
-                                                                          .network(
-                                                                        valueOrDefault<
-                                                                            String>(
+                                                                      child:
+                                                                          CachedNetworkImage(
+                                                                        imageUrl:
+                                                                            valueOrDefault<String>(
                                                                           userPostUsersRecord
                                                                               .photoUrl,
-                                                                          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-social-app-tx2kqp/assets/wn636nykq7im/lucrezia-carnelos-0liYTl4dJxk-unsplash.jpg',
+                                                                          'https://d1fdloi71mui9q.cloudfront.net/uJv2AiP5TNOFHg9X2INW_equLQuE3E2cZTfk6',
                                                                         ),
                                                                         fit: BoxFit
-                                                                            .fitWidth,
+                                                                            .cover,
                                                                       ),
                                                                     ),
                                                                   ),

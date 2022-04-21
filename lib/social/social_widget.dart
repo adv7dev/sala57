@@ -68,6 +68,35 @@ class _SocialWidgetState extends State<SocialWidget>
               height: 40,
               fit: BoxFit.fitWidth,
             ),
+            Column(
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Text(
+                      'EXPERIÊNCIAS',
+                      style: FlutterFlowTheme.of(context).title2.override(
+                            fontFamily: 'Lexend Deca',
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Text(
+                      'Publique a sua aqui...',
+                      textAlign: TextAlign.start,
+                      style: FlutterFlowTheme.of(context).bodyText1,
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ],
         ),
         actions: [
