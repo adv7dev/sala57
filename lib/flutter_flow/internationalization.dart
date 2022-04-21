@@ -304,13 +304,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // storyDetails
-  {
-    '3v8vr12u': {
-      'pt': 'Home',
-      'en': '',
-    },
-  },
   // editSettings
   {
     's4rc4p54': {
@@ -519,14 +512,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // createModal
   {
-    'z0mcgivs': {
-      'pt': 'Create Story',
-      'en': '',
-    },
-    'qqb2bxsm': {
-      'pt': 'Share a video of your pup.',
-      'en': '',
-    },
     'pmphyy23': {
       'pt': 'Create Post',
       'en': '',
@@ -555,32 +540,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // deleteStory
-  {
-    'vkvau1m5': {
-      'pt': 'Delete Story',
-      'en': '',
-    },
-    'b9vd15u9': {
-      'pt': 'Cancel',
-      'en': '',
-    },
-  },
   // add_meditacao
   {
-    'ofo389ew': {
+    'kkk4hnh8': {
       'pt': 'Titulo',
       'en': '',
     },
-    'sv1q6nr5': {
+    'cym4s1zg': {
       'pt': 'Texto',
       'en': '',
     },
-    'c5xwy099': {
+    'c3uhg92j': {
       'pt': 'url',
       'en': '',
     },
-    '4eosze22': {
+    '3rqbn8pr': {
       'pt': 'ADD',
       'en': '',
     },

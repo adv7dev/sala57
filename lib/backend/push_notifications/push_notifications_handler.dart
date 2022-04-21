@@ -15,7 +15,6 @@ import '../../forgot_password/forgot_password_widget.dart';
 import '../../create_post/create_post_widget.dart';
 import '../../create_story/create_story_widget.dart';
 import '../../post_details/post_details_widget.dart';
-import '../../story_details/story_details_widget.dart';
 import '../../edit_settings/edit_settings_widget.dart';
 import '../../edit_user_profile/edit_user_profile_widget.dart';
 import '../../change_password/change_password_widget.dart';
@@ -104,9 +103,6 @@ final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
         postReference: getParameter(data, 'postReference'),
         userRecord: await getDocumentParameter(
             data, 'userRecord', UsersRecord.serializer),
-      ),
-  'storyDetails': (data) async => StoryDetailsWidget(
-        initialStoryIndex: getParameter(data, 'initialStoryIndex'),
       ),
   'editSettings': (data) async => EditSettingsWidget(),
   'editUserProfile': (data) async => EditUserProfileWidget(),

@@ -114,6 +114,7 @@ class _AddMeditacaoWidgetState extends State<AddMeditacaoWidget> {
                                 ),
                               ),
                               style: FlutterFlowTheme.of(context).bodyText1,
+                              maxLines: 10,
                             ),
                           ),
                         ],
