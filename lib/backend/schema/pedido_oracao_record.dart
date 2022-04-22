@@ -24,12 +24,16 @@ abstract class PedidoOracaoRecord
   DateTime get data;
 
   @nullable
+  BuiltList<DocumentReference> get pushnotification;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
   static void _initializeBuilder(PedidoOracaoRecordBuilder builder) => builder
     ..titulo = ''
-    ..pedido = '';
+    ..pedido = ''
+    ..pushnotification = ListBuilder();
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('pedido_oracao');
@@ -65,4 +69,5 @@ Map<String, dynamic> createPedidoOracaoRecordData({
           ..nome = nome
           ..titulo = titulo
           ..pedido = pedido
-          ..data = data));
+          ..data = data
+          ..pushnotification = null));

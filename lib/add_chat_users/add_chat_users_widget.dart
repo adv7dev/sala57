@@ -30,6 +30,8 @@ class _AddChatUsersWidgetState extends State<AddChatUsersWidget> {
 
   PagingController<DocumentSnapshot, UsersRecord> _pagingController =
       PagingController(firstPageKey: null);
+  List<StreamSubscription> _streamSubscriptions = [];
+
   TextEditingController textController;
   ChatsRecord groupChat;
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -43,15 +45,35 @@ class _AddChatUsersWidgetState extends State<AddChatUsersWidget> {
             isEqualTo: textController.text != '' ? textController.text : null),
         nextPageMarker: nextPageMarker,
         pageSize: 50,
+        isStream: false,
       ).then((page) {
         _pagingController.appendPage(
           page.data,
           page.nextPageMarker,
         );
+        final streamSubscription = page.dataStream?.listen((data) {
+          final itemIndexes = _pagingController.itemList
+              .asMap()
+              .map((k, v) => MapEntry(v.reference.id, k));
+          data.forEach((item) {
+            final index = itemIndexes[item.reference.id];
+            if (index != null) {
+              _pagingController.itemList.replaceRange(index, index + 1, [item]);
+            }
+          });
+          setState(() {});
+        });
+        _streamSubscriptions.add(streamSubscription);
       });
     });
 
     textController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _streamSubscriptions.forEach((s) => s?.cancel());
+    super.dispose();
   }
 
   @override

@@ -145,6 +145,15 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget> {
                             height: 120,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).gray200,
+                              image: DecorationImage(
+                                fit: BoxFit.fitWidth,
+                                image: Image.network(
+                                  valueOrDefault<String>(
+                                    uploadedFileUrl,
+                                    'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-social-app-tx2kqp/assets/7dvyeuxvy2dg/addUser@2x.png',
+                                  ),
+                                ).image,
+                              ),
                               shape: BoxShape.circle,
                             ),
                           ),

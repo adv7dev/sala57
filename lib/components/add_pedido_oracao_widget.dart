@@ -1,5 +1,6 @@
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
+import '../backend/push_notifications/push_notifications_util.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -140,6 +141,17 @@ class _AddPedidoOracaoWidgetState extends State<AddPedidoOracaoWidget> {
                                 await PedidoOracaoRecord.collection
                                     .doc()
                                     .set(pedidoOracaoCreateData);
+                                triggerPushNotification(
+                                  notificationTitle: textController1.text,
+                                  notificationText: textController2.text,
+                                  notificationImageUrl:
+                                      'https://cdn.pixabay.com/photo/2017/03/27/15/16/man-2179326_960_720.jpg',
+                                  notificationSound: 'default',
+                                  userRefs: [currentUserReference],
+                                  initialPageName: 'homePage',
+                                  parameterData: {},
+                                );
+                                Navigator.pop(context);
                               },
                               text: 'Enviar Pedido',
                               options: FFButtonOptions(

@@ -25,6 +25,8 @@ class HomePageWidget extends StatefulWidget {
 class _HomePageWidgetState extends State<HomePageWidget> {
   PagingController<DocumentSnapshot, PedidoOracaoRecord> _pagingController =
       PagingController(firstPageKey: null);
+  List<StreamSubscription> _streamSubscriptions = [];
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -35,13 +37,33 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         queryBuilder: (pedidoOracaoRecord) => pedidoOracaoRecord,
         nextPageMarker: nextPageMarker,
         pageSize: 10,
+        isStream: false,
       ).then((page) {
         _pagingController.appendPage(
           page.data,
           page.nextPageMarker,
         );
+        final streamSubscription = page.dataStream?.listen((data) {
+          final itemIndexes = _pagingController.itemList
+              .asMap()
+              .map((k, v) => MapEntry(v.reference.id, k));
+          data.forEach((item) {
+            final index = itemIndexes[item.reference.id];
+            if (index != null) {
+              _pagingController.itemList.replaceRange(index, index + 1, [item]);
+            }
+          });
+          setState(() {});
+        });
+        _streamSubscriptions.add(streamSubscription);
       });
     });
+  }
+
+  @override
+  void dispose() {
+    _streamSubscriptions.forEach((s) => s?.cancel());
+    super.dispose();
   }
 
   @override
