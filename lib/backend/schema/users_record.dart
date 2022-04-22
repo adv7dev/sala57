@@ -44,6 +44,9 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
   bool get adm;
 
   @nullable
+  BuiltList<DocumentReference> get push;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
@@ -56,7 +59,8 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
     ..userName = ''
     ..bio = ''
     ..isFollowed = false
-    ..adm = false;
+    ..adm = false
+    ..push = ListBuilder();
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('users');
@@ -103,4 +107,5 @@ Map<String, dynamic> createUsersRecordData({
           ..userName = userName
           ..bio = bio
           ..isFollowed = isFollowed
-          ..adm = adm));
+          ..adm = adm
+          ..push = null));

@@ -177,9 +177,8 @@ class _AddPedidoOracaoWidgetState extends State<AddPedidoOracaoWidget> {
                                       notificationImageUrl:
                                           'https://cdn.pixabay.com/photo/2017/03/27/15/16/man-2179326_960_720.jpg',
                                       notificationSound: 'default',
-                                      userRefs: formPedidoOracaoRecord
-                                          .pushnotification
-                                          .toList(),
+                                      userRefs:
+                                          currentUserDocument?.push?.toList(),
                                       initialPageName: 'homePage',
                                       parameterData: {},
                                     );
