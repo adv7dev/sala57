@@ -25,11 +25,10 @@ class _PageVideosSala57WidgetState extends State<PageVideosSala57Widget> {
     super.initState();
     _pagingController.addPageRequestListener((nextPageMarker) {
       queryVideosSala57RecordPage(
-        queryBuilder: (videosSala57Record) =>
-            videosSala57Record.orderBy('data'),
+        queryBuilder: (videosSala57Record) => videosSala57Record,
         nextPageMarker: nextPageMarker,
         pageSize: 10,
-        isStream: false,
+        isStream: true,
       ).then((page) {
         _pagingController.appendPage(
           page.data,
@@ -77,12 +76,12 @@ class _PageVideosSala57WidgetState extends State<PageVideosSala57Widget> {
         centerTitle: true,
         elevation: 2,
       ),
-      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 5),
+            padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
             child: PagedListView<DocumentSnapshot<Object>, VideosSala57Record>(
               pagingController: _pagingController,
               padding: EdgeInsets.zero,
@@ -107,39 +106,13 @@ class _PageVideosSala57WidgetState extends State<PageVideosSala57Widget> {
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Expanded(
-                              child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
-                                child: Text(
-                                  listViewVideosSala57Record.nome,
-                                  style: FlutterFlowTheme.of(context)
-                                      .subtitle1
-                                      .override(
-                                        fontFamily: 'Lexend Deca',
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            FlutterFlowYoutubePlayer(
-                              url: listViewVideosSala57Record.video,
-                              autoPlay: false,
-                              looping: true,
-                              mute: false,
-                              showControls: true,
-                              showFullScreen: true,
-                            ),
-                          ],
+                        FlutterFlowYoutubePlayer(
+                          url: 'https://www.youtube.com/watch?v=C30hQ0ZSFoM',
+                          autoPlay: false,
+                          looping: true,
+                          mute: false,
+                          showControls: true,
+                          showFullScreen: true,
                         ),
                       ],
                     ),
