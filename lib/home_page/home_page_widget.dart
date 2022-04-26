@@ -6,6 +6,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_youtube_player.dart';
 import '../meditacoes/meditacoes_widget.dart';
+import '../page_videos_sala57/page_videos_sala57_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
@@ -349,6 +350,56 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             mute: false,
                                             showControls: true,
                                             showFullScreen: true,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Divider(
+                                    color: Color(0xFFBE1E2D),
+                                  ),
+                                  InkWell(
+                                    onTap: () async {
+                                      await Navigator.push(
+                                        context,
+                                        PageTransition(
+                                          type: PageTransitionType.rightToLeft,
+                                          duration: Duration(milliseconds: 450),
+                                          reverseDuration:
+                                              Duration(milliseconds: 450),
+                                          child: PageVideosSala57Widget(),
+                                        ),
+                                      );
+                                    },
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  7, 7, 7, 7),
+                                          child: Text(
+                                            'Ver mais vídeos publicados',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText1
+                                                .override(
+                                                  fontFamily: 'Lexend Deca',
+                                                  color: Color(0xFF0D45B4),
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 0, 10, 0),
+                                          child: Icon(
+                                            Icons.chevron_right_rounded,
+                                            color: Color(0xFF0D45B4),
+                                            size: 24,
                                           ),
                                         ),
                                       ],
