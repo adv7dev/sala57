@@ -27,96 +27,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).secondaryColor,
-        automaticallyImplyLeading: false,
-        leading: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
-          child: StreamBuilder<List<UsersRecord>>(
-            stream: queryUsersRecord(
-              singleRecord: true,
-            ),
-            builder: (context, snapshot) {
-              // Customize what your widget looks like when it's loading.
-              if (!snapshot.hasData) {
-                return Center(
-                  child: SizedBox(
-                    width: 50,
-                    height: 50,
-                    child: CircularProgressIndicator(
-                      color: FlutterFlowTheme.of(context).primaryColor,
-                    ),
-                  ),
-                );
-              }
-              List<UsersRecord> imageUsersRecordList = snapshot.data;
-              // Return an empty Container when the document does not exist.
-              if (snapshot.data.isEmpty) {
-                return Container();
-              }
-              final imageUsersRecord = imageUsersRecordList.isNotEmpty
-                  ? imageUsersRecordList.first
-                  : null;
-              return InkWell(
-                onTap: () async {
-                  await Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => PageVideosSala57Widget(),
-                    ),
-                  );
-                },
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(100),
-                  child: CachedNetworkImage(
-                    imageUrl: imageUsersRecord.photoUrl,
-                    width: MediaQuery.of(context).size.width * 0.5,
-                    height: MediaQuery.of(context).size.height * 0.5,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              );
-            },
-          ),
-        ),
-        title: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  FFLocalizations.of(context).getText(
-                    'wz0rht22' /* SALA 57 */,
-                  ),
-                  style: FlutterFlowTheme.of(context).title1.override(
-                        fontFamily: 'Lexend Deca',
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Das 5h às 7h...',
-                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                        fontFamily: 'Lexend Deca',
-                        color: Color(0xFF575757),
-                      ),
-                ),
-              ],
-            ),
-          ],
-        ),
-        actions: [],
-        centerTitle: true,
-        elevation: 4,
-      ),
       backgroundColor: Color(0xFFF1F5F8),
       endDrawer: Drawer(
         elevation: 16,
@@ -173,6 +83,46 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Expanded(
+                        child: Card(
+                          clipBehavior: Clip.antiAliasWithSaveLayer,
+                          color: Color(0xFFF5F5F5),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Stack(
+                                children: [
+                                  Image.asset(
+                                    'assets/images/Design_sem_nome_(1).gif',
+                                    width: MediaQuery.of(context).size.width *
+                                        0.98,
+                                    height: 100,
+                                    fit: BoxFit.contain,
+                                  ),
+                                  Align(
+                                    alignment:
+                                        AlignmentDirectional(0.87, -0.09),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          10, 30, 0, 0),
+                                      child: Icon(
+                                        Icons.view_headline_sharp,
+                                        color: Color(0xFFBE1E2D),
+                                        size: 35,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(10, 20, 0, 0),
                     child: InkWell(
