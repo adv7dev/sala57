@@ -5,7 +5,6 @@ import '../components/add_pedido_oracao_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_youtube_player.dart';
-import '../main.dart';
 import '../meditacoes/meditacoes_widget.dart';
 import '../page_videos_sala57/page_videos_sala57_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -63,8 +62,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   await Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>
-                          NavBarPage(initialPage: 'profilePage'),
+                      builder: (context) => PageVideosSala57Widget(),
                     ),
                   );
                 },
