@@ -8,21 +8,8 @@ import '../../flutter_flow/flutter_flow_util.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
+import '../../index.dart';
 import '../../main.dart';
-import '../../login/login_widget.dart';
-import '../../create_your_profile/create_your_profile_widget.dart';
-import '../../forgot_password/forgot_password_widget.dart';
-import '../../create_post/create_post_widget.dart';
-import '../../post_details/post_details_widget.dart';
-import '../../edit_settings/edit_settings_widget.dart';
-import '../../edit_user_profile/edit_user_profile_widget.dart';
-import '../../change_password/change_password_widget.dart';
-import '../../view_profile_page_other/view_profile_page_other_widget.dart';
-import '../../chat_page/chat_page_widget.dart';
-import '../../add_chat_users/add_chat_users_widget.dart';
-import '../../create_group_chat/create_group_chat_widget.dart';
-import '../../page_videos_sala57/page_videos_sala57_widget.dart';
-import '../../meditacoes/meditacoes_widget.dart';
 
 class PushNotificationsHandler extends StatefulWidget {
   const PushNotificationsHandler(

@@ -45,15 +45,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // login
   {
     'diy011rk': {
-      'pt': 'Entrar',
+      'pt': 'Sign In',
       'en': '',
     },
     'xu5kp49v': {
-      'pt': 'Seu E-mail',
+      'pt': 'Email Address',
+      'en': '',
+    },
+    'd3o6w7j6': {
+      'pt': 'Enter your email...',
       'en': '',
     },
     'qau4e318': {
-      'pt': 'Sua Senha',
+      'pt': 'Password',
+      'en': '',
+    },
+    'nkp5m4l8': {
+      'pt': 'Enter your password...',
       'en': '',
     },
     'v7gfc6om': {
@@ -69,19 +77,31 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'kodvw0zk': {
-      'pt': 'Criar Conta',
+      'pt': 'Sign up',
       'en': '',
     },
     'owerg0ei': {
-      'pt': 'Seu E-mail',
+      'pt': 'Email Address',
+      'en': '',
+    },
+    'ix24q25d': {
+      'pt': 'Enter your email...',
       'en': '',
     },
     'ajf0chib': {
-      'pt': 'Sua Senha',
+      'pt': 'Password',
+      'en': '',
+    },
+    'nxvwm50l': {
+      'pt': 'Enter your password...',
       'en': '',
     },
     'jjdla04b': {
-      'pt': 'Confirmar Senha',
+      'pt': 'Confirm Password',
+      'en': '',
+    },
+    '5owkaa78': {
+      'pt': 'Enter your password...',
       'en': '',
     },
     'h1x8h5l8': {
@@ -90,6 +110,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'w7145msc': {
       'pt': 'Ou use uma rede social para criar uma conta',
+      'en': '',
+    },
+    '9zjoc8oc': {
+      'pt': 'Home',
       'en': '',
     },
   },
@@ -112,11 +136,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'I\'m back with a super quick Instagram redesign just for the fan. Rounded corners and cute icons, what else do we need, haha.⁣ ',
       'en': '',
     },
-    '7fdj6w38': {
+    'n7eeuinj': {
       'pt': 'EXPERIÊNCIAS',
       'en': '',
     },
-    'km1yl6of': {
+    '4oxuulcr': {
       'pt': 'Publique a sua aqui...',
       'en': '',
     },
@@ -166,33 +190,29 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // homePage
   {
-    'b220bdf6': {
-      'pt': 'Em Breve...',
-      'en': '',
-    },
     '9pexqdzk': {
       'pt': 'MEDITAÇÃO | ',
       'en': 'MEDITATION |',
     },
-    'dabkbi7w': {
+    '6p2aha33': {
       'pt':
           'Toque para visulizar a meditação de hoje...   comece o  dia com Deus...',
       'en': '',
     },
-    'yqbhmpvs': {
+    '153bgkpv': {
       'pt': 'Ultima Sala 57 Ao Vivo',
       'en': '',
     },
-    'tqpor1me': {
+    '5t723jr7': {
       'pt': 'Ver mais vídeos publicados',
       'en': '',
     },
-    '02evz92c': {
-      'pt': 'PEDIDOS DE ORAÇÃO',
-      'en': 'MEDITATION |',
+    '3mlqf5lp': {
+      'pt': 'Pedidos de Oração',
+      'en': '',
     },
     'mtarxfqn': {
-      'pt': 'Home',
+      'pt': 'Início',
       'en': 'home',
     },
   },
@@ -490,26 +510,26 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // page_videos_sala57
   {
-    '9ulcoet5': {
+    'lbhu1h41': {
       'pt': 'Videos Sala57',
       'en': '',
     },
-    'gql3a7xf': {
+    'ld17uqr5': {
       'pt': 'Home',
       'en': '',
     },
   },
   // meditacoes
   {
-    'rqhtg5my': {
+    '14obhfqu': {
       'pt': 'Meditações',
       'en': '',
     },
-    'ri103s6n': {
+    'nl3btrq0': {
       'pt': 'Toque para visulizar a meditação de hoje...',
       'en': '',
     },
-    'wyumlgt1': {
+    'dpkdak4q': {
       'pt': 'Home',
       'en': '',
     },
@@ -565,34 +585,34 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // add_meditacao
   {
-    '6modl7hj': {
+    'ky688bq0': {
       'pt': 'Titulo',
       'en': '',
     },
-    'ie94ggwu': {
+    '9xxisvye': {
       'pt': 'Texto',
       'en': '',
     },
-    'zrytaxdo': {
+    'w0fetf8x': {
       'pt': 'url',
       'en': '',
     },
-    'hq5npwtu': {
+    'hese4rpe': {
       'pt': 'ADD',
       'en': '',
     },
   },
   // add_Pedido_oracao
   {
-    's2a44i7y': {
+    'qt2a66iq': {
       'pt': 'Pedido de Oração',
       'en': '',
     },
-    '8vfs7m79': {
+    'u8maa7bf': {
       'pt': 'Detalhes do Pedido',
       'en': '',
     },
-    '23f09l8u': {
+    'ecbhqabo': {
       'pt': 'Enviar Pedido',
       'en': '',
     },

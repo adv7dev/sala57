@@ -1,7 +1,5 @@
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
-import '../components/add_meditacao_widget.dart';
-import '../components/add_pedido_oracao_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_youtube_player.dart';
@@ -27,8 +25,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: Color(0xFFF1F5F8),
-      endDrawer: Drawer(
+      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+      drawer: Drawer(
         elevation: 16,
         child: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
@@ -38,11 +36,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
-                    child: Text(
-                      'Em Breve...',
-                      style: FlutterFlowTheme.of(context).bodyText1,
+                  Expanded(
+                    child: Card(
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      color: Color(0xFFF5F5F5),
                     ),
                   ),
                 ],
@@ -83,82 +80,147 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
+                  if (Theme.of(context).brightness == Brightness.dark ?? true)
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          child: Card(
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            color: Colors.white,
+                            elevation: 10,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: Stack(
+                                    children: [
+                                      Image.asset(
+                                        'assets/images/Design_sem_nome_(1).gif',
+                                        width: double.infinity,
+                                        height: 100,
+                                        fit: BoxFit.contain,
+                                      ),
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(-0.91, 0.01),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 30, 0, 0),
+                                          child: InkWell(
+                                            onTap: () async {
+                                              scaffoldKey.currentState
+                                                  .openDrawer();
+                                            },
+                                            child: Icon(
+                                              Icons.view_headline_sharp,
+                                              color: Color(0xFFBE1E2D),
+                                              size: 35,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  if (!(Theme.of(context).brightness == Brightness.dark) ??
+                      true)
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          child: Card(
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            elevation: 10,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: Stack(
+                                    children: [
+                                      Image.asset(
+                                        'assets/images/Design_sem_nome_(2).gif',
+                                        width: double.infinity,
+                                        height: 100,
+                                        fit: BoxFit.contain,
+                                      ),
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(-0.91, 0.01),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 30, 0, 0),
+                                          child: InkWell(
+                                            onTap: () async {
+                                              scaffoldKey.currentState
+                                                  .openDrawer();
+                                            },
+                                            child: Icon(
+                                              Icons.view_headline_sharp,
+                                              color: Color(0xFFBE1E2D),
+                                              size: 35,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
-                        child: Card(
-                          clipBehavior: Clip.antiAliasWithSaveLayer,
-                          color: Colors.white,
-                          elevation: 10,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5),
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                child: Stack(
-                                  children: [
-                                    Image.asset(
-                                      'assets/images/Design_sem_nome_(1).gif',
-                                      width: double.infinity,
-                                      height: 100,
-                                      fit: BoxFit.contain,
-                                    ),
-                                    Align(
-                                      alignment:
-                                          AlignmentDirectional(-0.91, 0.01),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 30, 0, 0),
-                                        child: Icon(
-                                          Icons.view_headline_sharp,
-                                          color: Color(0xFFBE1E2D),
-                                          size: 35,
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
+                          child: Card(
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            elevation: 5,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      10, 10, 10, 10),
+                                  child: InkWell(
+                                    onTap: () async {
+                                      await Navigator.push(
+                                        context,
+                                        PageTransition(
+                                          type: PageTransitionType.rightToLeft,
+                                          duration: Duration(milliseconds: 300),
+                                          reverseDuration:
+                                              Duration(milliseconds: 300),
+                                          child: MeditacoesWidget(),
                                         ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  InkWell(
-                    onTap: () async {
-                      await Navigator.push(
-                        context,
-                        PageTransition(
-                          type: PageTransitionType.rightToLeft,
-                          duration: Duration(milliseconds: 300),
-                          reverseDuration: Duration(milliseconds: 300),
-                          child: MeditacoesWidget(),
-                        ),
-                      );
-                    },
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Expanded(
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
-                            child: Card(
-                              clipBehavior: Clip.antiAliasWithSaveLayer,
-                              color: Colors.white,
-                              elevation: 5,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        7, 7, 7, 7),
+                                      );
+                                    },
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -172,7 +234,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               .subtitle1
                                               .override(
                                                 fontFamily: 'Lexend Deca',
-                                                color: Colors.black,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
                                                 fontWeight: FontWeight.bold,
                                               ),
                                         ),
@@ -183,175 +247,129 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               .subtitle1
                                               .override(
                                                 fontFamily: 'Lexend Deca',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
                                                 fontSize: 15,
                                                 fontStyle: FontStyle.italic,
                                               ),
                                         ),
-                                        if (currentUserDocument?.adm ?? true)
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    10, 0, 0, 0),
-                                            child: AuthUserStreamWidget(
-                                              child: InkWell(
-                                                onTap: () async {
-                                                  await showModalBottomSheet(
-                                                    isScrollControlled: true,
-                                                    backgroundColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .tertiaryColor,
-                                                    context: context,
-                                                    builder: (context) {
-                                                      return Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
-                                                        child: Container(
-                                                          height: MediaQuery.of(
-                                                                      context)
-                                                                  .size
-                                                                  .height *
-                                                              0.7,
-                                                          child:
-                                                              AddMeditacaoWidget(),
-                                                        ),
-                                                      );
-                                                    },
-                                                  );
-                                                },
-                                                child: Icon(
-                                                  Icons.add_circle,
-                                                  color: Color(0xFFD2393C),
-                                                  size: 24,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
                                                   10, 0, 0, 0),
-                                          child: InkWell(
-                                            onTap: () async {
-                                              await Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      MeditacoesWidget(),
-                                                ),
-                                              );
-                                            },
-                                            child: Icon(
-                                              Icons.chevron_right,
-                                              color: Color(0xFFD2393C),
-                                              size: 30,
-                                            ),
+                                          child: Icon(
+                                            Icons.chevron_right,
+                                            color: Color(0xFFD2393C),
+                                            size: 30,
                                           ),
                                         ),
                                       ],
                                     ),
                                   ),
-                                  Divider(
-                                    color: Color(0xFFBE1E2D),
-                                  ),
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Expanded(
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  5, 5, 5, 5),
-                                          child: Container(
-                                            width: double.infinity,
-                                            color: Colors.white,
-                                            child: ExpandableNotifier(
-                                              initialExpanded: false,
-                                              child: ExpandablePanel(
-                                                header: Padding(
+                                ),
+                                Divider(
+                                  color: Color(0xFFBE1E2D),
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Expanded(
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            5, 5, 5, 5),
+                                        child: Container(
+                                          width: double.infinity,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          child: ExpandableNotifier(
+                                            initialExpanded: false,
+                                            child: ExpandablePanel(
+                                              header: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(5, 0, 0, 0),
+                                                child: Text(
+                                                  columnMeditacaoRecord.titulo,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .title1
+                                                      .override(
+                                                        fontFamily:
+                                                            'Lexend Deca',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        fontSize: 15,
+                                                      ),
+                                                ),
+                                              ),
+                                              collapsed: Container(
+                                                width: MediaQuery.of(context)
+                                                    .size
+                                                    .width,
+                                                height: 40,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                ),
+                                                child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(5, 0, 0, 0),
+                                                      .fromSTEB(5, 0, 5, 0),
                                                   child: Text(
-                                                    columnMeditacaoRecord
-                                                        .titulo,
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '6p2aha33' /* Toque para visulizar a meditaç... */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .title1
+                                                        .bodyText1
                                                         .override(
                                                           fontFamily:
                                                               'Lexend Deca',
-                                                          color: Colors.black,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
                                                           fontSize: 15,
                                                         ),
                                                   ),
                                                 ),
-                                                collapsed: Container(
-                                                  width: MediaQuery.of(context)
-                                                      .size
-                                                      .width,
-                                                  height: 40,
-                                                  decoration: BoxDecoration(
-                                                    color: Colors.white,
+                                              ),
+                                              expanded: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Html(
+                                                    data: columnMeditacaoRecord
+                                                        .texto,
                                                   ),
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                5, 0, 5, 0),
-                                                    child: Text(
-                                                      'Toque para visulizar a meditação de hoje...   comece o  dia com Deus...',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyText1
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Lexend Deca',
-                                                                color: Color(
-                                                                    0xFF636363),
-                                                                fontSize: 15,
-                                                              ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                expanded: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Html(
-                                                      data:
-                                                          columnMeditacaoRecord
-                                                              .texto,
-                                                    ),
-                                                  ],
-                                                ),
-                                                theme: ExpandableThemeData(
-                                                  tapHeaderToExpand: true,
-                                                  tapBodyToExpand: false,
-                                                  tapBodyToCollapse: false,
-                                                  headerAlignment:
-                                                      ExpandablePanelHeaderAlignment
-                                                          .center,
-                                                  hasIcon: true,
-                                                ),
+                                                ],
+                                              ),
+                                              theme: ExpandableThemeData(
+                                                tapHeaderToExpand: true,
+                                                tapBodyToExpand: false,
+                                                tapBodyToCollapse: false,
+                                                headerAlignment:
+                                                    ExpandablePanelHeaderAlignment
+                                                        .center,
+                                                hasIcon: true,
                                               ),
                                             ),
                                           ),
                                         ),
                                       ),
-                                    ],
-                                  ),
-                                ],
-                              ),
+                                    ),
+                                  ],
+                                ),
+                              ],
                             ),
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                     child: StreamBuilder<List<VideosSala57Record>>(
                       stream: queryVideosSala57Record(
                         queryBuilder: (videosSala57Record) => videosSala57Record
@@ -392,7 +410,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
                                 child: Card(
                                   clipBehavior: Clip.antiAliasWithSaveLayer,
-                                  color: Color(0xFFF5F5F5),
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
                                   elevation: 5,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(5),
@@ -402,22 +421,56 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            7, 7, 7, 0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Text(
-                                              'Ultima Sala 57 Ao Vivo',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .subtitle1
-                                                  .override(
-                                                    fontFamily: 'Lexend Deca',
-                                                    color: Color(0xFF141414),
-                                                    fontWeight: FontWeight.w600,
-                                                  ),
-                                            ),
-                                          ],
+                                            10, 10, 10, 10),
+                                        child: InkWell(
+                                          onTap: () async {
+                                            await Navigator.push(
+                                              context,
+                                              PageTransition(
+                                                type: PageTransitionType
+                                                    .rightToLeft,
+                                                duration:
+                                                    Duration(milliseconds: 300),
+                                                reverseDuration:
+                                                    Duration(milliseconds: 300),
+                                                child: PageVideosSala57Widget(),
+                                              ),
+                                            );
+                                          },
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '153bgkpv' /* Ultima Sala 57 Ao Vivo */,
+                                                ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .subtitle1
+                                                    .override(
+                                                      fontFamily: 'Lexend Deca',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                    ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(10, 0, 0, 0),
+                                                child: Icon(
+                                                  Icons.chevron_right,
+                                                  color: Color(0xFFD2393C),
+                                                  size: 30,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                       Divider(
@@ -444,11 +497,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         ),
                                       ),
                                       Divider(
-                                        color: Color(0xFFE6E6E6),
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 7),
+                                            10, 10, 10, 10),
                                         child: InkWell(
                                           onTap: () async {
                                             await Navigator.push(
@@ -473,7 +527,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(7, 7, 7, 7),
                                                 child: Text(
-                                                  'Ver mais vídeos publicados',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '5t723jr7' /* Ver mais vídeos publicados */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyText1
@@ -481,7 +538,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         fontFamily:
                                                             'Lexend Deca',
                                                         color:
-                                                            Color(0xFF0D45B4),
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryColor,
                                                         fontSize: 15,
                                                         fontWeight:
                                                             FontWeight.w500,
@@ -493,7 +552,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     .fromSTEB(0, 0, 10, 0),
                                                 child: Icon(
                                                   Icons.chevron_right_rounded,
-                                                  color: Color(0xFF0D45B4),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryColor,
                                                   size: 24,
                                                 ),
                                               ),
@@ -511,56 +572,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       },
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(5, 20, 0, 0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          FFLocalizations.of(context).getText(
-                            '02evz92c' /* PEDIDOS DE ORAÇÃO */,
-                          ),
-                          style:
-                              FlutterFlowTheme.of(context).subtitle1.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Colors.black,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                          child: InkWell(
-                            onTap: () async {
-                              await showModalBottomSheet(
-                                isScrollControlled: true,
-                                backgroundColor:
-                                    FlutterFlowTheme.of(context).gray200,
-                                context: context,
-                                builder: (context) {
-                                  return Padding(
-                                    padding: MediaQuery.of(context).viewInsets,
-                                    child: Container(
-                                      height:
-                                          MediaQuery.of(context).size.height *
-                                              0.8,
-                                      child: AddPedidoOracaoWidget(),
-                                    ),
-                                  );
-                                },
-                              );
-                            },
-                            child: Icon(
-                              Icons.add_circle,
-                              color: Color(0xFFD2393C),
-                              size: 24,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -569,149 +580,218 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
                           child: Card(
                             clipBehavior: Clip.antiAliasWithSaveLayer,
-                            color: Color(0xFFD7D7D7),
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            elevation: 5,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5),
                             ),
-                            child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
-                              child: StreamBuilder<List<PedidoOracaoRecord>>(
-                                stream: queryPedidoOracaoRecord(
-                                  queryBuilder: (pedidoOracaoRecord) =>
-                                      pedidoOracaoRecord.orderBy('data',
-                                          descending: true),
-                                  limit: 10,
-                                ),
-                                builder: (context, snapshot) {
-                                  // Customize what your widget looks like when it's loading.
-                                  if (!snapshot.hasData) {
-                                    return Center(
-                                      child: SizedBox(
-                                        width: 50,
-                                        height: 50,
-                                        child: CircularProgressIndicator(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryColor,
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      10, 10, 10, 10),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          '3mlqf5lp' /* Pedidos de Oração */,
                                         ),
-                                      ),
-                                    );
-                                  }
-                                  List<PedidoOracaoRecord>
-                                      listViewPedidoOracaoRecordList =
-                                      snapshot.data;
-                                  return ListView.builder(
-                                    padding: EdgeInsets.zero,
-                                    primary: false,
-                                    shrinkWrap: true,
-                                    scrollDirection: Axis.vertical,
-                                    itemCount:
-                                        listViewPedidoOracaoRecordList.length,
-                                    itemBuilder: (context, listViewIndex) {
-                                      final listViewPedidoOracaoRecord =
-                                          listViewPedidoOracaoRecordList[
-                                              listViewIndex];
-                                      return Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            5, 5, 5, 5),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Expanded(
-                                                  child: Text(
-                                                    listViewPedidoOracaoRecord
-                                                        .titulo,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .title3
-                                                        .override(
-                                                          fontFamily:
-                                                              'Lexend Deca',
-                                                          color: Colors.black,
-                                                          fontSize: 15,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Expanded(
-                                                  child: Text(
-                                                    listViewPedidoOracaoRecord
-                                                        .pedido,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyText1
-                                                        .override(
-                                                          fontFamily:
-                                                              'Lexend Deca',
-                                                          color:
-                                                              Color(0xFF616161),
-                                                        ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.end,
-                                              children: [
-                                                Expanded(
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0, 0, 10, 0),
-                                                    child: AuthUserStreamWidget(
-                                                      child: Text(
-                                                        currentUserDisplayName,
-                                                        textAlign:
-                                                            TextAlign.end,
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyText1
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Lexend Deca',
-                                                                  color: Color(
-                                                                      0xFF616161),
-                                                                ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                Text(
-                                                  dateTimeFormat(
-                                                      'd/M h:mm a',
-                                                      listViewPedidoOracaoRecord
-                                                          .data),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyText1,
-                                                ),
-                                              ],
-                                            ),
-                                            Divider(
+                                        style: FlutterFlowTheme.of(context)
+                                            .subtitle1
+                                            .override(
+                                              fontFamily: 'Lexend Deca',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryColor,
+                                                      .primaryText,
+                                              fontWeight: FontWeight.w600,
                                             ),
-                                          ],
+                                      ),
+                                      Icon(
+                                        Icons.add_circle,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryColor,
+                                        size: 30,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Divider(
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Expanded(
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 0, 0, 5),
+                                        child: StreamBuilder<
+                                            List<PedidoOracaoRecord>>(
+                                          stream: queryPedidoOracaoRecord(
+                                            queryBuilder:
+                                                (pedidoOracaoRecord) =>
+                                                    pedidoOracaoRecord.orderBy(
+                                                        'data',
+                                                        descending: true),
+                                            limit: 10,
+                                          ),
+                                          builder: (context, snapshot) {
+                                            // Customize what your widget looks like when it's loading.
+                                            if (!snapshot.hasData) {
+                                              return Center(
+                                                child: SizedBox(
+                                                  width: 50,
+                                                  height: 50,
+                                                  child:
+                                                      CircularProgressIndicator(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryColor,
+                                                  ),
+                                                ),
+                                              );
+                                            }
+                                            List<PedidoOracaoRecord>
+                                                listViewPedidoOracaoRecordList =
+                                                snapshot.data;
+                                            return ListView.builder(
+                                              padding: EdgeInsets.zero,
+                                              primary: false,
+                                              shrinkWrap: true,
+                                              scrollDirection: Axis.vertical,
+                                              itemCount:
+                                                  listViewPedidoOracaoRecordList
+                                                      .length,
+                                              itemBuilder:
+                                                  (context, listViewIndex) {
+                                                final listViewPedidoOracaoRecord =
+                                                    listViewPedidoOracaoRecordList[
+                                                        listViewIndex];
+                                                return Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(5, 5, 5, 5),
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Expanded(
+                                                            child: Text(
+                                                              listViewPedidoOracaoRecord
+                                                                  .titulo,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .title3
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Lexend Deca',
+                                                                    color: Colors
+                                                                        .black,
+                                                                    fontSize:
+                                                                        15,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w600,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Expanded(
+                                                            child: Text(
+                                                              listViewPedidoOracaoRecord
+                                                                  .pedido,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyText1
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Lexend Deca',
+                                                                    color: Color(
+                                                                        0xFF616161),
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .end,
+                                                        children: [
+                                                          Expanded(
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0,
+                                                                          0,
+                                                                          10,
+                                                                          0),
+                                                              child:
+                                                                  AuthUserStreamWidget(
+                                                                child: Text(
+                                                                  currentUserDisplayName,
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .end,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyText1
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Lexend Deca',
+                                                                        color: Color(
+                                                                            0xFF616161),
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          Text(
+                                                            dateTimeFormat(
+                                                                'd/M h:mm a',
+                                                                listViewPedidoOracaoRecord
+                                                                    .data),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyText1,
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      Divider(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryColor,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                );
+                                              },
+                                            );
+                                          },
                                         ),
-                                      );
-                                    },
-                                  );
-                                },
-                              ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
                             ),
                           ),
                         ),

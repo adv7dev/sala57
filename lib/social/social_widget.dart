@@ -14,7 +14,6 @@ import '../flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SocialWidget extends StatefulWidget {
@@ -446,9 +445,9 @@ class _SocialWidgetState extends State<SocialWidget>
                                                                           from:
                                                                               0.0);
                                                                 },
-                                                                child: FaIcon(
-                                                                  FontAwesomeIcons
-                                                                      .paw,
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .favorite_border,
                                                                   color: Color(
                                                                       0xFF95A1AC),
                                                                   size: 25,
@@ -481,9 +480,9 @@ class _SocialWidgetState extends State<SocialWidget>
                                                                       .update(
                                                                           userPostsUpdateData);
                                                                 },
-                                                                child: FaIcon(
-                                                                  FontAwesomeIcons
-                                                                      .paw,
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .favorite,
                                                                   color: Color(
                                                                       0xFF4B39EF),
                                                                   size: 25,

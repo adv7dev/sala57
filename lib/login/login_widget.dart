@@ -105,12 +105,12 @@ class _LoginWidgetState extends State<LoginWidget> {
                             tabs: [
                               Tab(
                                 text: FFLocalizations.of(context).getText(
-                                  'diy011rk' /* Entrar */,
+                                  'diy011rk' /* Sign In */,
                                 ),
                               ),
                               Tab(
                                 text: FFLocalizations.of(context).getText(
-                                  'kodvw0zk' /* Criar Conta */,
+                                  'kodvw0zk' /* Sign up */,
                                 ),
                               ),
                             ],
@@ -137,7 +137,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               labelText:
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                'xu5kp49v' /* Seu E-mail */,
+                                                'xu5kp49v' /* Email Address */,
                                               ),
                                               labelStyle: FlutterFlowTheme.of(
                                                       context)
@@ -149,6 +149,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
+                                              hintText: 'Enter your email...',
                                               hintStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyText1
@@ -203,7 +204,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               labelText:
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                'qau4e318' /* Sua Senha */,
+                                                'qau4e318' /* Password */,
                                               ),
                                               labelStyle: FlutterFlowTheme.of(
                                                       context)
@@ -215,6 +216,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
+                                              hintText:
+                                                  'Enter your password...',
                                               hintStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyText1
@@ -523,7 +526,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               labelText:
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                'owerg0ei' /* Seu E-mail */,
+                                                'owerg0ei' /* Email Address */,
                                               ),
                                               labelStyle:
                                                   FlutterFlowTheme.of(context)
@@ -536,6 +539,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
+                                              hintText: 'Enter your email...',
                                               hintStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyText1
@@ -589,7 +593,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               labelText:
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                'ajf0chib' /* Sua Senha */,
+                                                'ajf0chib' /* Password */,
                                               ),
                                               labelStyle:
                                                   FlutterFlowTheme.of(context)
@@ -602,6 +606,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
+                                              hintText:
+                                                  'Enter your password...',
                                               hintStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyText1
@@ -672,7 +678,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               labelText:
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                'jjdla04b' /* Confirmar Senha */,
+                                                'jjdla04b' /* Confirm Password */,
                                               ),
                                               labelStyle:
                                                   FlutterFlowTheme.of(context)
@@ -685,6 +691,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
+                                              hintText:
+                                                  'Enter your password...',
                                               hintStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyText1
