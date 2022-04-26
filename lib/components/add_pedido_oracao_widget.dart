@@ -97,8 +97,7 @@ class _AddPedidoOracaoWidgetState extends State<AddPedidoOracaoWidget> {
                                         borderRadius: BorderRadius.circular(5),
                                       ),
                                       filled: true,
-                                      fillColor: FlutterFlowTheme.of(context)
-                                          .primaryColor,
+                                      fillColor: Color(0xFFCACACA),
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
@@ -138,8 +137,7 @@ class _AddPedidoOracaoWidgetState extends State<AddPedidoOracaoWidget> {
                                         borderRadius: BorderRadius.circular(5),
                                       ),
                                       filled: true,
-                                      fillColor: FlutterFlowTheme.of(context)
-                                          .primaryColor,
+                                      fillColor: Color(0xFFCACACA),
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
@@ -161,13 +159,17 @@ class _AddPedidoOracaoWidgetState extends State<AddPedidoOracaoWidget> {
                               children: [
                                 FFButtonWidget(
                                   onPressed: () async {
-                                    final pedidoOracaoCreateData =
-                                        createPedidoOracaoRecordData(
-                                      pedido: textController2.text,
-                                      titulo: textController1.text,
-                                      data: getCurrentTimestamp,
-                                      nome: currentUserReference,
-                                    );
+                                    final pedidoOracaoCreateData = {
+                                      ...createPedidoOracaoRecordData(
+                                        pedido: textController2.text,
+                                        titulo: textController1.text,
+                                        data: getCurrentTimestamp,
+                                        nome: currentUserReference,
+                                      ),
+                                      'pushnotification': [
+                                        currentUserReference
+                                      ],
+                                    };
                                     await PedidoOracaoRecord.collection
                                         .doc()
                                         .set(pedidoOracaoCreateData);

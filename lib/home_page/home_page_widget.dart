@@ -248,6 +248,25 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 ),
                               ),
                             ),
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                            child: InkWell(
+                              onTap: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => MeditacoesWidget(),
+                                  ),
+                                );
+                              },
+                              child: Icon(
+                                Icons.chevron_right,
+                                color: Color(0xFFD2393C),
+                                size: 30,
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -328,81 +347,77 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(5, 20, 0, 0),
-                    child: InkWell(
-                      onTap: () async {
-                        await Navigator.push(
-                          context,
-                          PageTransition(
-                            type: PageTransitionType.rightToLeft,
-                            duration: Duration(milliseconds: 300),
-                            reverseDuration: Duration(milliseconds: 300),
-                            child: PageVideosSala57Widget(),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          FFLocalizations.of(context).getText(
+                            'cweka8av' /* ÚLTIMA SALA 57 - AO VIVO  */,
                           ),
-                        );
-                      },
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            FFLocalizations.of(context).getText(
-                              'cweka8av' /* ÚLTIMA SALA 57 - AO VIVO  */,
-                            ),
-                            style:
-                                FlutterFlowTheme.of(context).subtitle1.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: Colors.black,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                          ),
-                          if (currentUserDocument?.adm ?? true)
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                              child: AuthUserStreamWidget(
-                                child: InkWell(
-                                  onTap: () async {
-                                    await showModalBottomSheet(
-                                      isScrollControlled: true,
-                                      backgroundColor:
-                                          FlutterFlowTheme.of(context)
-                                              .background,
-                                      context: context,
-                                      builder: (context) {
-                                        return Padding(
-                                          padding:
-                                              MediaQuery.of(context).viewInsets,
-                                          child: Container(
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.7,
-                                            child: AddMeditacaoWidget(),
-                                          ),
-                                        );
-                                      },
-                                    );
-                                  },
-                                  child: Icon(
-                                    Icons.add_circle,
-                                    color: Color(0xFFD2393C),
-                                    size: 24,
+                          style:
+                              FlutterFlowTheme.of(context).subtitle1.override(
+                                    fontFamily: 'Lexend Deca',
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
                                   ),
-                                ),
-                              ),
-                            ),
+                        ),
+                        if (currentUserDocument?.adm ?? true)
                           Padding(
                             padding:
                                 EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                            child: AuthUserStreamWidget(
+                              child: InkWell(
+                                onTap: () async {
+                                  await showModalBottomSheet(
+                                    isScrollControlled: true,
+                                    backgroundColor:
+                                        FlutterFlowTheme.of(context).background,
+                                    context: context,
+                                    builder: (context) {
+                                      return Padding(
+                                        padding:
+                                            MediaQuery.of(context).viewInsets,
+                                        child: Container(
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.7,
+                                          child: AddMeditacaoWidget(),
+                                        ),
+                                      );
+                                    },
+                                  );
+                                },
+                                child: Icon(
+                                  Icons.add_circle,
+                                  color: Color(0xFFD2393C),
+                                  size: 24,
+                                ),
+                              ),
+                            ),
+                          ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                          child: InkWell(
+                            onTap: () async {
+                              await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      PageVideosSala57Widget(),
+                                ),
+                              );
+                            },
                             child: Icon(
                               Icons.chevron_right,
                               color: Color(0xFFD2393C),
                               size: 30,
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                   Row(

@@ -77,14 +77,13 @@ class _MeditacoesWidgetState extends State<MeditacoesWidget> {
         centerTitle: true,
         elevation: 2,
       ),
-      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
           child: PagedListView<DocumentSnapshot<Object>, MeditacaoRecord>(
             pagingController: _pagingController,
             padding: EdgeInsets.zero,
-            shrinkWrap: true,
             scrollDirection: Axis.vertical,
             builderDelegate: PagedChildBuilderDelegate<MeditacaoRecord>(
               // Customize what your widget looks like when it's loading the first page.

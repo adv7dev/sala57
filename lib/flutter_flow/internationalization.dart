@@ -112,11 +112,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'I\'m back with a super quick Instagram redesign just for the fan. Rounded corners and cute icons, what else do we need, haha.⁣ ',
       'en': '',
     },
-    'ysb4t8c9': {
+    '6gv9zajm': {
       'pt': 'EXPERIÊNCIAS',
       'en': '',
     },
-    'dlgf198e': {
+    'josudaxi': {
       'pt': 'Publique a sua aqui...',
       'en': '',
     },
@@ -170,11 +170,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'SALA 57',
       'en': 'ROOM 57',
     },
-    'ai642ema': {
+    'fwnrs50c': {
       'pt': 'Das 5h às 7h...',
       'en': '',
     },
-    'eogt0imp': {
+    '0aziexcd': {
       'pt': 'Em Breve...',
       'en': '',
     },
@@ -182,7 +182,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'MEDITAÇÃO | ',
       'en': 'MEDITATION |',
     },
-    'z0f3j694': {
+    'kyszogpo': {
       'pt': 'Toque para visulizar a meditação de hoje...',
       'en': '',
     },
@@ -493,26 +493,26 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // page_videos_sala57
   {
-    'rttq1lyw': {
+    '4hi14hy6': {
       'pt': 'Videos Sala57',
       'en': '',
     },
-    '1i2wwqob': {
+    'feud176f': {
       'pt': 'Home',
       'en': '',
     },
   },
   // meditacoes
   {
-    'br66rwnb': {
+    'lhj1yv86': {
       'pt': 'Meditações',
       'en': '',
     },
-    'kux3wx9v': {
+    'fj609ph4': {
       'pt': 'Toque para visulizar a meditação de hoje...',
       'en': '',
     },
-    'i1zzg1or': {
+    '48kf628g': {
       'pt': 'Home',
       'en': '',
     },
@@ -568,34 +568,34 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // add_meditacao
   {
-    'vxos69ai': {
+    'c6izgarc': {
       'pt': 'Titulo',
       'en': '',
     },
-    'ups97r5a': {
+    'yh57rjy3': {
       'pt': 'Texto',
       'en': '',
     },
-    'dnj3lery': {
+    'fs80ycyt': {
       'pt': 'url',
       'en': '',
     },
-    '1jkpvbov': {
+    'c0b9tg9s': {
       'pt': 'ADD',
       'en': '',
     },
   },
   // add_Pedido_oracao
   {
-    '79sy0viv': {
+    'xdsmqcwc': {
       'pt': 'Pedido de Oração',
       'en': '',
     },
-    '1ep5fog7': {
+    'gl2kpvb4': {
       'pt': 'Detalhes do Pedido',
       'en': '',
     },
-    '3ip3lzmc': {
+    'gx4xv9du': {
       'pt': 'Enviar Pedido',
       'en': '',
     },
