@@ -3,6 +3,7 @@ import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_youtube_player.dart';
+import '../main.dart';
 import '../meditacoes/meditacoes_widget.dart';
 import '../page_videos_sala57/page_videos_sala57_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -29,24 +30,127 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       drawer: Drawer(
         elevation: 16,
-        child: Card(
-          clipBehavior: Clip.antiAliasWithSaveLayer,
-          color: FlutterFlowTheme.of(context).primaryBackground,
+        child: Container(
+          width: 100,
+          height: 100,
+          decoration: BoxDecoration(
+            color: FlutterFlowTheme.of(context).secondaryBackground,
+          ),
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Expanded(
-                      child: Card(
-                        clipBehavior: Clip.antiAliasWithSaveLayer,
-                        color: Color(0xFFF5F5F5),
-                      ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                  child: InkWell(
+                    onTap: () async {
+                      await Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              NavBarPage(initialPage: 'profilePage'),
+                        ),
+                        (r) => false,
+                      );
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Material(
+                          color: Colors.transparent,
+                          elevation: 5,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                          child: Container(
+                            width: 100,
+                            height: 100,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(100),
+                              border: Border.all(
+                                color:
+                                    FlutterFlowTheme.of(context).primaryColor,
+                                width: 3,
+                              ),
+                            ),
+                            child: AuthUserStreamWidget(
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(100),
+                                child: Image.network(
+                                  valueOrDefault<String>(
+                                    currentUserPhoto,
+                                    'https://d1fdloi71mui9q.cloudfront.net/uJv2AiP5TNOFHg9X2INW_equLQuE3E2cZTfk6',
+                                  ),
+                                  width: 100,
+                                  height: 100,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Expanded(
+                                      child: AuthUserStreamWidget(
+                                        child: Text(
+                                          currentUserDisplayName,
+                                          style: FlutterFlowTheme.of(context)
+                                              .subtitle1
+                                              .override(
+                                                fontFamily: 'Lexend Deca',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Expanded(
+                                      child: Text(
+                                        currentUserEmail,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Lexend Deca',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              fontSize: 10,
+                                              fontStyle: FontStyle.italic,
+                                            ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
               ],
             ),
