@@ -483,23 +483,26 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
-                                              Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  '153bgkpv' /* Ultima Sala 57 Ao Vivo */,
+                                              Expanded(
+                                                child: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '153bgkpv' /* ÚLTIMA SALA 57 AO VIVO */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .subtitle1
+                                                      .override(
+                                                        fontFamily:
+                                                            'Lexend Deca',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                      ),
                                                 ),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .subtitle1
-                                                    .override(
-                                                      fontFamily: 'Lexend Deca',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                    ),
                                               ),
                                               Padding(
                                                 padding: EdgeInsetsDirectional
@@ -640,7 +643,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     children: [
                                       Text(
                                         FFLocalizations.of(context).getText(
-                                          '3mlqf5lp' /* Pedidos de Oração */,
+                                          '3mlqf5lp' /* PEDIDOS DE ORAÇÃO */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .subtitle1
