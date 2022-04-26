@@ -9,6 +9,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomePageWidget extends StatefulWidget {
@@ -124,6 +125,26 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           ),
                                         ),
                                       ),
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(0.88, -0.06),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 30, 0, 0),
+                                          child: InkWell(
+                                            onTap: () async {
+                                              setDarkModeSetting(
+                                                  context, ThemeMode.dark);
+                                            },
+                                            child: FaIcon(
+                                              FontAwesomeIcons.solidMoon,
+                                              color: Colors.black,
+                                              size: 25,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
                                     ],
                                   ),
                                 ),
@@ -175,6 +196,26 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               Icons.view_headline_sharp,
                                               color: Color(0xFFBE1E2D),
                                               size: 35,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(0.86, -0.12),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 30, 0, 0),
+                                          child: InkWell(
+                                            onTap: () async {
+                                              setDarkModeSetting(
+                                                  context, ThemeMode.light);
+                                            },
+                                            child: Icon(
+                                              Icons.wb_sunny_rounded,
+                                              color: Colors.white,
+                                              size: 30,
                                             ),
                                           ),
                                         ),
