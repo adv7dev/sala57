@@ -72,8 +72,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   borderRadius: BorderRadius.circular(100),
                   child: CachedNetworkImage(
                     imageUrl: imageUsersRecord.photoUrl,
-                    width: 30,
-                    height: 30,
+                    width: MediaQuery.of(context).size.width * 0.5,
+                    height: MediaQuery.of(context).size.height * 0.5,
                     fit: BoxFit.cover,
                   ),
                 ),

@@ -77,49 +77,44 @@ class _PageVideosSala57WidgetState extends State<PageVideosSala57Widget> {
         elevation: 2,
       ),
       backgroundColor: Colors.white,
-      body: SafeArea(
-        child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
-          child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
-            child: PagedListView<DocumentSnapshot<Object>, VideosSala57Record>(
-              pagingController: _pagingController,
-              padding: EdgeInsets.zero,
-              scrollDirection: Axis.vertical,
-              builderDelegate: PagedChildBuilderDelegate<VideosSala57Record>(
-                // Customize what your widget looks like when it's loading the first page.
-                firstPageProgressIndicatorBuilder: (_) => Center(
-                  child: SizedBox(
-                    width: 50,
-                    height: 50,
-                    child: CircularProgressIndicator(
-                      color: FlutterFlowTheme.of(context).primaryColor,
-                    ),
-                  ),
+      body: Padding(
+        padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
+        child: PagedListView<DocumentSnapshot<Object>, VideosSala57Record>(
+          pagingController: _pagingController,
+          padding: EdgeInsets.zero,
+          scrollDirection: Axis.vertical,
+          builderDelegate: PagedChildBuilderDelegate<VideosSala57Record>(
+            // Customize what your widget looks like when it's loading the first page.
+            firstPageProgressIndicatorBuilder: (_) => Center(
+              child: SizedBox(
+                width: 50,
+                height: 50,
+                child: CircularProgressIndicator(
+                  color: FlutterFlowTheme.of(context).primaryColor,
                 ),
-
-                itemBuilder: (context, _, listViewIndex) {
-                  final listViewVideosSala57Record =
-                      _pagingController.itemList[listViewIndex];
-                  return Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        FlutterFlowYoutubePlayer(
-                          url: 'https://www.youtube.com/watch?v=C30hQ0ZSFoM',
-                          autoPlay: false,
-                          looping: true,
-                          mute: false,
-                          showControls: true,
-                          showFullScreen: true,
-                        ),
-                      ],
-                    ),
-                  );
-                },
               ),
             ),
+
+            itemBuilder: (context, _, listViewIndex) {
+              final listViewVideosSala57Record =
+                  _pagingController.itemList[listViewIndex];
+              return Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    FlutterFlowYoutubePlayer(
+                      url: 'https://www.youtube.com/watch?v=C30hQ0ZSFoM',
+                      autoPlay: false,
+                      looping: true,
+                      mute: false,
+                      showControls: true,
+                      showFullScreen: true,
+                    ),
+                  ],
+                ),
+              );
+            },
           ),
         ),
       ),
