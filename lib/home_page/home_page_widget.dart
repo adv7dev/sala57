@@ -124,175 +124,213 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       ),
                     ],
                   ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(10, 5, 0, 0),
-                    child: InkWell(
-                      onTap: () async {
-                        await Navigator.push(
-                          context,
-                          PageTransition(
-                            type: PageTransitionType.rightToLeft,
-                            duration: Duration(milliseconds: 300),
-                            reverseDuration: Duration(milliseconds: 300),
-                            child: MeditacoesWidget(),
-                          ),
-                        );
-                      },
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Text(
-                            FFLocalizations.of(context).getText(
-                              '9pexqdzk' /* MEDITAÇÃO |  */,
-                            ),
-                            style:
-                                FlutterFlowTheme.of(context).subtitle1.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                          ),
-                          Text(
-                            dateTimeFormat('MMMMEEEEd', getCurrentTimestamp),
-                            style:
-                                FlutterFlowTheme.of(context).subtitle1.override(
-                                      fontFamily: 'Lexend Deca',
-                                      fontSize: 15,
-                                      fontStyle: FontStyle.italic,
-                                    ),
-                          ),
-                          if (currentUserDocument?.adm ?? true)
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                              child: AuthUserStreamWidget(
-                                child: InkWell(
-                                  onTap: () async {
-                                    await showModalBottomSheet(
-                                      isScrollControlled: true,
-                                      backgroundColor:
-                                          FlutterFlowTheme.of(context)
-                                              .tertiaryColor,
-                                      context: context,
-                                      builder: (context) {
-                                        return Padding(
-                                          padding:
-                                              MediaQuery.of(context).viewInsets,
-                                          child: Container(
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.7,
-                                            child: AddMeditacaoWidget(),
-                                          ),
-                                        );
-                                      },
-                                    );
-                                  },
-                                  child: Icon(
-                                    Icons.add_circle,
-                                    color: Color(0xFFD2393C),
-                                    size: 24,
-                                  ),
-                                ),
+                  InkWell(
+                    onTap: () async {
+                      await Navigator.push(
+                        context,
+                        PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          duration: Duration(milliseconds: 300),
+                          reverseDuration: Duration(milliseconds: 300),
+                          child: MeditacoesWidget(),
+                        ),
+                      );
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
+                            child: Card(
+                              clipBehavior: Clip.antiAliasWithSaveLayer,
+                              color: Color(0xFFF5F5F5),
+                              elevation: 5,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5),
                               ),
-                            ),
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                            child: InkWell(
-                              onTap: () async {
-                                await Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => MeditacoesWidget(),
-                                  ),
-                                );
-                              },
-                              child: Icon(
-                                Icons.chevron_right,
-                                color: Color(0xFFD2393C),
-                                size: 30,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Divider(
-                    height: 10,
-                    thickness: 2,
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
-                          child: Container(
-                            width: double.infinity,
-                            color: Color(0xFFECECEC),
-                            child: ExpandableNotifier(
-                              initialExpanded: false,
-                              child: ExpandablePanel(
-                                header: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      5, 0, 0, 0),
-                                  child: Text(
-                                    columnMeditacaoRecord.titulo,
-                                    style: FlutterFlowTheme.of(context)
-                                        .title1
-                                        .override(
-                                          fontFamily: 'Lexend Deca',
-                                          color: Colors.black,
-                                          fontSize: 15,
-                                        ),
-                                  ),
-                                ),
-                                collapsed: Container(
-                                  width: MediaQuery.of(context).size.width,
-                                  height: 40,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xFFF3F3F3),
-                                  ),
-                                  child: Padding(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5, 0, 5, 0),
-                                    child: Text(
-                                      'Toque para visulizar a meditação de hoje...',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyText1
-                                          .override(
-                                            fontFamily: 'Lexend Deca',
-                                            color: Color(0xFF636363),
-                                            fontSize: 15,
+                                        7, 7, 7, 7),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            '9pexqdzk' /* MEDITAÇÃO |  */,
                                           ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .subtitle1
+                                              .override(
+                                                fontFamily: 'Lexend Deca',
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                        ),
+                                        Text(
+                                          dateTimeFormat(
+                                              'MMMMEEEEd', getCurrentTimestamp),
+                                          style: FlutterFlowTheme.of(context)
+                                              .subtitle1
+                                              .override(
+                                                fontFamily: 'Lexend Deca',
+                                                fontSize: 15,
+                                                fontStyle: FontStyle.italic,
+                                              ),
+                                        ),
+                                        if (currentUserDocument?.adm ?? true)
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    10, 0, 0, 0),
+                                            child: AuthUserStreamWidget(
+                                              child: InkWell(
+                                                onTap: () async {
+                                                  await showModalBottomSheet(
+                                                    isScrollControlled: true,
+                                                    backgroundColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .tertiaryColor,
+                                                    context: context,
+                                                    builder: (context) {
+                                                      return Padding(
+                                                        padding: MediaQuery.of(
+                                                                context)
+                                                            .viewInsets,
+                                                        child: Container(
+                                                          height: MediaQuery.of(
+                                                                      context)
+                                                                  .size
+                                                                  .height *
+                                                              0.7,
+                                                          child:
+                                                              AddMeditacaoWidget(),
+                                                        ),
+                                                      );
+                                                    },
+                                                  );
+                                                },
+                                                child: Icon(
+                                                  Icons.add_circle,
+                                                  color: Color(0xFFD2393C),
+                                                  size: 24,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  10, 0, 0, 0),
+                                          child: InkWell(
+                                            onTap: () async {
+                                              await Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      MeditacoesWidget(),
+                                                ),
+                                              );
+                                            },
+                                            child: Icon(
+                                              Icons.chevron_right,
+                                              color: Color(0xFFD2393C),
+                                              size: 30,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
-                                ),
-                                expanded: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Html(
-                                      data: columnMeditacaoRecord.texto,
+                                  Container(
+                                    height: 200,
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          5, 5, 5, 5),
+                                      child: Container(
+                                        width: double.infinity,
+                                        color: Colors.white,
+                                        child: ExpandableNotifier(
+                                          initialExpanded: false,
+                                          child: ExpandablePanel(
+                                            header: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(5, 0, 0, 0),
+                                              child: Text(
+                                                columnMeditacaoRecord.titulo,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .title1
+                                                        .override(
+                                                          fontFamily:
+                                                              'Lexend Deca',
+                                                          color: Colors.black,
+                                                          fontSize: 15,
+                                                        ),
+                                              ),
+                                            ),
+                                            collapsed: Container(
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
+                                              height: 40,
+                                              decoration: BoxDecoration(
+                                                color: Color(0xFFF3F3F3),
+                                              ),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(5, 0, 5, 0),
+                                                child: Text(
+                                                  'Toque para visulizar a meditação de hoje...',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyText1
+                                                      .override(
+                                                        fontFamily:
+                                                            'Lexend Deca',
+                                                        color:
+                                                            Color(0xFF636363),
+                                                        fontSize: 15,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                            expanded: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Html(
+                                                  data: columnMeditacaoRecord
+                                                      .texto,
+                                                ),
+                                              ],
+                                            ),
+                                            theme: ExpandableThemeData(
+                                              tapHeaderToExpand: true,
+                                              tapBodyToExpand: false,
+                                              tapBodyToCollapse: false,
+                                              headerAlignment:
+                                                  ExpandablePanelHeaderAlignment
+                                                      .center,
+                                              hasIcon: true,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
                                     ),
-                                  ],
-                                ),
-                                theme: ExpandableThemeData(
-                                  tapHeaderToExpand: true,
-                                  tapBodyToExpand: false,
-                                  tapBodyToCollapse: false,
-                                  headerAlignment:
-                                      ExpandablePanelHeaderAlignment.center,
-                                  hasIcon: true,
-                                ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
