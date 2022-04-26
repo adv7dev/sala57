@@ -144,7 +144,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
                             child: Card(
                               clipBehavior: Clip.antiAliasWithSaveLayer,
-                              color: Color(0xFFF5F5F5),
+                              color: Colors.white,
                               elevation: 5,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(5),
@@ -248,6 +248,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       ],
                                     ),
                                   ),
+                                  Divider(
+                                    color: Color(0xFFBE1E2D),
+                                  ),
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -285,7 +288,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       .width,
                                                   height: 40,
                                                   decoration: BoxDecoration(
-                                                    color: Color(0xFFF3F3F3),
+                                                    color: Colors.white,
                                                   ),
                                                   child: Padding(
                                                     padding:
