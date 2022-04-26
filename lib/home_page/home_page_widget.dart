@@ -135,7 +135,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           child: InkWell(
                                             onTap: () async {
                                               setDarkModeSetting(
-                                                  context, ThemeMode.dark);
+                                                  context, ThemeMode.light);
                                             },
                                             child: FaIcon(
                                               FontAwesomeIcons.solidMoon,
