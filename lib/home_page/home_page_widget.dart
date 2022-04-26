@@ -210,7 +210,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           child: InkWell(
                                             onTap: () async {
                                               setDarkModeSetting(
-                                                  context, ThemeMode.light);
+                                                  context, ThemeMode.dark);
                                             },
                                             child: Icon(
                                               Icons.wb_sunny_rounded,
