@@ -90,6 +90,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         child: Card(
                           clipBehavior: Clip.antiAliasWithSaveLayer,
                           color: Colors.white,
+                          elevation: 10,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5),
+                          ),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
