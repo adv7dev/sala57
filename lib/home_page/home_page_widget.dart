@@ -6,7 +6,6 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_youtube_player.dart';
 import '../meditacoes/meditacoes_widget.dart';
-import '../page_videos_sala57/page_videos_sala57_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
@@ -125,7 +124,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     ],
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(10, 20, 0, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(10, 5, 0, 0),
                     child: InkWell(
                       onTap: () async {
                         await Navigator.push(
@@ -232,7 +231,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
                           child: Container(
                             width: double.infinity,
-                            color: Color(0xFFE1E1E1),
+                            color: Color(0xFFECECEC),
                             child: ExpandableNotifier(
                               initialExpanded: false,
                               child: ExpandablePanel(
@@ -254,7 +253,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   width: MediaQuery.of(context).size.width,
                                   height: 40,
                                   decoration: BoxDecoration(
-                                    color: Color(0xFFE1E1E1),
+                                    color: Color(0xFFF3F3F3),
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
@@ -295,126 +294,73 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     ],
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(5, 20, 0, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Text(
-                          FFLocalizations.of(context).getText(
-                            'cweka8av' /* ÚLTIMA SALA 57 - AO VIVO  */,
-                          ),
-                          style:
-                              FlutterFlowTheme.of(context).subtitle1.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Colors.black,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                        ),
-                        if (currentUserDocument?.adm ?? true)
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                            child: AuthUserStreamWidget(
-                              child: InkWell(
-                                onTap: () async {
-                                  await showModalBottomSheet(
-                                    isScrollControlled: true,
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).background,
-                                    context: context,
-                                    builder: (context) {
-                                      return Padding(
-                                        padding:
-                                            MediaQuery.of(context).viewInsets,
-                                        child: Container(
-                                          height: MediaQuery.of(context)
-                                                  .size
-                                                  .height *
-                                              0.7,
-                                          child: AddMeditacaoWidget(),
-                                        ),
-                                      );
-                                    },
-                                  );
-                                },
-                                child: Icon(
-                                  Icons.add_circle,
-                                  color: Color(0xFFD2393C),
-                                  size: 24,
-                                ),
+                        Expanded(
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
+                            child: Card(
+                              clipBehavior: Clip.antiAliasWithSaveLayer,
+                              color: Color(0xFFF5F5F5),
+                              elevation: 5,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5),
                               ),
-                            ),
-                          ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                          child: InkWell(
-                            onTap: () async {
-                              await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      PageVideosSala57Widget(),
-                                ),
-                              );
-                            },
-                            child: Icon(
-                              Icons.chevron_right,
-                              color: Color(0xFFD2393C),
-                              size: 30,
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        7, 7, 7, 0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Text(
+                                          'Ultima Sala 57 Ao Vivo',
+                                          style: FlutterFlowTheme.of(context)
+                                              .subtitle1
+                                              .override(
+                                                fontFamily: 'Lexend Deca',
+                                                color: Color(0xFF141414),
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Divider(
+                                    color: Color(0xFFBE1E2D),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        7, 7, 7, 7),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Expanded(
+                                          child: FlutterFlowYoutubePlayer(
+                                            url:
+                                                'https://www.youtube.com/watch?v=C30hQ0ZSFoM',
+                                            autoPlay: false,
+                                            looping: true,
+                                            mute: false,
+                                            showControls: true,
+                                            showFullScreen: true,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
                       ],
                     ),
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      StreamBuilder<List<VideosSala57Record>>(
-                        stream: queryVideosSala57Record(
-                          queryBuilder: (videosSala57Record) =>
-                              videosSala57Record.orderBy('data',
-                                  descending: true),
-                          singleRecord: true,
-                        ),
-                        builder: (context, snapshot) {
-                          // Customize what your widget looks like when it's loading.
-                          if (!snapshot.hasData) {
-                            return Center(
-                              child: SizedBox(
-                                width: 50,
-                                height: 50,
-                                child: CircularProgressIndicator(
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryColor,
-                                ),
-                              ),
-                            );
-                          }
-                          List<VideosSala57Record>
-                              youtubePlayerVideosSala57RecordList =
-                              snapshot.data;
-                          // Return an empty Container when the document does not exist.
-                          if (snapshot.data.isEmpty) {
-                            return Container();
-                          }
-                          final youtubePlayerVideosSala57Record =
-                              youtubePlayerVideosSala57RecordList.isNotEmpty
-                                  ? youtubePlayerVideosSala57RecordList.first
-                                  : null;
-                          return FlutterFlowYoutubePlayer(
-                            url: youtubePlayerVideosSala57Record.video,
-                            autoPlay: false,
-                            looping: true,
-                            mute: false,
-                            showControls: true,
-                            showFullScreen: true,
-                          );
-                        },
-                      ),
-                    ],
                   ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(5, 20, 0, 0),
