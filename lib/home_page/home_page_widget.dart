@@ -248,24 +248,28 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       ],
                                     ),
                                   ),
-                                  Container(
-                                    height: 200,
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          5, 5, 5, 5),
-                                      child: Container(
-                                        width: double.infinity,
-                                        color: Colors.white,
-                                        child: ExpandableNotifier(
-                                          initialExpanded: false,
-                                          child: ExpandablePanel(
-                                            header: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(5, 0, 0, 0),
-                                              child: Text(
-                                                columnMeditacaoRecord.titulo,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5, 5, 5, 5),
+                                          child: Container(
+                                            width: double.infinity,
+                                            color: Colors.white,
+                                            child: ExpandableNotifier(
+                                              initialExpanded: false,
+                                              child: ExpandablePanel(
+                                                header: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(5, 0, 0, 0),
+                                                  child: Text(
+                                                    columnMeditacaoRecord
+                                                        .titulo,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .title1
                                                         .override(
                                                           fontFamily:
@@ -273,56 +277,63 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           color: Colors.black,
                                                           fontSize: 15,
                                                         ),
-                                              ),
-                                            ),
-                                            collapsed: Container(
-                                              width: MediaQuery.of(context)
-                                                  .size
-                                                  .width,
-                                              height: 40,
-                                              decoration: BoxDecoration(
-                                                color: Color(0xFFF3F3F3),
-                                              ),
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(5, 0, 5, 0),
-                                                child: Text(
-                                                  'Toque para visulizar a meditação de hoje...',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyText1
-                                                      .override(
-                                                        fontFamily:
-                                                            'Lexend Deca',
-                                                        color:
-                                                            Color(0xFF636363),
-                                                        fontSize: 15,
-                                                      ),
+                                                  ),
+                                                ),
+                                                collapsed: Container(
+                                                  width: MediaQuery.of(context)
+                                                      .size
+                                                      .width,
+                                                  height: 40,
+                                                  decoration: BoxDecoration(
+                                                    color: Color(0xFFF3F3F3),
+                                                  ),
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                                5, 0, 5, 0),
+                                                    child: Text(
+                                                      'Toque para visulizar a meditação de hoje...   comece o  dia com Deus...',
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyText1
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Lexend Deca',
+                                                                color: Color(
+                                                                    0xFF636363),
+                                                                fontSize: 15,
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                expanded: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Html(
+                                                      data:
+                                                          columnMeditacaoRecord
+                                                              .texto,
+                                                    ),
+                                                  ],
+                                                ),
+                                                theme: ExpandableThemeData(
+                                                  tapHeaderToExpand: true,
+                                                  tapBodyToExpand: false,
+                                                  tapBodyToCollapse: false,
+                                                  headerAlignment:
+                                                      ExpandablePanelHeaderAlignment
+                                                          .center,
+                                                  hasIcon: true,
                                                 ),
                                               ),
-                                            ),
-                                            expanded: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Html(
-                                                  data: columnMeditacaoRecord
-                                                      .texto,
-                                                ),
-                                              ],
-                                            ),
-                                            theme: ExpandableThemeData(
-                                              tapHeaderToExpand: true,
-                                              tapBodyToExpand: false,
-                                              tapBodyToCollapse: false,
-                                              headerAlignment:
-                                                  ExpandablePanelHeaderAlignment
-                                                      .center,
-                                              hasIcon: true,
                                             ),
                                           ),
                                         ),
                                       ),
-                                    ),
+                                    ],
                                   ),
                                 ],
                               ),
