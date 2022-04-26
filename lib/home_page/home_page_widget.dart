@@ -296,121 +296,163 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Expanded(
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
-                            child: Card(
-                              clipBehavior: Clip.antiAliasWithSaveLayer,
-                              color: Color(0xFFF5F5F5),
-                              elevation: 5,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        7, 7, 7, 0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Text(
-                                          'Ultima Sala 57 Ao Vivo',
-                                          style: FlutterFlowTheme.of(context)
-                                              .subtitle1
-                                              .override(
-                                                fontFamily: 'Lexend Deca',
-                                                color: Color(0xFF141414),
-                                                fontWeight: FontWeight.w600,
-                                              ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Divider(
-                                    color: Color(0xFFBE1E2D),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        7, 7, 7, 7),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Expanded(
-                                          child: FlutterFlowYoutubePlayer(
-                                            url:
-                                                'https://www.youtube.com/watch?v=C30hQ0ZSFoM',
-                                            autoPlay: false,
-                                            looping: true,
-                                            mute: false,
-                                            showControls: true,
-                                            showFullScreen: true,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Divider(
-                                    color: Color(0xFFBE1E2D),
-                                  ),
-                                  InkWell(
-                                    onTap: () async {
-                                      await Navigator.push(
-                                        context,
-                                        PageTransition(
-                                          type: PageTransitionType.rightToLeft,
-                                          duration: Duration(milliseconds: 450),
-                                          reverseDuration:
-                                              Duration(milliseconds: 450),
-                                          child: PageVideosSala57Widget(),
-                                        ),
-                                      );
-                                    },
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  7, 7, 7, 7),
-                                          child: Text(
-                                            'Ver mais vídeos publicados',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyText1
-                                                .override(
-                                                  fontFamily: 'Lexend Deca',
-                                                  color: Color(0xFF0D45B4),
-                                                  fontSize: 15,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 10, 0),
-                                          child: Icon(
-                                            Icons.chevron_right_rounded,
-                                            color: Color(0xFF0D45B4),
-                                            size: 24,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
+                    child: StreamBuilder<List<VideosSala57Record>>(
+                      stream: queryVideosSala57Record(
+                        queryBuilder: (videosSala57Record) => videosSala57Record
+                            .orderBy('data', descending: true),
+                        singleRecord: true,
+                      ),
+                      builder: (context, snapshot) {
+                        // Customize what your widget looks like when it's loading.
+                        if (!snapshot.hasData) {
+                          return Center(
+                            child: SizedBox(
+                              width: 50,
+                              height: 50,
+                              child: CircularProgressIndicator(
+                                color:
+                                    FlutterFlowTheme.of(context).primaryColor,
                               ),
                             ),
-                          ),
-                        ),
-                      ],
+                          );
+                        }
+                        List<VideosSala57Record> rowVideosSala57RecordList =
+                            snapshot.data;
+                        // Return an empty Container when the document does not exist.
+                        if (snapshot.data.isEmpty) {
+                          return Container();
+                        }
+                        final rowVideosSala57Record =
+                            rowVideosSala57RecordList.isNotEmpty
+                                ? rowVideosSala57RecordList.first
+                                : null;
+                        return Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              child: Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
+                                child: Card(
+                                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                                  color: Color(0xFFF5F5F5),
+                                  elevation: 5,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            7, 7, 7, 0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Text(
+                                              'Ultima Sala 57 Ao Vivo',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .subtitle1
+                                                  .override(
+                                                    fontFamily: 'Lexend Deca',
+                                                    color: Color(0xFF141414),
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Divider(
+                                        color: Color(0xFFBE1E2D),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            7, 7, 7, 7),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Expanded(
+                                              child: FlutterFlowYoutubePlayer(
+                                                url:
+                                                    rowVideosSala57Record.video,
+                                                autoPlay: false,
+                                                looping: true,
+                                                mute: false,
+                                                showControls: true,
+                                                showFullScreen: true,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Divider(
+                                        color: Color(0xFFE6E6E6),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 0, 0, 7),
+                                        child: InkWell(
+                                          onTap: () async {
+                                            await Navigator.push(
+                                              context,
+                                              PageTransition(
+                                                type: PageTransitionType
+                                                    .rightToLeft,
+                                                duration:
+                                                    Duration(milliseconds: 450),
+                                                reverseDuration:
+                                                    Duration(milliseconds: 450),
+                                                child: PageVideosSala57Widget(),
+                                              ),
+                                            );
+                                          },
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(7, 7, 7, 7),
+                                                child: Text(
+                                                  'Ver mais vídeos publicados',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyText1
+                                                      .override(
+                                                        fontFamily:
+                                                            'Lexend Deca',
+                                                        color:
+                                                            Color(0xFF0D45B4),
+                                                        fontSize: 15,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(0, 0, 10, 0),
+                                                child: Icon(
+                                                  Icons.chevron_right_rounded,
+                                                  color: Color(0xFF0D45B4),
+                                                  size: 24,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        );
+                      },
                     ),
                   ),
                   Padding(
