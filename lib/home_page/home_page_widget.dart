@@ -89,33 +89,34 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       Expanded(
                         child: Card(
                           clipBehavior: Clip.antiAliasWithSaveLayer,
-                          color: Color(0xFFF5F5F5),
+                          color: Colors.white,
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Stack(
-                                children: [
-                                  Image.asset(
-                                    'assets/images/Design_sem_nome_(1).gif',
-                                    width: MediaQuery.of(context).size.width *
-                                        0.98,
-                                    height: 100,
-                                    fit: BoxFit.contain,
-                                  ),
-                                  Align(
-                                    alignment:
-                                        AlignmentDirectional(0.87, -0.09),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          10, 30, 0, 0),
-                                      child: Icon(
-                                        Icons.view_headline_sharp,
-                                        color: Color(0xFFBE1E2D),
-                                        size: 35,
+                              Expanded(
+                                child: Stack(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/Design_sem_nome_(1).gif',
+                                      width: double.infinity,
+                                      height: 100,
+                                      fit: BoxFit.contain,
+                                    ),
+                                    Align(
+                                      alignment:
+                                          AlignmentDirectional(-0.91, 0.01),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 30, 0, 0),
+                                        child: Icon(
+                                          Icons.view_headline_sharp,
+                                          color: Color(0xFFBE1E2D),
+                                          size: 35,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ],
                           ),
