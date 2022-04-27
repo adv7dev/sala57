@@ -1246,8 +1246,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                                       await listViewPedidoOracaoRecord.reference.update(pedidoOracaoUpdateData);
                                                                                       await (animationsMap['iconOnActionTriggerAnimation'].curvedAnimation.parent as AnimationController).forward(from: 0.0);
                                                                                     },
-                                                                                    child: Icon(
-                                                                                      Icons.favorite_border,
+                                                                                    child: FaIcon(
+                                                                                      FontAwesomeIcons.pray,
                                                                                       color: Color(0xFF95A1AC),
                                                                                       size: 25,
                                                                                     ),
@@ -1266,8 +1266,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                                       };
                                                                                       await listViewPedidoOracaoRecord.reference.update(pedidoOracaoUpdateData);
                                                                                     },
-                                                                                    child: Icon(
-                                                                                      Icons.favorite,
+                                                                                    child: FaIcon(
+                                                                                      FontAwesomeIcons.pray,
                                                                                       color: Color(0xFF4B39EF),
                                                                                       size: 25,
                                                                                     ),
