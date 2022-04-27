@@ -1233,48 +1233,46 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                           child:
                                                                               Stack(
                                                                             children: [
-                                                                              if (listViewPedidoOracaoRecord.likes.toList()?.contains(currentUserReference) ?? true)
-                                                                                Align(
-                                                                                  alignment: AlignmentDirectional(0, 0.25),
-                                                                                  child: InkWell(
-                                                                                    onTap: () async {
-                                                                                      final pedidoOracaoUpdateData = {
-                                                                                        'likes': FieldValue.arrayUnion([
-                                                                                          currentUserReference
-                                                                                        ]),
-                                                                                      };
-                                                                                      await listViewPedidoOracaoRecord.reference.update(pedidoOracaoUpdateData);
-                                                                                      await (animationsMap['iconOnActionTriggerAnimation'].curvedAnimation.parent as AnimationController).forward(from: 0.0);
-                                                                                    },
-                                                                                    child: FaIcon(
-                                                                                      FontAwesomeIcons.pray,
-                                                                                      color: Color(0xFF95A1AC),
-                                                                                      size: 25,
-                                                                                    ),
+                                                                              Align(
+                                                                                alignment: AlignmentDirectional(0, 0.25),
+                                                                                child: InkWell(
+                                                                                  onTap: () async {
+                                                                                    final pedidoOracaoUpdateData = {
+                                                                                      'likes': FieldValue.arrayUnion([
+                                                                                        currentUserReference
+                                                                                      ]),
+                                                                                    };
+                                                                                    await listViewPedidoOracaoRecord.reference.update(pedidoOracaoUpdateData);
+                                                                                    await (animationsMap['iconOnActionTriggerAnimation'].curvedAnimation.parent as AnimationController).forward(from: 0.0);
+                                                                                  },
+                                                                                  child: FaIcon(
+                                                                                    FontAwesomeIcons.pray,
+                                                                                    color: Color(0xFF95A1AC),
+                                                                                    size: 25,
                                                                                   ),
                                                                                 ),
-                                                                              if (listViewPedidoOracaoRecord.likes.toList()?.contains(currentUserReference) ?? true)
-                                                                                Align(
-                                                                                  alignment: AlignmentDirectional(0, 0.25),
-                                                                                  child:
-                                                                                      InkWell(
-                                                                                    onTap: () async {
-                                                                                      final pedidoOracaoUpdateData = {
-                                                                                        'likes': FieldValue.arrayRemove([
-                                                                                          currentUserReference
-                                                                                        ]),
-                                                                                      };
-                                                                                      await listViewPedidoOracaoRecord.reference.update(pedidoOracaoUpdateData);
-                                                                                    },
-                                                                                    child: FaIcon(
-                                                                                      FontAwesomeIcons.pray,
-                                                                                      color: Color(0xFF4B39EF),
-                                                                                      size: 25,
-                                                                                    ),
-                                                                                  ).animated([
-                                                                                    animationsMap['iconOnActionTriggerAnimation']
-                                                                                  ]),
-                                                                                ),
+                                                                              ),
+                                                                              Align(
+                                                                                alignment: AlignmentDirectional(0, 0.25),
+                                                                                child:
+                                                                                    InkWell(
+                                                                                  onTap: () async {
+                                                                                    final pedidoOracaoUpdateData = {
+                                                                                      'likes': FieldValue.arrayRemove([
+                                                                                        currentUserReference
+                                                                                      ]),
+                                                                                    };
+                                                                                    await listViewPedidoOracaoRecord.reference.update(pedidoOracaoUpdateData);
+                                                                                  },
+                                                                                  child: FaIcon(
+                                                                                    FontAwesomeIcons.pray,
+                                                                                    color: Color(0xFF4B39EF),
+                                                                                    size: 25,
+                                                                                  ),
+                                                                                ).animated([
+                                                                                  animationsMap['iconOnActionTriggerAnimation']
+                                                                                ]),
+                                                                              ),
                                                                             ],
                                                                           ),
                                                                         ),
