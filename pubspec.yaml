@@ -44,6 +44,7 @@ dependencies:
   firebase_storage: 10.1.0
   firebase_storage_web: 3.2.8
   flutter_html: 2.2.1
+  flutter_spinkit: 4.1.2+1
   font_awesome_flutter: 8.11.0
   google_fonts: 2.2.0
   google_sign_in: 5.2.1
@@ -88,7 +89,7 @@ flutter_icons:
   android: true
   ios: true
   remove_alpha_ios: true
-  image_path: 'assets/images/app_launcher_icon.png'
+  image_path: 'assets/images/app_launcher_icon.ico'
 
 
 # For information on the generic Dart part of this file, see the

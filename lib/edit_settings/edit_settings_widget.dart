@@ -8,6 +8,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../login/login_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class EditSettingsWidget extends StatefulWidget {
@@ -31,8 +32,9 @@ class _EditSettingsWidgetState extends State<EditSettingsWidget> {
             child: SizedBox(
               width: 50,
               height: 50,
-              child: CircularProgressIndicator(
+              child: SpinKitPumpingHeart(
                 color: FlutterFlowTheme.of(context).primaryColor,
+                size: 50,
               ),
             ),
           );
@@ -159,8 +161,12 @@ class _EditSettingsWidgetState extends State<EditSettingsWidget> {
                           onTap: () async {
                             await Navigator.push(
                               context,
-                              MaterialPageRoute(
-                                builder: (context) => EditUserProfileWidget(),
+                              PageTransition(
+                                type: PageTransitionType.scale,
+                                alignment: Alignment.bottomCenter,
+                                duration: Duration(milliseconds: 500),
+                                reverseDuration: Duration(milliseconds: 500),
+                                child: EditUserProfileWidget(),
                               ),
                             );
                           },
@@ -216,8 +222,12 @@ class _EditSettingsWidgetState extends State<EditSettingsWidget> {
                             onTap: () async {
                               await Navigator.push(
                                 context,
-                                MaterialPageRoute(
-                                  builder: (context) => ChangePasswordWidget(),
+                                PageTransition(
+                                  type: PageTransitionType.scale,
+                                  alignment: Alignment.bottomCenter,
+                                  duration: Duration(milliseconds: 500),
+                                  reverseDuration: Duration(milliseconds: 500),
+                                  child: ChangePasswordWidget(),
                                 ),
                               );
                             },
@@ -271,8 +281,12 @@ class _EditSettingsWidgetState extends State<EditSettingsWidget> {
                         await signOut();
                         await Navigator.pushAndRemoveUntil(
                           context,
-                          MaterialPageRoute(
-                            builder: (context) => LoginWidget(),
+                          PageTransition(
+                            type: PageTransitionType.scale,
+                            alignment: Alignment.bottomCenter,
+                            duration: Duration(milliseconds: 500),
+                            reverseDuration: Duration(milliseconds: 500),
+                            child: LoginWidget(),
                           ),
                           (r) => false,
                         );

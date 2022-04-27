@@ -5,6 +5,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
@@ -207,8 +208,9 @@ class _AddChatUsersWidgetState extends State<AddChatUsersWidget> {
                   child: SizedBox(
                     width: 50,
                     height: 50,
-                    child: CircularProgressIndicator(
+                    child: SpinKitPumpingHeart(
                       color: FlutterFlowTheme.of(context).primaryColor,
+                      size: 50,
                     ),
                   ),
                 ),

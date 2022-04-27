@@ -5,6 +5,7 @@ import 'serialization_util.dart';
 import '../backend.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
 import '../../flutter_flow/flutter_flow_util.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
@@ -65,14 +66,10 @@ class _PushNotificationsHandlerState extends State<PushNotificationsHandler> {
   Widget build(BuildContext context) => _loading
       ? Container(
           color: Colors.transparent,
-          child: Center(
-            child: Builder(
-              builder: (context) => Image.asset(
-                'assets/images/Sniff_0.0_Splash@2x.png',
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 1,
-                fit: BoxFit.cover,
-              ),
+          child: Builder(
+            builder: (context) => Image.asset(
+              'assets/images/Design_sem_nome_(3).gif',
+              fit: BoxFit.cover,
             ),
           ),
         )

@@ -6,6 +6,7 @@ import '../flutter_flow/chat/index.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AllChatsPageWidget extends StatefulWidget {
@@ -40,8 +41,12 @@ class _AllChatsPageWidgetState extends State<AllChatsPageWidget> {
         onPressed: () async {
           await Navigator.push(
             context,
-            MaterialPageRoute(
-              builder: (context) => CreateGroupChatWidget(),
+            PageTransition(
+              type: PageTransitionType.scale,
+              alignment: Alignment.bottomCenter,
+              duration: Duration(milliseconds: 500),
+              reverseDuration: Duration(milliseconds: 500),
+              child: CreateGroupChatWidget(),
             ),
           );
         },
@@ -69,8 +74,9 @@ class _AllChatsPageWidgetState extends State<AllChatsPageWidget> {
                   child: SizedBox(
                     width: 50,
                     height: 50,
-                    child: CircularProgressIndicator(
+                    child: SpinKitPumpingHeart(
                       color: FlutterFlowTheme.of(context).primaryColor,
+                      size: 50,
                     ),
                   ),
                 );
@@ -101,8 +107,13 @@ class _AllChatsPageWidgetState extends State<AllChatsPageWidget> {
                         onTap: chatInfo != null
                             ? () => Navigator.push(
                                   context,
-                                  MaterialPageRoute(
-                                    builder: (context) => ChatPageWidget(
+                                  PageTransition(
+                                    type: PageTransitionType.scale,
+                                    alignment: Alignment.bottomCenter,
+                                    duration: Duration(milliseconds: 500),
+                                    reverseDuration:
+                                        Duration(milliseconds: 500),
+                                    child: ChatPageWidget(
                                       chatUser: chatInfo.otherUsers.length == 1
                                           ? chatInfo.otherUsersList.first
                                           : null,

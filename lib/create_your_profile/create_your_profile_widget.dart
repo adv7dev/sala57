@@ -8,6 +8,7 @@ import '../flutter_flow/upload_media.dart';
 import '../main.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CreateYourProfileWidget extends StatefulWidget {
@@ -326,9 +327,12 @@ class _CreateYourProfileWidgetState extends State<CreateYourProfileWidget> {
                           await currentUserReference.update(usersUpdateData);
                           await Navigator.pushAndRemoveUntil(
                             context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  NavBarPage(initialPage: 'homePage'),
+                            PageTransition(
+                              type: PageTransitionType.scale,
+                              alignment: Alignment.bottomCenter,
+                              duration: Duration(milliseconds: 200),
+                              reverseDuration: Duration(milliseconds: 200),
+                              child: NavBarPage(initialPage: 'homePage'),
                             ),
                             (r) => false,
                           );

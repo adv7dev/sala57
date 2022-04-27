@@ -6,6 +6,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ChatPageWidget extends StatefulWidget {
@@ -107,8 +108,12 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
                 onTap: () async {
                   await Navigator.push(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) => AddChatUsersWidget(
+                    PageTransition(
+                      type: PageTransitionType.scale,
+                      alignment: Alignment.bottomCenter,
+                      duration: Duration(milliseconds: 500),
+                      reverseDuration: Duration(milliseconds: 500),
+                      child: AddChatUsersWidget(
                         chat: _chatInfo.chatRecord,
                       ),
                     ),
@@ -186,8 +191,9 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
                   child: SizedBox(
                     width: 50,
                     height: 50,
-                    child: CircularProgressIndicator(
+                    child: SpinKitPumpingHeart(
                       color: FlutterFlowTheme.of(context).primaryColor,
+                      size: 50,
                     ),
                   ),
                 ),

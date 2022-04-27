@@ -10,6 +10,7 @@ import '../flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PostDetailsWidget extends StatefulWidget {
@@ -47,8 +48,9 @@ class _PostDetailsWidgetState extends State<PostDetailsWidget> {
             child: SizedBox(
               width: 50,
               height: 50,
-              child: CircularProgressIndicator(
+              child: SpinKitPumpingHeart(
                 color: FlutterFlowTheme.of(context).primaryColor,
+                size: 50,
               ),
             ),
           );
@@ -416,9 +418,10 @@ class _PostDetailsWidgetState extends State<PostDetailsWidget> {
                                         child: SizedBox(
                                           width: 50,
                                           height: 50,
-                                          child: CircularProgressIndicator(
+                                          child: SpinKitPumpingHeart(
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryColor,
+                                            size: 50,
                                           ),
                                         ),
                                       );
@@ -462,12 +465,12 @@ class _PostDetailsWidgetState extends State<PostDetailsWidget> {
                                                   child: SizedBox(
                                                     width: 50,
                                                     height: 50,
-                                                    child:
-                                                        CircularProgressIndicator(
+                                                    child: SpinKitPumpingHeart(
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryColor,
+                                                      size: 50,
                                                     ),
                                                   ),
                                                 );

@@ -6,6 +6,7 @@ import '../flutter_flow/flutter_flow_widgets.dart';
 import '../forgot_password/forgot_password_widget.dart';
 import '../main.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -294,11 +295,17 @@ class _LoginWidgetState extends State<LoginWidget> {
 
                                               await Navigator.push(
                                                 context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      NavBarPage(
-                                                          initialPage:
-                                                              'homePage'),
+                                                PageTransition(
+                                                  type:
+                                                      PageTransitionType.scale,
+                                                  alignment:
+                                                      Alignment.bottomCenter,
+                                                  duration: Duration(
+                                                      milliseconds: 500),
+                                                  reverseDuration: Duration(
+                                                      milliseconds: 500),
+                                                  child: NavBarPage(
+                                                      initialPage: 'homePage'),
                                                 ),
                                               );
                                             },
@@ -338,9 +345,16 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             onPressed: () async {
                                               await Navigator.push(
                                                 context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      ForgotPasswordWidget(),
+                                                PageTransition(
+                                                  type:
+                                                      PageTransitionType.scale,
+                                                  alignment:
+                                                      Alignment.bottomCenter,
+                                                  duration: Duration(
+                                                      milliseconds: 500),
+                                                  reverseDuration: Duration(
+                                                      milliseconds: 500),
+                                                  child: ForgotPasswordWidget(),
                                                 ),
                                               );
                                             },
@@ -424,11 +438,18 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                   }
                                                   await Navigator.push(
                                                     context,
-                                                    MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          NavBarPage(
-                                                              initialPage:
-                                                                  'homePage'),
+                                                    PageTransition(
+                                                      type: PageTransitionType
+                                                          .scale,
+                                                      alignment: Alignment
+                                                          .bottomCenter,
+                                                      duration: Duration(
+                                                          milliseconds: 500),
+                                                      reverseDuration: Duration(
+                                                          milliseconds: 500),
+                                                      child: NavBarPage(
+                                                          initialPage:
+                                                              'homePage'),
                                                     ),
                                                   );
                                                 },
@@ -782,8 +803,16 @@ class _LoginWidgetState extends State<LoginWidget> {
 
                                               await Navigator.push(
                                                 context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
+                                                PageTransition(
+                                                  type:
+                                                      PageTransitionType.scale,
+                                                  alignment:
+                                                      Alignment.bottomCenter,
+                                                  duration: Duration(
+                                                      milliseconds: 500),
+                                                  reverseDuration: Duration(
+                                                      milliseconds: 500),
+                                                  child:
                                                       CreateYourProfileWidget(),
                                                 ),
                                               );
@@ -871,8 +900,16 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                   }
                                                   await Navigator.push(
                                                     context,
-                                                    MaterialPageRoute(
-                                                      builder: (context) =>
+                                                    PageTransition(
+                                                      type: PageTransitionType
+                                                          .scale,
+                                                      alignment: Alignment
+                                                          .bottomCenter,
+                                                      duration: Duration(
+                                                          milliseconds: 500),
+                                                      reverseDuration: Duration(
+                                                          milliseconds: 500),
+                                                      child:
                                                           CreateYourProfileWidget(),
                                                     ),
                                                   );
