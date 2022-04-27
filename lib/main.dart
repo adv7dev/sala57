@@ -10,6 +10,7 @@ import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'index.dart';
 
 void main() async {
@@ -129,63 +130,128 @@ class _NavBarPageState extends State<NavBarPage> {
     final currentIndex = tabs.keys.toList().indexOf(_currentPage);
     return Scaffold(
       body: tabs[_currentPage],
-      bottomNavigationBar: BottomNavigationBar(
+      extendBody: true,
+      bottomNavigationBar: FloatingNavbar(
         currentIndex: currentIndex,
         onTap: (i) => setState(() => _currentPage = tabs.keys.toList()[i]),
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         selectedItemColor: Color(0xFFBE1E2D),
         unselectedItemColor: FlutterFlowTheme.of(context).secondaryText,
-        showSelectedLabels: true,
-        showUnselectedLabels: true,
-        type: BottomNavigationBarType.fixed,
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home_outlined,
-              size: 24,
+        selectedBackgroundColor: Color(0x00000000),
+        borderRadius: 8,
+        itemBorderRadius: 8,
+        margin: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+        width: double.infinity,
+        elevation: 0,
+        items: [
+          FloatingNavbarItem(
+            customWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.home_outlined,
+                  color: currentIndex == 0
+                      ? Color(0xFFBE1E2D)
+                      : FlutterFlowTheme.of(context).secondaryText,
+                  size: 24,
+                ),
+                Text(
+                  FFLocalizations.of(context).getText(
+                    'mtarxfqn' /* Início */,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: currentIndex == 0
+                        ? Color(0xFFBE1E2D)
+                        : FlutterFlowTheme.of(context).secondaryText,
+                    fontSize: 11.0,
+                  ),
+                ),
+              ],
             ),
-            label: FFLocalizations.of(context).getText(
-              'mtarxfqn' /* Início */,
-            ),
-            tooltip: '',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.bubble_chart,
-              size: 24,
+          FloatingNavbarItem(
+            customWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.bubble_chart,
+                  color: currentIndex == 1
+                      ? Color(0xFFBE1E2D)
+                      : FlutterFlowTheme.of(context).secondaryText,
+                  size: 24,
+                ),
+                Text(
+                  FFLocalizations.of(context).getText(
+                    'ycp68zco' /* Social */,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: currentIndex == 1
+                        ? Color(0xFFBE1E2D)
+                        : FlutterFlowTheme.of(context).secondaryText,
+                    fontSize: 11.0,
+                  ),
+                ),
+              ],
             ),
-            label: FFLocalizations.of(context).getText(
-              'ycp68zco' /* Social */,
-            ),
-            tooltip: '',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.chat_bubble_outline,
-              size: 24,
+          FloatingNavbarItem(
+            customWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  currentIndex == 2
+                      ? Icons.chat_bubble_outlined
+                      : Icons.chat_bubble_outline,
+                  color: currentIndex == 2
+                      ? Color(0xFFBE1E2D)
+                      : FlutterFlowTheme.of(context).secondaryText,
+                  size: 24,
+                ),
+                Text(
+                  FFLocalizations.of(context).getText(
+                    '3qig93fq' /* Messages */,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: currentIndex == 2
+                        ? Color(0xFFBE1E2D)
+                        : FlutterFlowTheme.of(context).secondaryText,
+                    fontSize: 11.0,
+                  ),
+                ),
+              ],
             ),
-            activeIcon: Icon(
-              Icons.chat_bubble_outlined,
-              size: 24,
-            ),
-            label: FFLocalizations.of(context).getText(
-              '3qig93fq' /* Messages */,
-            ),
-            tooltip: '',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.account_circle_outlined,
-              size: 24,
+          FloatingNavbarItem(
+            customWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  currentIndex == 3
+                      ? Icons.account_circle
+                      : Icons.account_circle_outlined,
+                  color: currentIndex == 3
+                      ? Color(0xFFBE1E2D)
+                      : FlutterFlowTheme.of(context).secondaryText,
+                  size: 24,
+                ),
+                Text(
+                  FFLocalizations.of(context).getText(
+                    'dywwzovd' /* Profile */,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: currentIndex == 3
+                        ? Color(0xFFBE1E2D)
+                        : FlutterFlowTheme.of(context).secondaryText,
+                    fontSize: 11.0,
+                  ),
+                ),
+              ],
             ),
-            activeIcon: Icon(
-              Icons.account_circle,
-              size: 24,
-            ),
-            label: FFLocalizations.of(context).getText(
-              'dywwzovd' /* Profile */,
-            ),
-            tooltip: '',
           )
         ],
       ),
