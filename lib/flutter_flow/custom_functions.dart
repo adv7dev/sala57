@@ -13,6 +13,10 @@ int likes(UserPostsRecord post) {
   return post.likes.length;
 }
 
+int orar(MeditacaoRecord meditacao) {
+  return meditacao.likes.length;
+}
+
 bool hasUploadedMedia(String mediaPath) {
   return mediaPath != null && mediaPath.isNotEmpty;
 }

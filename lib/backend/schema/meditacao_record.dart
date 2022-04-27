@@ -24,13 +24,28 @@ abstract class MeditacaoRecord
   String get img;
 
   @nullable
+  DocumentReference get postUser;
+
+  @nullable
+  BuiltList<DocumentReference> get likes;
+
+  @nullable
+  int get numComents;
+
+  @nullable
+  bool get postOwner;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
   static void _initializeBuilder(MeditacaoRecordBuilder builder) => builder
     ..titulo = ''
     ..texto = ''
-    ..img = '';
+    ..img = ''
+    ..likes = ListBuilder()
+    ..numComents = 0
+    ..postOwner = false;
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('meditacao');
@@ -58,6 +73,9 @@ Map<String, dynamic> createMeditacaoRecordData({
   String texto,
   DateTime data,
   String img,
+  DocumentReference postUser,
+  int numComents,
+  bool postOwner,
 }) =>
     serializers.toFirestore(
         MeditacaoRecord.serializer,
@@ -65,4 +83,8 @@ Map<String, dynamic> createMeditacaoRecordData({
           ..titulo = titulo
           ..texto = texto
           ..data = data
-          ..img = img));
+          ..img = img
+          ..postUser = postUser
+          ..likes = null
+          ..numComents = numComents
+          ..postOwner = postOwner));
