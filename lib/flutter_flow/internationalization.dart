@@ -45,23 +45,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // login
   {
     'diy011rk': {
-      'pt': 'Sign In',
+      'pt': 'Entrar',
       'en': '',
     },
     'xu5kp49v': {
-      'pt': 'Email Address',
+      'pt': '',
       'en': '',
     },
-    'bvlqh1tg': {
-      'pt': 'Enter your email...',
+    '66698c56': {
+      'pt': 'E-mail',
       'en': '',
     },
     'qau4e318': {
-      'pt': 'Password',
+      'pt': '',
       'en': '',
     },
-    'ci4029qb': {
-      'pt': 'Enter your password...',
+    'px4mrl69': {
+      'pt': 'Senha',
       'en': '',
     },
     'v7gfc6om': {
@@ -77,31 +77,31 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'kodvw0zk': {
-      'pt': 'Sign up',
+      'pt': 'Criar Conta',
       'en': '',
     },
     'owerg0ei': {
-      'pt': 'Email Address',
+      'pt': '',
       'en': '',
     },
-    '7gnqnsqn': {
-      'pt': 'Enter your email...',
+    'lemx1yub': {
+      'pt': 'E-mail',
       'en': '',
     },
     'ajf0chib': {
-      'pt': 'Password',
+      'pt': '',
       'en': '',
     },
-    'ge82efnq': {
-      'pt': 'Enter your password...',
+    'b40oeeqi': {
+      'pt': 'Senha',
       'en': '',
     },
     'jjdla04b': {
-      'pt': 'Confirm Password',
+      'pt': '',
       'en': '',
     },
-    '1ftu4otk': {
-      'pt': 'Enter your password...',
+    '4i72v8nc': {
+      'pt': 'Confirmar Senha',
       'en': '',
     },
     'h1x8h5l8': {
@@ -112,7 +112,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Ou use uma rede social para criar uma conta',
       'en': '',
     },
-    '2koo1owr': {
+    'azhm0cdr': {
       'pt': 'Home',
       'en': '',
     },
@@ -136,11 +136,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'I\'m back with a super quick Instagram redesign just for the fan. Rounded corners and cute icons, what else do we need, haha.⁣ ',
       'en': '',
     },
-    'h2nd6pnp': {
+    '8v4r282o': {
       'pt': 'EXPERIÊNCIAS',
       'en': '',
     },
-    'i42mdntt': {
+    'm6y4dxsi': {
       'pt': 'Publique a sua aqui...',
       'en': '',
     },
@@ -211,15 +211,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'PEDIDOS DE ORAÇÃO',
       'en': '',
     },
-    'gra4cgjk': {
+    'kcq4v8ic': {
       'pt': 'MEDITAÇÕES',
       'en': '',
     },
-    '1feo9m59': {
+    'nflpvo9v': {
       'pt': 'P.  DE ORAÇÃO',
       'en': '',
     },
-    '923n17go': {
+    'af1rcz95': {
       'pt': 'VÍDEOS SALA57',
       'en': '',
     },
@@ -522,26 +522,26 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // page_videos_sala57
   {
-    'r4aba2dh': {
+    'en102g1g': {
       'pt': 'Videos Sala57',
       'en': '',
     },
-    'y1ulcyey': {
+    '3r73q9wq': {
       'pt': 'Home',
       'en': '',
     },
   },
   // meditacoes
   {
-    '2ex4c74z': {
+    'rnq86b3c': {
       'pt': 'Meditações',
       'en': '',
     },
-    'wcsvszej': {
+    'lo4gfkmm': {
       'pt': 'Toque para visulizar a meditação de hoje...',
       'en': '',
     },
-    'tpvtjvh7': {
+    'kcxjt4j5': {
       'pt': 'Home',
       'en': '',
     },
@@ -597,34 +597,34 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // add_meditacao
   {
-    'bhmynnrn': {
+    'tga3kyx8': {
       'pt': 'Titulo',
       'en': '',
     },
-    'f2o7gwwm': {
+    'lqcwqpyz': {
       'pt': 'Texto',
       'en': '',
     },
-    'gx5eqdjd': {
+    'dgen7v1s': {
       'pt': 'url',
       'en': '',
     },
-    '6vfikizk': {
+    'bkb03hgq': {
       'pt': 'ADD',
       'en': '',
     },
   },
   // add_Pedido_oracao
   {
-    '57bm0icc': {
+    'mdh7txa9': {
       'pt': 'Pedido de Oração',
       'en': '',
     },
-    'ofjjez3h': {
+    '2pfz2ami': {
       'pt': 'Detalhes do Pedido',
       'en': '',
     },
-    'bce4kbch': {
+    'uqafl909': {
       'pt': 'Enviar Pedido',
       'en': '',
     },

@@ -106,12 +106,12 @@ class _LoginWidgetState extends State<LoginWidget> {
                             tabs: [
                               Tab(
                                 text: FFLocalizations.of(context).getText(
-                                  'diy011rk' /* Sign In */,
+                                  'diy011rk' /* Entrar */,
                                 ),
                               ),
                               Tab(
                                 text: FFLocalizations.of(context).getText(
-                                  'kodvw0zk' /* Sign up */,
+                                  'kodvw0zk' /* Criar Conta */,
                                 ),
                               ),
                             ],
@@ -135,11 +135,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                 emailAddressLoginController,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              labelText:
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                'xu5kp49v' /* Email Address */,
-                                              ),
                                               labelStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyText1
@@ -150,7 +145,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
-                                              hintText: 'Enter your email...',
+                                              hintText: 'E-mail',
                                               hintStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyText1
@@ -202,11 +197,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             obscureText:
                                                 !passwordLoginVisibility,
                                             decoration: InputDecoration(
-                                              labelText:
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                'qau4e318' /* Password */,
-                                              ),
                                               labelStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyText1
@@ -217,8 +207,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                     fontWeight:
                                                         FontWeight.normal,
                                                   ),
-                                              hintText:
-                                                  'Enter your password...',
+                                              hintText: 'Senha',
                                               hintStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyText1
@@ -544,11 +533,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             controller: emailAddressController,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              labelText:
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                'owerg0ei' /* Email Address */,
-                                              ),
                                               labelStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .subtitle2
@@ -560,7 +544,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
-                                              hintText: 'Enter your email...',
+                                              hintText: 'E-mail',
                                               hintStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyText1
@@ -611,11 +595,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             controller: passwordController,
                                             obscureText: !passwordVisibility,
                                             decoration: InputDecoration(
-                                              labelText:
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                'ajf0chib' /* Password */,
-                                              ),
                                               labelStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .subtitle2
@@ -627,8 +606,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
-                                              hintText:
-                                                  'Enter your password...',
+                                              hintText: 'Senha',
                                               hintStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyText1
@@ -696,11 +674,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             obscureText:
                                                 !passwordConfirmVisibility,
                                             decoration: InputDecoration(
-                                              labelText:
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                'jjdla04b' /* Confirm Password */,
-                                              ),
                                               labelStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .subtitle2
@@ -712,8 +685,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
-                                              hintText:
-                                                  'Enter your password...',
+                                              hintText: 'Confirmar Senha',
                                               hintStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyText1
