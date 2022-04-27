@@ -11,7 +11,6 @@ import '../page_videos_sala57/page_videos_sala57_widget.dart';
 import '../flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
@@ -1256,48 +1255,25 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                               height: 41,
                                                                               child: Stack(
                                                                                 children: [
-                                                                                  if (!(columnMeditacaoRecord.likes.toList()?.contains(currentUserReference)) ?? true)
-                                                                                    Align(
-                                                                                      alignment: AlignmentDirectional(0, 0.25),
-                                                                                      child: InkWell(
-                                                                                        onTap: () async {
-                                                                                          final meditacaoUpdateData = {
-                                                                                            'likes': FieldValue.arrayUnion([
-                                                                                              currentUserReference
-                                                                                            ]),
-                                                                                          };
-                                                                                          await columnMeditacaoRecord.reference.update(meditacaoUpdateData);
-                                                                                          await (animationsMap['iconOnActionTriggerAnimation'].curvedAnimation.parent as AnimationController).forward(from: 0.0);
-                                                                                        },
-                                                                                        child: FaIcon(
-                                                                                          FontAwesomeIcons.pray,
-                                                                                          color: Color(0xFFE1E1E1),
-                                                                                          size: 25,
-                                                                                        ),
-                                                                                      ),
+                                                                                  Align(
+                                                                                    alignment: AlignmentDirectional(0, 0.25),
+                                                                                    child: FaIcon(
+                                                                                      FontAwesomeIcons.pray,
+                                                                                      color: Color(0xFFE1E1E1),
+                                                                                      size: 25,
                                                                                     ),
-                                                                                  if (columnMeditacaoRecord.likes.toList()?.contains(currentUserReference) ?? true)
-                                                                                    Align(
-                                                                                      alignment: AlignmentDirectional(0, 0.25),
-                                                                                      child:
-                                                                                          InkWell(
-                                                                                        onTap: () async {
-                                                                                          final meditacaoUpdateData = {
-                                                                                            'likes': FieldValue.arrayRemove([
-                                                                                              currentUserReference
-                                                                                            ]),
-                                                                                          };
-                                                                                          await columnMeditacaoRecord.reference.update(meditacaoUpdateData);
-                                                                                        },
-                                                                                        child: FaIcon(
-                                                                                          FontAwesomeIcons.pray,
-                                                                                          color: FlutterFlowTheme.of(context).primaryColor,
-                                                                                          size: 25,
-                                                                                        ),
-                                                                                      ).animated([
-                                                                                        animationsMap['iconOnActionTriggerAnimation']
-                                                                                      ]),
-                                                                                    ),
+                                                                                  ),
+                                                                                  Align(
+                                                                                    alignment: AlignmentDirectional(0, 0.25),
+                                                                                    child:
+                                                                                        FaIcon(
+                                                                                      FontAwesomeIcons.pray,
+                                                                                      color: FlutterFlowTheme.of(context).primaryColor,
+                                                                                      size: 25,
+                                                                                    ).animated([
+                                                                                      animationsMap['iconOnActionTriggerAnimation']
+                                                                                    ]),
+                                                                                  ),
                                                                                 ],
                                                                               ),
                                                                             ),
