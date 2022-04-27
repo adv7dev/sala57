@@ -1,11 +1,13 @@
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
+import '../components/add_meditacao_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_youtube_player.dart';
 import '../main.dart';
 import '../meditacoes/meditacoes_widget.dart';
 import '../page_videos_sala57/page_videos_sala57_widget.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
@@ -722,15 +724,15 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             ),
                           );
                         }
-                        List<VideosSala57Record> rowVideosSala57RecordList =
+                        List<VideosSala57Record> videoVideosSala57RecordList =
                             snapshot.data;
                         // Return an empty Container when the document does not exist.
                         if (snapshot.data.isEmpty) {
                           return Container();
                         }
-                        final rowVideosSala57Record =
-                            rowVideosSala57RecordList.isNotEmpty
-                                ? rowVideosSala57RecordList.first
+                        final videoVideosSala57Record =
+                            videoVideosSala57RecordList.isNotEmpty
+                                ? videoVideosSala57RecordList.first
                                 : null;
                         return Row(
                           mainAxisSize: MainAxisSize.max,
@@ -819,8 +821,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           children: [
                                             Expanded(
                                               child: FlutterFlowYoutubePlayer(
-                                                url:
-                                                    rowVideosSala57Record.video,
+                                                url: videoVideosSala57Record
+                                                    .video,
                                                 autoPlay: false,
                                                 looping: true,
                                                 mute: false,
@@ -946,11 +948,35 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               fontWeight: FontWeight.w600,
                                             ),
                                       ),
-                                      Icon(
-                                        Icons.add_circle,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryColor,
-                                        size: 30,
+                                      InkWell(
+                                        onTap: () async {
+                                          showModalBottomSheet(
+                                            isScrollControlled: true,
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
+                                            context: context,
+                                            builder: (context) {
+                                              return Padding(
+                                                padding: MediaQuery.of(context)
+                                                    .viewInsets,
+                                                child: Container(
+                                                  height: MediaQuery.of(context)
+                                                          .size
+                                                          .height *
+                                                      0.7,
+                                                  child: AddMeditacaoWidget(),
+                                                ),
+                                              );
+                                            },
+                                          );
+                                        },
+                                        child: Icon(
+                                          Icons.add_circle,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryColor,
+                                          size: 30,
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -963,165 +989,198 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Expanded(
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 5),
-                                        child: StreamBuilder<
-                                            List<PedidoOracaoRecord>>(
-                                          stream: queryPedidoOracaoRecord(
-                                            queryBuilder:
-                                                (pedidoOracaoRecord) =>
-                                                    pedidoOracaoRecord.orderBy(
-                                                        'data',
-                                                        descending: true),
-                                            limit: 10,
-                                          ),
-                                          builder: (context, snapshot) {
-                                            // Customize what your widget looks like when it's loading.
-                                            if (!snapshot.hasData) {
-                                              return Center(
-                                                child: SizedBox(
-                                                  width: 50,
-                                                  height: 50,
-                                                  child: SpinKitPumpingHeart(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryColor,
-                                                    size: 50,
-                                                  ),
+                                      child: StreamBuilder<
+                                          List<PedidoOracaoRecord>>(
+                                        stream: queryPedidoOracaoRecord(
+                                          queryBuilder: (pedidoOracaoRecord) =>
+                                              pedidoOracaoRecord.orderBy('data',
+                                                  descending: true),
+                                          limit: 10,
+                                        ),
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 50,
+                                                height: 50,
+                                                child: SpinKitPumpingHeart(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryColor,
+                                                  size: 50,
                                                 ),
-                                              );
-                                            }
-                                            List<PedidoOracaoRecord>
-                                                listViewPedidoOracaoRecordList =
-                                                snapshot.data;
-                                            return ListView.builder(
-                                              padding: EdgeInsets.zero,
-                                              primary: false,
-                                              shrinkWrap: true,
-                                              scrollDirection: Axis.vertical,
-                                              itemCount:
-                                                  listViewPedidoOracaoRecordList
-                                                      .length,
-                                              itemBuilder:
-                                                  (context, listViewIndex) {
-                                                final listViewPedidoOracaoRecord =
-                                                    listViewPedidoOracaoRecordList[
-                                                        listViewIndex];
-                                                return Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(5, 5, 5, 5),
-                                                  child: Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        children: [
-                                                          Expanded(
-                                                            child: Text(
-                                                              listViewPedidoOracaoRecord
-                                                                  .titulo,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .title3
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Lexend Deca',
-                                                                    color: Colors
-                                                                        .black,
-                                                                    fontSize:
-                                                                        15,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                  ),
+                                              ),
+                                            );
+                                          }
+                                          List<PedidoOracaoRecord>
+                                              listViewPedidoOracaoRecordList =
+                                              snapshot.data;
+                                          return ListView.builder(
+                                            padding: EdgeInsets.zero,
+                                            primary: false,
+                                            shrinkWrap: true,
+                                            scrollDirection: Axis.vertical,
+                                            itemCount:
+                                                listViewPedidoOracaoRecordList
+                                                    .length,
+                                            itemBuilder:
+                                                (context, listViewIndex) {
+                                              final listViewPedidoOracaoRecord =
+                                                  listViewPedidoOracaoRecordList[
+                                                      listViewIndex];
+                                              return Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(5, 5, 5, 5),
+                                                child: Card(
+                                                  clipBehavior: Clip
+                                                      .antiAliasWithSaveLayer,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  elevation: 5,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5),
+                                                  ),
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                                5, 5, 5, 5),
+                                                    child: Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Expanded(
+                                                              child: Text(
+                                                                listViewPedidoOracaoRecord
+                                                                    .titulo
+                                                                    .maybeHandleOverflow(
+                                                                  maxChars: 50,
+                                                                  replacement:
+                                                                      '…',
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .title3
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Lexend Deca',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                      fontSize:
+                                                                          15,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w600,
+                                                                    ),
+                                                              ),
                                                             ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                      Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        children: [
-                                                          Expanded(
-                                                            child: Text(
-                                                              listViewPedidoOracaoRecord
-                                                                  .pedido,
+                                                          ],
+                                                        ),
+                                                        Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Expanded(
+                                                              child:
+                                                                  AutoSizeText(
+                                                                listViewPedidoOracaoRecord
+                                                                    .pedido
+                                                                    .maybeHandleOverflow(
+                                                                  maxChars: 300,
+                                                                  replacement:
+                                                                      '…',
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyText1
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Lexend Deca',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .end,
+                                                          children: [
+                                                            Expanded(
+                                                              child: Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0,
+                                                                            0,
+                                                                            10,
+                                                                            0),
+                                                                child:
+                                                                    AuthUserStreamWidget(
+                                                                  child: Text(
+                                                                    currentUserDisplayName,
+                                                                    textAlign:
+                                                                        TextAlign
+                                                                            .end,
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyText1
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Lexend Deca',
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primaryColor,
+                                                                        ),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            Text(
+                                                              dateTimeFormat(
+                                                                  'd/M h:mm a',
+                                                                  listViewPedidoOracaoRecord
+                                                                      .data),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyText1
                                                                   .override(
                                                                     fontFamily:
                                                                         'Lexend Deca',
-                                                                    color: Color(
-                                                                        0xFF616161),
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondaryText,
                                                                   ),
                                                             ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                      Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .end,
-                                                        children: [
-                                                          Expanded(
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          10,
-                                                                          0),
-                                                              child:
-                                                                  AuthUserStreamWidget(
-                                                                child: Text(
-                                                                  currentUserDisplayName,
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .end,
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyText1
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Lexend Deca',
-                                                                        color: Color(
-                                                                            0xFF616161),
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                          Text(
-                                                            dateTimeFormat(
-                                                                'd/M h:mm a',
-                                                                listViewPedidoOracaoRecord
-                                                                    .data),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyText1,
-                                                          ),
-                                                        ],
-                                                      ),
-                                                      Divider(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryColor,
-                                                      ),
-                                                    ],
+                                                          ],
+                                                        ),
+                                                        Divider(
+                                                          thickness: 1,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                        ),
+                                                      ],
+                                                    ),
                                                   ),
-                                                );
-                                              },
-                                            );
-                                          },
-                                        ),
+                                                ),
+                                              );
+                                            },
+                                          );
+                                        },
                                       ),
                                     ),
                                   ],
