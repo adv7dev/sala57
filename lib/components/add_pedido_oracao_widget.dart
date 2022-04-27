@@ -161,17 +161,12 @@ class _AddPedidoOracaoWidgetState extends State<AddPedidoOracaoWidget> {
                               children: [
                                 FFButtonWidget(
                                   onPressed: () async {
-                                    final pedidoOracaoCreateData = {
-                                      ...createPedidoOracaoRecordData(
-                                        pedido: textController2.text,
-                                        titulo: textController1.text,
-                                        data: getCurrentTimestamp,
-                                        nome: currentUserReference,
-                                      ),
-                                      'pushnotification': [
-                                        currentUserReference
-                                      ],
-                                    };
+                                    final pedidoOracaoCreateData =
+                                        createPedidoOracaoRecordData(
+                                      pedido: textController2.text,
+                                      titulo: textController1.text,
+                                      data: getCurrentTimestamp,
+                                    );
                                     await PedidoOracaoRecord.collection
                                         .doc()
                                         .set(pedidoOracaoCreateData);

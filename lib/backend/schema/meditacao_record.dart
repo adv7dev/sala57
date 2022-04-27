@@ -24,12 +24,6 @@ abstract class MeditacaoRecord
   String get img;
 
   @nullable
-  DocumentReference get postUser;
-
-  @nullable
-  BuiltList<DocumentReference> get likes;
-
-  @nullable
   int get numComents;
 
   @nullable
@@ -43,7 +37,6 @@ abstract class MeditacaoRecord
     ..titulo = ''
     ..texto = ''
     ..img = ''
-    ..likes = ListBuilder()
     ..numComents = 0
     ..postOwner = false;
 
@@ -73,7 +66,6 @@ Map<String, dynamic> createMeditacaoRecordData({
   String texto,
   DateTime data,
   String img,
-  DocumentReference postUser,
   int numComents,
   bool postOwner,
 }) =>
@@ -84,7 +76,5 @@ Map<String, dynamic> createMeditacaoRecordData({
           ..texto = texto
           ..data = data
           ..img = img
-          ..postUser = postUser
-          ..likes = null
           ..numComents = numComents
           ..postOwner = postOwner));

@@ -12,9 +12,6 @@ abstract class PedidoOracaoRecord
       _$pedidoOracaoRecordSerializer;
 
   @nullable
-  DocumentReference get nome;
-
-  @nullable
   String get titulo;
 
   @nullable
@@ -24,7 +21,16 @@ abstract class PedidoOracaoRecord
   DateTime get data;
 
   @nullable
-  BuiltList<DocumentReference> get pushnotification;
+  int get postOwner;
+
+  @nullable
+  int get numComments;
+
+  @nullable
+  BuiltList<DocumentReference> get likes;
+
+  @nullable
+  DocumentReference get postUser;
 
   @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
@@ -33,7 +39,9 @@ abstract class PedidoOracaoRecord
   static void _initializeBuilder(PedidoOracaoRecordBuilder builder) => builder
     ..titulo = ''
     ..pedido = ''
-    ..pushnotification = ListBuilder();
+    ..postOwner = 0
+    ..numComments = 0
+    ..likes = ListBuilder();
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('pedido_oracao');
@@ -58,16 +66,20 @@ abstract class PedidoOracaoRecord
 }
 
 Map<String, dynamic> createPedidoOracaoRecordData({
-  DocumentReference nome,
   String titulo,
   String pedido,
   DateTime data,
+  int postOwner,
+  int numComments,
+  DocumentReference postUser,
 }) =>
     serializers.toFirestore(
         PedidoOracaoRecord.serializer,
         PedidoOracaoRecord((p) => p
-          ..nome = nome
           ..titulo = titulo
           ..pedido = pedido
           ..data = data
-          ..pushnotification = null));
+          ..postOwner = postOwner
+          ..numComments = numComments
+          ..likes = null
+          ..postUser = postUser));
