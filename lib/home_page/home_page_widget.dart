@@ -1,6 +1,9 @@
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../components/add_meditacao_widget.dart';
+import '../components/add_video_widget.dart';
+import '../components/comments_widget.dart';
+import '../create_post/create_post_widget.dart';
 import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -8,6 +11,7 @@ import '../flutter_flow/flutter_flow_youtube_player.dart';
 import '../main.dart';
 import '../meditacoes/meditacoes_widget.dart';
 import '../page_videos_sala57/page_videos_sala57_widget.dart';
+import '../post_details/post_details_widget.dart';
 import '../flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -88,7 +92,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               reverseDuration: Duration(milliseconds: 500),
                               child: NavBarPage(initialPage: 'profilePage'),
                             ),
-                            (r) => false,
+                                (r) => false,
                           );
                         },
                         child: Row(
@@ -105,7 +109,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 height: 100,
                                 decoration: BoxDecoration(
                                   color:
-                                      FlutterFlowTheme.of(context).primaryText,
+                                  FlutterFlowTheme.of(context).primaryText,
                                   boxShadow: [
                                     BoxShadow(
                                       color: FlutterFlowTheme.of(context)
@@ -138,7 +142,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             Expanded(
                               child: Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -150,14 +154,14 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             child: Text(
                                               currentUserDisplayName,
                                               style: FlutterFlowTheme.of(
-                                                      context)
+                                                  context)
                                                   .subtitle1
                                                   .override(
-                                                    fontFamily: 'Lexend Deca',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText,
-                                                  ),
+                                                fontFamily: 'Lexend Deca',
+                                                color: FlutterFlowTheme.of(
+                                                    context)
+                                                    .primaryText,
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -172,13 +176,13 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyText1
                                                 .override(
-                                                  fontFamily: 'Lexend Deca',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryText,
-                                                  fontSize: 10,
-                                                  fontStyle: FontStyle.italic,
-                                                ),
+                                              fontFamily: 'Lexend Deca',
+                                              color: FlutterFlowTheme.of(
+                                                  context)
+                                                  .secondaryText,
+                                              fontSize: 10,
+                                              fontStyle: FontStyle.italic,
+                                            ),
                                           ),
                                         ),
                                       ],
@@ -236,11 +240,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .subtitle1
                                             .override(
-                                              fontFamily: 'Lexend Deca',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                            ),
+                                          fontFamily: 'Lexend Deca',
+                                          color:
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -291,11 +295,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .subtitle1
                                             .override(
-                                              fontFamily: 'Lexend Deca',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                            ),
+                                          fontFamily: 'Lexend Deca',
+                                          color:
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -346,11 +350,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .subtitle1
                                             .override(
-                                              fontFamily: 'Lexend Deca',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                            ),
+                                          fontFamily: 'Lexend Deca',
+                                          color:
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -428,11 +432,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-0.91, 0.01),
+                                        AlignmentDirectional(-0.91, 0.01),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0, 30, 0, 0),
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0, 30, 0, 0),
                                           child: InkWell(
                                             onTap: () async {
                                               scaffoldKey.currentState
@@ -448,11 +452,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.88, -0.06),
+                                        AlignmentDirectional(0.88, -0.06),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0, 30, 0, 0),
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0, 30, 0, 0),
                                           child: InkWell(
                                             onTap: () async {
                                               setDarkModeSetting(
@@ -483,7 +487,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           child: Card(
                             clipBehavior: Clip.antiAliasWithSaveLayer,
                             color:
-                                FlutterFlowTheme.of(context).primaryBackground,
+                            FlutterFlowTheme.of(context).primaryBackground,
                             elevation: 10,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5),
@@ -502,11 +506,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-0.91, 0.01),
+                                        AlignmentDirectional(-0.91, 0.01),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0, 30, 0, 0),
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0, 30, 0, 0),
                                           child: InkWell(
                                             onTap: () async {
                                               scaffoldKey.currentState
@@ -522,11 +526,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.86, -0.12),
+                                        AlignmentDirectional(0.86, -0.12),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0, 30, 0, 0),
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0, 30, 0, 0),
                                           child: InkWell(
                                             onTap: () async {
                                               setDarkModeSetting(
@@ -558,7 +562,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           child: Card(
                             clipBehavior: Clip.antiAliasWithSaveLayer,
                             color:
-                                FlutterFlowTheme.of(context).primaryBackground,
+                            FlutterFlowTheme.of(context).primaryBackground,
                             elevation: 5,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5),
@@ -577,7 +581,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           type: PageTransitionType.rightToLeft,
                                           duration: Duration(milliseconds: 500),
                                           reverseDuration:
-                                              Duration(milliseconds: 500),
+                                          Duration(milliseconds: 500),
                                           child: MeditacoesWidget(),
                                         ),
                                       );
@@ -585,7 +589,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
                                           FFLocalizations.of(context).getText(
@@ -594,31 +598,74 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           style: FlutterFlowTheme.of(context)
                                               .subtitle1
                                               .override(
-                                                fontFamily: 'Lexend Deca',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                fontWeight: FontWeight.bold,
-                                              ),
+                                            fontFamily: 'Lexend Deca',
+                                            color:
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            fontWeight: FontWeight.bold,
+                                          ),
                                         ),
-                                        Text(
-                                          dateTimeFormat(
-                                              'MMMMEEEEd', getCurrentTimestamp),
-                                          style: FlutterFlowTheme.of(context)
-                                              .subtitle1
-                                              .override(
-                                                fontFamily: 'Lexend Deca',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                fontSize: 15,
-                                                fontStyle: FontStyle.italic,
-                                              ),
+                                        Expanded(
+                                          child: Text(
+                                            dateTimeFormat('MMMMEEEEd',
+                                                getCurrentTimestamp),
+                                            style: FlutterFlowTheme.of(context)
+                                                .subtitle1
+                                                .override(
+                                              fontFamily: 'Lexend Deca',
+                                              color: FlutterFlowTheme.of(
+                                                  context)
+                                                  .secondaryText,
+                                              fontSize: 12,
+                                              fontStyle: FontStyle.italic,
+                                            ),
+                                          ),
                                         ),
+                                        if (currentUserDocument?.adm ?? true)
+                                          Padding(
+                                            padding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                10, 0, 0, 0),
+                                            child: AuthUserStreamWidget(
+                                              child: InkWell(
+                                                onTap: () async {
+                                                  await showModalBottomSheet(
+                                                    isScrollControlled: true,
+                                                    backgroundColor:
+                                                    FlutterFlowTheme.of(
+                                                        context)
+                                                        .secondaryBackground,
+                                                    context: context,
+                                                    builder: (context) {
+                                                      return Padding(
+                                                        padding: MediaQuery.of(
+                                                            context)
+                                                            .viewInsets,
+                                                        child: Container(
+                                                          height: MediaQuery.of(
+                                                              context)
+                                                              .size
+                                                              .height *
+                                                              0.5,
+                                                          child:
+                                                          AddMeditacaoWidget(),
+                                                        ),
+                                                      );
+                                                    },
+                                                  );
+                                                },
+                                                child: Icon(
+                                                  Icons.add,
+                                                  color: Color(0xFFD2393C),
+                                                  size: 30,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  10, 0, 0, 0),
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              10, 0, 0, 0),
                                           child: Icon(
                                             Icons.chevron_right,
                                             color: Color(0xFFD2393C),
@@ -652,17 +699,17 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 child: Text(
                                                   columnMeditacaoRecord.titulo,
                                                   style: FlutterFlowTheme.of(
-                                                          context)
+                                                      context)
                                                       .title1
                                                       .override(
-                                                        fontFamily:
-                                                            'Lexend Deca',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        fontSize: 15,
-                                                      ),
+                                                    fontFamily:
+                                                    'Lexend Deca',
+                                                    color:
+                                                    FlutterFlowTheme.of(
+                                                        context)
+                                                        .primaryText,
+                                                    fontSize: 15,
+                                                  ),
                                                 ),
                                               ),
                                               collapsed: Container(
@@ -672,7 +719,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 height: 40,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
-                                                          context)
+                                                      context)
                                                       .primaryBackground,
                                                 ),
                                                 child: Padding(
@@ -684,16 +731,18 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                       '6p2aha33' /* Toque para visulizar a meditaç... */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
-                                                            context)
+                                                        context)
                                                         .bodyText1
                                                         .override(
-                                                          fontFamily:
-                                                              'Lexend Deca',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          fontSize: 15,
-                                                        ),
+                                                      fontFamily:
+                                                      'Lexend Deca',
+                                                      color: FlutterFlowTheme
+                                                          .of(context)
+                                                          .secondaryText,
+                                                      fontSize: 15,
+                                                      fontWeight:
+                                                      FontWeight.w300,
+                                                    ),
                                                   ),
                                                 ),
                                               ),
@@ -711,9 +760,14 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 tapBodyToExpand: false,
                                                 tapBodyToCollapse: false,
                                                 headerAlignment:
-                                                    ExpandablePanelHeaderAlignment
-                                                        .center,
+                                                ExpandablePanelHeaderAlignment
+                                                    .center,
                                                 hasIcon: true,
+                                                expandIcon: Icons.expand_less,
+                                                collapseIcon: Icons.expand_more,
+                                                iconColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryText,
                                               ),
                                             ),
                                           ),
@@ -746,7 +800,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               height: 50,
                               child: SpinKitPumpingHeart(
                                 color:
-                                    FlutterFlowTheme.of(context).primaryColor,
+                                FlutterFlowTheme.of(context).primaryColor,
                                 size: 50,
                               ),
                             ),
@@ -759,9 +813,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           return Container();
                         }
                         final videoVideosSala57Record =
-                            videoVideosSala57RecordList.isNotEmpty
-                                ? videoVideosSala57RecordList.first
-                                : null;
+                        videoVideosSala57RecordList.isNotEmpty
+                            ? videoVideosSala57RecordList.first
+                            : null;
                         return Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -769,7 +823,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             Expanded(
                               child: Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
+                                EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
                                 child: Card(
                                   clipBehavior: Clip.antiAliasWithSaveLayer,
                                   color: FlutterFlowTheme.of(context)
@@ -792,9 +846,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 type: PageTransitionType
                                                     .rightToLeft,
                                                 duration:
-                                                    Duration(milliseconds: 500),
+                                                Duration(milliseconds: 500),
                                                 reverseDuration:
-                                                    Duration(milliseconds: 500),
+                                                Duration(milliseconds: 500),
                                                 child: PageVideosSala57Widget(),
                                               ),
                                             );
@@ -802,7 +856,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
+                                            MainAxisAlignment.spaceBetween,
                                             children: [
                                               Expanded(
                                                 child: Text(
@@ -811,20 +865,63 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                     '153bgkpv' /* ÚLTIMA SALA 57 AO VIVO */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
-                                                          context)
+                                                      context)
                                                       .subtitle1
                                                       .override(
-                                                        fontFamily:
-                                                            'Lexend Deca',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                      ),
+                                                    fontFamily:
+                                                    'Lexend Deca',
+                                                    color:
+                                                    FlutterFlowTheme.of(
+                                                        context)
+                                                        .primaryText,
+                                                    fontWeight:
+                                                    FontWeight.w600,
+                                                  ),
                                                 ),
                                               ),
+                                              if (currentUserDocument?.adm ??
+                                                  true)
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(10, 0, 0, 0),
+                                                  child: AuthUserStreamWidget(
+                                                    child: InkWell(
+                                                      onTap: () async {
+                                                        await showModalBottomSheet(
+                                                          isScrollControlled:
+                                                          true,
+                                                          backgroundColor:
+                                                          FlutterFlowTheme.of(
+                                                              context)
+                                                              .secondaryBackground,
+                                                          context: context,
+                                                          builder: (context) {
+                                                            return Padding(
+                                                              padding: MediaQuery
+                                                                  .of(context)
+                                                                  .viewInsets,
+                                                              child: Container(
+                                                                height: MediaQuery.of(
+                                                                    context)
+                                                                    .size
+                                                                    .height *
+                                                                    0.5,
+                                                                child:
+                                                                AddVideoWidget(),
+                                                              ),
+                                                            );
+                                                          },
+                                                        );
+                                                      },
+                                                      child: Icon(
+                                                        Icons.add,
+                                                        color:
+                                                        Color(0xFFD2393C),
+                                                        size: 30,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
                                               Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(10, 0, 0, 0),
@@ -876,9 +973,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 type: PageTransitionType
                                                     .rightToLeft,
                                                 duration:
-                                                    Duration(milliseconds: 450),
+                                                Duration(milliseconds: 450),
                                                 reverseDuration:
-                                                    Duration(milliseconds: 450),
+                                                Duration(milliseconds: 450),
                                                 child: PageVideosSala57Widget(),
                                               ),
                                             );
@@ -886,7 +983,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
+                                            MainAxisAlignment.spaceBetween,
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
@@ -897,19 +994,19 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                     '5t723jr7' /* Ver mais vídeos publicados */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
-                                                          context)
+                                                      context)
                                                       .bodyText1
                                                       .override(
-                                                        fontFamily:
-                                                            'Lexend Deca',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryColor,
-                                                        fontSize: 15,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
+                                                    fontFamily:
+                                                    'Lexend Deca',
+                                                    color:
+                                                    FlutterFlowTheme.of(
+                                                        context)
+                                                        .primaryColor,
+                                                    fontSize: 15,
+                                                    fontWeight:
+                                                    FontWeight.w500,
+                                                  ),
                                                 ),
                                               ),
                                               Padding(
@@ -918,7 +1015,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 child: Icon(
                                                   Icons.chevron_right_rounded,
                                                   color: FlutterFlowTheme.of(
-                                                          context)
+                                                      context)
                                                       .primaryColor,
                                                   size: 24,
                                                 ),
@@ -946,7 +1043,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           child: Card(
                             clipBehavior: Clip.antiAliasWithSaveLayer,
                             color:
-                                FlutterFlowTheme.of(context).primaryBackground,
+                            FlutterFlowTheme.of(context).primaryBackground,
                             elevation: 5,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5),
@@ -960,7 +1057,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
                                         FFLocalizations.of(context).getText(
@@ -969,34 +1066,26 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .subtitle1
                                             .override(
-                                              fontFamily: 'Lexend Deca',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              fontWeight: FontWeight.w600,
-                                            ),
+                                          fontFamily: 'Lexend Deca',
+                                          color:
+                                          FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          fontWeight: FontWeight.w600,
+                                        ),
                                       ),
                                       InkWell(
                                         onTap: () async {
-                                          showModalBottomSheet(
-                                            isScrollControlled: true,
-                                            backgroundColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryBackground,
-                                            context: context,
-                                            builder: (context) {
-                                              return Padding(
-                                                padding: MediaQuery.of(context)
-                                                    .viewInsets,
-                                                child: Container(
-                                                  height: MediaQuery.of(context)
-                                                          .size
-                                                          .height *
-                                                      0.7,
-                                                  child: AddMeditacaoWidget(),
-                                                ),
-                                              );
-                                            },
+                                          await Navigator.push(
+                                            context,
+                                            PageTransition(
+                                              type: PageTransitionType.scale,
+                                              alignment: Alignment.bottomCenter,
+                                              duration:
+                                              Duration(milliseconds: 400),
+                                              reverseDuration:
+                                              Duration(milliseconds: 400),
+                                              child: CreatePostWidget(),
+                                            ),
                                           );
                                         },
                                         child: Icon(
@@ -1011,18 +1100,15 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 ),
                                 Divider(
                                   color:
-                                      FlutterFlowTheme.of(context).primaryColor,
+                                  FlutterFlowTheme.of(context).primaryColor,
                                 ),
                                 Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Expanded(
-                                      child: StreamBuilder<
-                                          List<PedidoOracaoRecord>>(
-                                        stream: queryPedidoOracaoRecord(
-                                          queryBuilder: (pedidoOracaoRecord) =>
-                                              pedidoOracaoRecord.orderBy('data',
-                                                  descending: true),
+                                      child:
+                                      StreamBuilder<List<UserPostsRecord>>(
+                                        stream: queryUserPostsRecord(
                                           limit: 10,
                                         ),
                                         builder: (context, snapshot) {
@@ -1034,15 +1120,15 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 height: 50,
                                                 child: SpinKitPumpingHeart(
                                                   color: FlutterFlowTheme.of(
-                                                          context)
+                                                      context)
                                                       .primaryColor,
                                                   size: 50,
                                                 ),
                                               ),
                                             );
                                           }
-                                          List<PedidoOracaoRecord>
-                                              listViewPedidoOracaoRecordList =
+                                          List<UserPostsRecord>
+                                          listViewUserPostsRecordList =
                                               snapshot.data;
                                           return ListView.builder(
                                             padding: EdgeInsets.zero,
@@ -1050,317 +1136,366 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             shrinkWrap: true,
                                             scrollDirection: Axis.vertical,
                                             itemCount:
-                                                listViewPedidoOracaoRecordList
-                                                    .length,
+                                            listViewUserPostsRecordList
+                                                .length,
                                             itemBuilder:
                                                 (context, listViewIndex) {
-                                              final listViewPedidoOracaoRecord =
-                                                  listViewPedidoOracaoRecordList[
-                                                      listViewIndex];
+                                              final listViewUserPostsRecord =
+                                              listViewUserPostsRecordList[
+                                              listViewIndex];
                                               return Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(5, 5, 5, 5),
-                                                child: Card(
-                                                  clipBehavior: Clip
-                                                      .antiAliasWithSaveLayer,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                  elevation: 5,
-                                                  shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5),
-                                                  ),
-                                                  child: Padding(
-                                                    padding:
+                                                child:
+                                                StreamBuilder<UsersRecord>(
+                                                  stream:
+                                                  UsersRecord.getDocument(
+                                                      listViewUserPostsRecord
+                                                          .postUser),
+                                                  builder: (context, snapshot) {
+                                                    // Customize what your widget looks like when it's loading.
+                                                    if (!snapshot.hasData) {
+                                                      return Center(
+                                                        child: SizedBox(
+                                                          width: 50,
+                                                          height: 50,
+                                                          child:
+                                                          SpinKitPumpingHeart(
+                                                            color: FlutterFlowTheme
+                                                                .of(context)
+                                                                .primaryColor,
+                                                            size: 50,
+                                                          ),
+                                                        ),
+                                                      );
+                                                    }
+                                                    final cardUsersRecord =
+                                                        snapshot.data;
+                                                    return Card(
+                                                      clipBehavior: Clip
+                                                          .antiAliasWithSaveLayer,
+                                                      color: FlutterFlowTheme
+                                                          .of(context)
+                                                          .secondaryBackground,
+                                                      elevation: 5,
+                                                      shape:
+                                                      RoundedRectangleBorder(
+                                                        borderRadius:
+                                                        BorderRadius
+                                                            .circular(5),
+                                                      ),
+                                                      child: Padding(
+                                                        padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                10, 10, 10, 10),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          children: [
-                                                            Expanded(
-                                                              child: Text(
-                                                                listViewPedidoOracaoRecord
-                                                                    .titulo
-                                                                    .maybeHandleOverflow(
-                                                                  maxChars: 50,
-                                                                  replacement:
-                                                                      '…',
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .title3
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Lexend Deca',
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
-                                                                      fontSize:
-                                                                          15,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w600,
-                                                                    ),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          children: [
-                                                            Expanded(
-                                                              child:
-                                                                  AutoSizeText(
-                                                                listViewPedidoOracaoRecord
-                                                                    .pedido
-                                                                    .maybeHandleOverflow(
-                                                                  maxChars: 300,
-                                                                  replacement:
-                                                                      '…',
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyText1
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Lexend Deca',
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryText,
-                                                                    ),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .end,
-                                                          children: [
-                                                            Expanded(
-                                                              child: Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            10,
-                                                                            0),
+                                                            .fromSTEB(10,
+                                                            10, 10, 10),
+                                                        child: InkWell(
+                                                          onTap: () async {
+                                                            await Navigator
+                                                                .push(
+                                                              context,
+                                                              PageTransition(
+                                                                type:
+                                                                PageTransitionType
+                                                                    .scale,
+                                                                alignment: Alignment
+                                                                    .bottomCenter,
+                                                                duration: Duration(
+                                                                    milliseconds:
+                                                                    500),
+                                                                reverseDuration:
+                                                                Duration(
+                                                                    milliseconds:
+                                                                    500),
                                                                 child:
-                                                                    AuthUserStreamWidget(
-                                                                  child: Text(
-                                                                    currentUserDisplayName,
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .end,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyText1
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Lexend Deca',
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryColor,
-                                                                        ),
-                                                                  ),
+                                                                PostDetailsWidget(
+                                                                  userRecord:
+                                                                  cardUsersRecord,
+                                                                  postReference:
+                                                                  listViewUserPostsRecord
+                                                                      .reference,
                                                                 ),
                                                               ),
-                                                            ),
-                                                            Text(
-                                                              dateTimeFormat(
-                                                                  'd/M h:mm a',
-                                                                  listViewPedidoOracaoRecord
-                                                                      .data),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyText1
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Lexend Deca',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryText,
-                                                                  ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(8,
-                                                                      4, 8, 0),
-                                                          child: Row(
+                                                            );
+                                                          },
+                                                          child: Column(
                                                             mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .spaceBetween,
+                                                            MainAxisSize
+                                                                .max,
                                                             children: [
+                                                              Padding(
+                                                                padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                    0,
+                                                                    0,
+                                                                    0,
+                                                                    5),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                                  children: [
+                                                                    Expanded(
+                                                                      child:
+                                                                      Text(
+                                                                        listViewUserPostsRecord
+                                                                            .postTitle
+                                                                            .maybeHandleOverflow(
+                                                                          maxChars:
+                                                                          50,
+                                                                          replacement:
+                                                                          '…',
+                                                                        ),
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .title3
+                                                                            .override(
+                                                                          fontFamily: 'Lexend Deca',
+                                                                          color: FlutterFlowTheme.of(context).primaryText,
+                                                                          fontSize: 15,
+                                                                          fontWeight: FontWeight.w600,
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                              Padding(
+                                                                padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                    0,
+                                                                    0,
+                                                                    0,
+                                                                    10),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                                  children: [
+                                                                    Expanded(
+                                                                      child:
+                                                                      AutoSizeText(
+                                                                        listViewUserPostsRecord
+                                                                            .postDescription
+                                                                            .maybeHandleOverflow(
+                                                                          maxChars:
+                                                                          300,
+                                                                          replacement:
+                                                                          '…',
+                                                                        ),
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .bodyText1
+                                                                            .override(
+                                                                          fontFamily: 'Lexend Deca',
+                                                                          color: FlutterFlowTheme.of(context).secondaryText,
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
                                                               Row(
                                                                 mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
+                                                                MainAxisSize
+                                                                    .max,
+                                                                mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .end,
                                                                 children: [
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            16,
-                                                                            0),
-                                                                    child: Row(
+                                                                  Expanded(
+                                                                    child:
+                                                                    Padding(
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                          0,
+                                                                          0,
+                                                                          10,
+                                                                          0),
+                                                                      child:
+                                                                      Text(
+                                                                        cardUsersRecord
+                                                                            .displayName,
+                                                                        textAlign:
+                                                                        TextAlign.end,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .bodyText1
+                                                                            .override(
+                                                                          fontFamily: 'Lexend Deca',
+                                                                          color: FlutterFlowTheme.of(context).primaryColor,
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  Text(
+                                                                    dateTimeFormat(
+                                                                        'relative',
+                                                                        listViewUserPostsRecord
+                                                                            .timePosted),
+                                                                    style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                        .bodyText1
+                                                                        .override(
+                                                                      fontFamily:
+                                                                      'Lexend Deca',
+                                                                      color:
+                                                                      FlutterFlowTheme.of(context).secondaryText,
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                              Padding(
+                                                                padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                    8,
+                                                                    4,
+                                                                    8,
+                                                                    0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                                  mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
+                                                                  children: [
+                                                                    Row(
                                                                       mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
+                                                                      MainAxisSize
+                                                                          .max,
                                                                       children: [
-                                                                        Container(
-                                                                          width:
-                                                                              41,
-                                                                          height:
-                                                                              41,
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              16,
+                                                                              0),
                                                                           child:
-                                                                              Stack(
+                                                                          Row(
+                                                                            mainAxisSize:
+                                                                            MainAxisSize.max,
                                                                             children: [
-                                                                              if (listViewPedidoOracaoRecord.likes.toList()?.contains(currentUserReference) ?? true)
-                                                                                Align(
-                                                                                  alignment: AlignmentDirectional(0, 0.25),
-                                                                                  child: InkWell(
-                                                                                    onTap: () async {
-                                                                                      final pedidoOracaoUpdateData = {
-                                                                                        'likes': FieldValue.arrayUnion([
-                                                                                          currentUserReference
+                                                                              Container(
+                                                                                width: 41,
+                                                                                height: 41,
+                                                                                child: Stack(
+                                                                                  children: [
+                                                                                    if (!(listViewUserPostsRecord.likes.toList()?.contains(currentUserReference)) ?? true)
+                                                                                      Align(
+                                                                                        alignment: AlignmentDirectional(0, 0.25),
+                                                                                        child: InkWell(
+                                                                                          onTap: () async {
+                                                                                            final userPostsUpdateData = {
+                                                                                              'likes': FieldValue.arrayUnion([
+                                                                                                currentUserReference
+                                                                                              ]),
+                                                                                            };
+                                                                                            await listViewUserPostsRecord.reference.update(userPostsUpdateData);
+                                                                                            await (animationsMap['iconOnActionTriggerAnimation'].curvedAnimation.parent as AnimationController).forward(from: 0.0);
+                                                                                          },
+                                                                                          child: FaIcon(
+                                                                                            FontAwesomeIcons.pray,
+                                                                                            color: Color(0xFF95A1AC),
+                                                                                            size: 25,
+                                                                                          ),
+                                                                                        ),
+                                                                                      ),
+                                                                                    if (listViewUserPostsRecord.likes.toList()?.contains(currentUserReference) ?? true)
+                                                                                      Align(
+                                                                                        alignment: AlignmentDirectional(0, 0.25),
+                                                                                        child:
+                                                                                        InkWell(
+                                                                                          onTap: () async {
+                                                                                            final userPostsUpdateData = {
+                                                                                              'likes': FieldValue.arrayRemove([
+                                                                                                currentUserReference
+                                                                                              ]),
+                                                                                            };
+                                                                                            await listViewUserPostsRecord.reference.update(userPostsUpdateData);
+                                                                                          },
+                                                                                          child: FaIcon(
+                                                                                            FontAwesomeIcons.pray,
+                                                                                            color: Color(0xFF4B39EF),
+                                                                                            size: 25,
+                                                                                          ),
+                                                                                        ).animated([
+                                                                                          animationsMap['iconOnActionTriggerAnimation']
                                                                                         ]),
-                                                                                      };
-                                                                                      await listViewPedidoOracaoRecord.reference.update(pedidoOracaoUpdateData);
-                                                                                      await (animationsMap['iconOnActionTriggerAnimation'].curvedAnimation.parent as AnimationController).forward(from: 0.0);
-                                                                                    },
-                                                                                    child: FaIcon(
-                                                                                      FontAwesomeIcons.pray,
-                                                                                      color: Color(0xFF95A1AC),
-                                                                                      size: 25,
-                                                                                    ),
+                                                                                      ),
+                                                                                  ],
+                                                                                ),
+                                                                              ),
+                                                                              Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(4, 0, 0, 0),
+                                                                                child: Text(
+                                                                                  valueOrDefault<String>(
+                                                                                    functions.likes(listViewUserPostsRecord).toString(),
+                                                                                    '0',
+                                                                                  ),
+                                                                                  style: FlutterFlowTheme.of(context).bodyText2.override(
+                                                                                    fontFamily: 'Lexend Deca',
+                                                                                    color: Color(0xFF8B97A2),
+                                                                                    fontSize: 14,
+                                                                                    fontWeight: FontWeight.normal,
                                                                                   ),
                                                                                 ),
-                                                                              if (listViewPedidoOracaoRecord.likes.toList()?.contains(currentUserReference) ?? true)
-                                                                                Align(
-                                                                                  alignment: AlignmentDirectional(0, 0.25),
-                                                                                  child:
-                                                                                      InkWell(
-                                                                                    onTap: () async {
-                                                                                      final pedidoOracaoUpdateData = {
-                                                                                        'likes': FieldValue.arrayRemove([
-                                                                                          currentUserReference
-                                                                                        ]),
-                                                                                      };
-                                                                                      await listViewPedidoOracaoRecord.reference.update(pedidoOracaoUpdateData);
-                                                                                    },
-                                                                                    child: FaIcon(
-                                                                                      FontAwesomeIcons.pray,
-                                                                                      color: Color(0xFF4B39EF),
-                                                                                      size: 25,
-                                                                                    ),
-                                                                                  ).animated([
-                                                                                    animationsMap['iconOnActionTriggerAnimation']
-                                                                                  ]),
-                                                                                ),
+                                                                              ),
                                                                             ],
                                                                           ),
                                                                         ),
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              4,
-                                                                              0,
-                                                                              0,
-                                                                              0),
-                                                                          child:
-                                                                              Text(
-                                                                            valueOrDefault<String>(
-                                                                              functions.orar(listViewPedidoOracaoRecord).toString(),
-                                                                              '0',
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                          MainAxisSize.max,
+                                                                          children: [
+                                                                            Icon(
+                                                                              Icons.mode_comment_outlined,
+                                                                              color: Color(0xFF95A1AC),
+                                                                              size: 24,
                                                                             ),
-                                                                            style: FlutterFlowTheme.of(context).bodyText2.override(
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(4, 0, 0, 0),
+                                                                              child: Text(
+                                                                                valueOrDefault<String>(
+                                                                                  listViewUserPostsRecord.numComments.toString(),
+                                                                                  '0',
+                                                                                ),
+                                                                                style: FlutterFlowTheme.of(context).bodyText2.override(
                                                                                   fontFamily: 'Lexend Deca',
                                                                                   color: Color(0xFF8B97A2),
                                                                                   fontSize: 14,
                                                                                   fontWeight: FontWeight.normal,
                                                                                 ),
-                                                                          ),
+                                                                              ),
+                                                                            ),
+                                                                          ],
                                                                         ),
                                                                       ],
                                                                     ),
-                                                                  ),
-                                                                  Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    children: [
-                                                                      Icon(
-                                                                        Icons
-                                                                            .mode_comment_outlined,
-                                                                        color: Color(
-                                                                            0xFF95A1AC),
-                                                                        size:
-                                                                            24,
-                                                                      ),
-                                                                      Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            4,
-                                                                            0,
-                                                                            0,
-                                                                            0),
-                                                                        child:
-                                                                            Text(
-                                                                          valueOrDefault<
-                                                                              String>(
-                                                                            listViewPedidoOracaoRecord.numComments.toString(),
-                                                                            '0',
-                                                                          ),
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyText2
-                                                                              .override(
-                                                                                fontFamily: 'Lexend Deca',
-                                                                                color: Color(0xFF8B97A2),
-                                                                                fontSize: 14,
-                                                                                fontWeight: FontWeight.normal,
-                                                                              ),
+                                                                    Row(
+                                                                      mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                      children: [
+                                                                        Icon(
+                                                                          Icons
+                                                                              .ios_share,
+                                                                          color:
+                                                                          Color(0xFF95A1AC),
+                                                                          size:
+                                                                          24,
                                                                         ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                              Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  Icon(
-                                                                    Icons
-                                                                        .ios_share,
-                                                                    color: Color(
-                                                                        0xFF95A1AC),
-                                                                    size: 24,
-                                                                  ),
-                                                                ],
+                                                                      ],
+                                                                    ),
+                                                                  ],
+                                                                ),
                                                               ),
                                                             ],
                                                           ),
                                                         ),
-                                                      ],
-                                                    ),
-                                                  ),
+                                                      ),
+                                                    );
+                                                  },
                                                 ),
                                               );
                                             },

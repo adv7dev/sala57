@@ -57,7 +57,7 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -66,7 +66,7 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
           buttonSize: 60,
           icon: Icon(
             Icons.arrow_back_rounded,
-            color: Colors.black,
+            color: FlutterFlowTheme.of(context).primaryColor,
             size: 24,
           ),
           onPressed: () async {
@@ -81,21 +81,21 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
                   'o6ycg65w' /* Group Chat */,
                 ),
                 style: FlutterFlowTheme.of(context).bodyText1.override(
-                      fontFamily: 'Lexend Deca',
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  fontFamily: 'Lexend Deca',
+                  color: Colors.black,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             if (!(isGroupChat()) ?? true)
               Text(
                 widget.chatUser.displayName,
                 style: FlutterFlowTheme.of(context).bodyText1.override(
-                      fontFamily: 'Lexend Deca',
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  fontFamily: 'Lexend Deca',
+                  color: FlutterFlowTheme.of(context).primaryText,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
           ],
         ),
@@ -121,7 +121,7 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
                 },
                 child: Icon(
                   Icons.person_add,
-                  color: Colors.black,
+                  color: FlutterFlowTheme.of(context).primaryText,
                   size: 24,
                 ),
               ),
@@ -131,6 +131,7 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
         centerTitle: false,
         elevation: 2,
       ),
+      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
         child: StreamBuilder<FFChatInfo>(
           stream: FFChatManager.instance.getChatInfo(
@@ -139,64 +140,65 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
           ),
           builder: (context, snapshot) => snapshot.hasData
               ? FFChatPage(
-                  chatInfo: snapshot.data,
-                  allowImages: true,
-                  backgroundColor: Color(0xFFF2F4F8),
-                  timeDisplaySetting: TimeDisplaySetting.visibleOnTap,
-                  currentUserBoxDecoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(
-                      color: Colors.transparent,
-                    ),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  otherUsersBoxDecoration: BoxDecoration(
-                    color: Color(0xFF4B39EF),
-                    border: Border.all(
-                      color: Colors.transparent,
-                    ),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  currentUserTextStyle: GoogleFonts.getFont(
-                    'DM Sans',
-                    color: Color(0xFF1E2429),
-                    fontWeight: FontWeight.w500,
-                    fontSize: 14,
-                    fontStyle: FontStyle.normal,
-                  ),
-                  otherUsersTextStyle: GoogleFonts.getFont(
-                    'DM Sans',
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 14,
-                  ),
-                  inputHintTextStyle: GoogleFonts.getFont(
-                    'DM Sans',
-                    color: Color(0xFF95A1AC),
-                    fontWeight: FontWeight.normal,
-                    fontSize: 14,
-                  ),
-                  inputTextStyle: GoogleFonts.getFont(
-                    'DM Sans',
-                    color: Colors.black,
-                    fontWeight: FontWeight.normal,
-                    fontSize: 14,
-                  ),
-                  emptyChatWidget: Image.asset(
-                    'assets/images/chat_(1).png',
-                    width: MediaQuery.of(context).size.width * 0.76,
-                  ),
-                )
+            chatInfo: snapshot.data,
+            allowImages: true,
+            backgroundColor:
+            FlutterFlowTheme.of(context).secondaryBackground,
+            timeDisplaySetting: TimeDisplaySetting.visibleOnTap,
+            currentUserBoxDecoration: BoxDecoration(
+              color: FlutterFlowTheme.of(context).primaryText,
+              border: Border.all(
+                color: Colors.transparent,
+              ),
+              borderRadius: BorderRadius.circular(15),
+            ),
+            otherUsersBoxDecoration: BoxDecoration(
+              color: FlutterFlowTheme.of(context).primaryColor,
+              border: Border.all(
+                color: Colors.transparent,
+              ),
+              borderRadius: BorderRadius.circular(15),
+            ),
+            currentUserTextStyle: GoogleFonts.getFont(
+              'DM Sans',
+              color: FlutterFlowTheme.of(context).primaryColor,
+              fontWeight: FontWeight.w500,
+              fontSize: 14,
+              fontStyle: FontStyle.normal,
+            ),
+            otherUsersTextStyle: GoogleFonts.getFont(
+              'DM Sans',
+              color: Colors.white,
+              fontWeight: FontWeight.w500,
+              fontSize: 14,
+            ),
+            inputHintTextStyle: GoogleFonts.getFont(
+              'DM Sans',
+              color: FlutterFlowTheme.of(context).primaryColor,
+              fontWeight: FontWeight.normal,
+              fontSize: 14,
+            ),
+            inputTextStyle: GoogleFonts.getFont(
+              'DM Sans',
+              color: Color(0xFF0B0B0B),
+              fontWeight: FontWeight.normal,
+              fontSize: 14,
+            ),
+            emptyChatWidget: Image.asset(
+              'assets/images/chat_(1).png',
+              width: MediaQuery.of(context).size.width * 0.76,
+            ),
+          )
               : Center(
-                  child: SizedBox(
-                    width: 50,
-                    height: 50,
-                    child: SpinKitPumpingHeart(
-                      color: FlutterFlowTheme.of(context).primaryColor,
-                      size: 50,
-                    ),
-                  ),
-                ),
+            child: SizedBox(
+              width: 50,
+              height: 50,
+              child: SpinKitPumpingHeart(
+                color: FlutterFlowTheme.of(context).primaryColor,
+                size: 50,
+              ),
+            ),
+          ),
         ),
       ),
     );

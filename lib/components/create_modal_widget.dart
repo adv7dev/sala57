@@ -55,7 +55,7 @@ class _CreateModalWidgetState extends State<CreateModalWidget> {
                           children: [
                             Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
+                              EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   'pmphyy23' /* Create Post */,
@@ -63,16 +63,16 @@ class _CreateModalWidgetState extends State<CreateModalWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .title3
                                     .override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: FlutterFlowTheme.of(context)
-                                          .tertiaryColor,
-                                    ),
+                                  fontFamily: 'Lexend Deca',
+                                  color: FlutterFlowTheme.of(context)
+                                      .tertiaryColor,
+                                ),
                               ),
                             ),
                             Expanded(
                               child: Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
+                                EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     'gukmr1o5' /* Share a photo that will appear... */,
@@ -129,20 +129,20 @@ class _CreateModalWidgetState extends State<CreateModalWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              'o2qfpany' /* Create Post */,
+                              'o2qfpany' /* Pedir Oração */,
                             ),
                             style: FlutterFlowTheme.of(context).title3.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: FlutterFlowTheme.of(context)
-                                      .tertiaryColor,
-                                ),
+                              fontFamily: 'Lexend Deca',
+                              color: FlutterFlowTheme.of(context)
+                                  .tertiaryColor,
+                            ),
                           ),
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              'k8s4bryi' /* Share photos on your timeline. */,
+                              'k8s4bryi' /* Envie um pedido de oração... */,
                             ),
                             style: FlutterFlowTheme.of(context).bodyText1,
                           ),

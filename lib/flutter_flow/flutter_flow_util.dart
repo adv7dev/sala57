@@ -20,6 +20,7 @@ export 'package:cloud_firestore/cloud_firestore.dart' show DocumentReference;
 export 'package:page_transition/page_transition.dart';
 export 'internationalization.dart' show FFLocalizations;
 
+
 T valueOrDefault<T>(T value, T defaultValue) =>
     (value is String && value.isEmpty) || value == null ? defaultValue : value;
 
@@ -30,7 +31,7 @@ String dateTimeFormat(String format, DateTime dateTime) {
   if (format == 'relative') {
     return timeago.format(dateTime);
   }
-  return DateFormat(format).format(dateTime);
+  return DateFormat(format, 'pt').format(dateTime);
 }
 
 Future launchURL(String url) async {
@@ -58,34 +59,34 @@ enum DecimalType {
 }
 
 String formatNumber(
-  num value, {
-  FormatType formatType,
-  DecimalType decimalType,
-  String currency,
-  bool toLowerCase = false,
-  String format,
-  String locale,
-}) {
-  var formattedValue = '';
+    num value, {
+      FormatType formatType,
+      DecimalType decimalType,
+      String currency,
+      bool toLowerCase = false,
+      String format,
+      String locale,
+    }) {
+  var formattedValue = 'pt';
   switch (formatType) {
     case FormatType.decimal:
       switch (decimalType) {
         case DecimalType.automatic:
-          formattedValue = NumberFormat.decimalPattern().format(value);
+          formattedValue = NumberFormat.decimalPattern('pt').format(value);
           break;
         case DecimalType.periodDecimal:
-          formattedValue = NumberFormat.decimalPattern('en_US').format(value);
+          formattedValue = NumberFormat.decimalPattern('pt').format(value);
           break;
         case DecimalType.commaDecimal:
-          formattedValue = NumberFormat.decimalPattern('es_PA').format(value);
+          formattedValue = NumberFormat.decimalPattern('pt').format(value);
           break;
       }
       break;
     case FormatType.percent:
-      formattedValue = NumberFormat.percentPattern().format(value);
+      formattedValue = NumberFormat.percentPattern('pt').format(value);
       break;
     case FormatType.scientific:
-      formattedValue = NumberFormat.scientificPattern().format(value);
+      formattedValue = NumberFormat.scientificPattern('pt').format(value);
       if (toLowerCase) {
         formattedValue = formattedValue.toLowerCase();
       }
@@ -97,9 +98,9 @@ String formatNumber(
       formattedValue = NumberFormat.compactLong().format(value);
       break;
     case FormatType.custom:
-      final hasLocale = locale != null && locale.isNotEmpty;
+      final hasLocale = locale != 'pt' && locale.isNotEmpty;
       formattedValue =
-          NumberFormat(format, hasLocale ? locale : null).format(value);
+          NumberFormat(format, hasLocale ? locale : 'pt').format(value);
   }
 
   if (formattedValue.isEmpty) {
@@ -129,8 +130,8 @@ dynamic getJsonField(dynamic response, String jsonPath) {
   final field = JsonPath(jsonPath).read(response);
   return field.isNotEmpty
       ? field.length > 1
-          ? field.map((f) => f.value).toList()
-          : field.first.value
+      ? field.map((f) => f.value).toList()
+      : field.first.value
       : null;
 }
 
@@ -161,17 +162,17 @@ extension StringDocRef on String {
 }
 
 void setAppLanguage(BuildContext context, String language) =>
-    MyApp.of(context).setLocale(Locale(language, ''));
+    MyApp.of(context).setLocale(Locale(language, 'pt'));
 
 void setDarkModeSetting(BuildContext context, ThemeMode themeMode) =>
     MyApp.of(context).setThemeMode(themeMode);
 
 void showSnackbar(
-  BuildContext context,
-  String message, {
-  bool loading = false,
-  int duration = 4,
-}) {
+    BuildContext context,
+    String message, {
+      bool loading = false,
+      int duration = 4,
+    }) {
   ScaffoldMessenger.of(context).hideCurrentSnackBar();
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(

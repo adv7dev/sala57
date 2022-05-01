@@ -122,7 +122,7 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'homePage': HomePageWidget(),
-      'social': SocialWidget(),
+      'Social': SocialWidget(),
       'allChatsPage': AllChatsPageWidget(),
       'profilePage': ProfilePageWidget(),
     };
@@ -151,11 +151,11 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.bubble_chart,
+              Icons.favorite,
               size: 24,
             ),
             label: FFLocalizations.of(context).getText(
-              'ycp68zco' /* Social */,
+              'ycp68zco' /* Orações */,
             ),
             tooltip: '',
           ),
@@ -169,7 +169,7 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 24,
             ),
             label: FFLocalizations.of(context).getText(
-              '3qig93fq' /* Messages */,
+              '3qig93fq' /* Mensagens */,
             ),
             tooltip: '',
           ),
@@ -183,7 +183,7 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 24,
             ),
             label: FFLocalizations.of(context).getText(
-              'dywwzovd' /* Profile */,
+              'dywwzovd' /* Perfil */,
             ),
             tooltip: '',
           )

@@ -79,9 +79,14 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                           children: [
                             Text(
                               FFLocalizations.of(context).getText(
-                                '9oufay6f' /* Comments */,
+                                '9oufay6f' /* Comentários */,
                               ),
-                              style: FlutterFlowTheme.of(context).title3,
+                              style:
+                              FlutterFlowTheme.of(context).title3.override(
+                                fontFamily: 'Lexend Deca',
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryColor,
+                              ),
                             ),
                           ],
                         ),
@@ -91,8 +96,8 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                           queryBuilder: (storyCommentsRecord) =>
                               storyCommentsRecord
                                   .where('storyAssociation',
-                                      isEqualTo:
-                                          columnUserStoriesRecord.reference)
+                                  isEqualTo:
+                                  columnUserStoriesRecord.reference)
                                   .orderBy('timePosted', descending: true),
                         ),
                         builder: (context, snapshot) {
@@ -104,14 +109,14 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                 height: 50,
                                 child: SpinKitPumpingHeart(
                                   color:
-                                      FlutterFlowTheme.of(context).primaryColor,
+                                  FlutterFlowTheme.of(context).primaryColor,
                                   size: 50,
                                 ),
                               ),
                             );
                           }
                           List<StoryCommentsRecord>
-                              listViewStoryCommentsRecordList = snapshot.data;
+                          listViewStoryCommentsRecordList = snapshot.data;
                           if (listViewStoryCommentsRecordList.isEmpty) {
                             return Center(
                               child: Image.asset(
@@ -128,11 +133,11 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                             itemCount: listViewStoryCommentsRecordList.length,
                             itemBuilder: (context, listViewIndex) {
                               final listViewStoryCommentsRecord =
-                                  listViewStoryCommentsRecordList[
-                                      listViewIndex];
+                              listViewStoryCommentsRecordList[
+                              listViewIndex];
                               return Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                                EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
                                 child: StreamBuilder<UsersRecord>(
                                   stream: UsersRecord.getDocument(
                                       listViewStoryCommentsRecord.commentUser),
@@ -156,7 +161,7 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                       width: 100,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
-                                            .background,
+                                            .primaryBackground,
                                         borderRadius: BorderRadius.circular(8),
                                       ),
                                       child: Padding(
@@ -165,7 +170,7 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                           children: [
                                             Container(
                                               width: 40,
@@ -177,7 +182,7 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                               child: Image.network(
                                                 valueOrDefault<String>(
                                                   commentUsersRecord.photoUrl,
-                                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-social-app-tx2kqp/assets/0qewjt016bnb/app_icon-sniff-app-store.png',
+                                                  'https://yt3.ggpht.com/v3nvnatadE5ItAh744OFOonUxvx5mb5dxG0uW57Dc5-uRQcCoYuwsj5fgrZ__55tzRBw-qPH=s900-c-k-c0x00ffffff-no-rj',
                                                 ),
                                               ),
                                             ),
@@ -187,64 +192,81 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                                     .fromSTEB(12, 0, 0, 0),
                                                 child: Column(
                                                   mainAxisSize:
-                                                      MainAxisSize.max,
+                                                  MainAxisSize.max,
                                                   crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
+                                                  CrossAxisAlignment.start,
                                                   children: [
                                                     Text(
                                                       commentUsersRecord
                                                           .displayName,
                                                       style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .subtitle2,
-                                                    ),
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0, 4, 0, 0),
-                                                      child: Text(
-                                                        listViewStoryCommentsRecord
-                                                            .comment,
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyText1,
+                                                      FlutterFlowTheme.of(
+                                                          context)
+                                                          .subtitle2
+                                                          .override(
+                                                        fontFamily:
+                                                        'Lexend Deca',
+                                                        color: FlutterFlowTheme.of(
+                                                            context)
+                                                            .primaryText,
                                                       ),
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0, 4, 0, 0),
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(
+                                                          0, 4, 0, 0),
+                                                      child: Text(
+                                                        listViewStoryCommentsRecord
+                                                            .comment,
+                                                        style:
+                                                        FlutterFlowTheme.of(
+                                                            context)
+                                                            .bodyText1
+                                                            .override(
+                                                          fontFamily:
+                                                          'Lexend Deca',
+                                                          color: FlutterFlowTheme.of(
+                                                              context)
+                                                              .secondaryText,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(
+                                                          0, 4, 0, 0),
                                                       child: Row(
                                                         mainAxisSize:
-                                                            MainAxisSize.max,
+                                                        MainAxisSize.max,
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0,
-                                                                        0,
-                                                                        4,
-                                                                        0),
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                0,
+                                                                0,
+                                                                4,
+                                                                0),
                                                             child: Text(
                                                               FFLocalizations.of(
-                                                                      context)
+                                                                  context)
                                                                   .getText(
                                                                 'vtdt28il' /* Posted */,
                                                               ),
                                                               style: FlutterFlowTheme
-                                                                      .of(context)
+                                                                  .of(context)
                                                                   .bodyText1
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Lexend Deca',
-                                                                    fontSize:
-                                                                        12,
-                                                                  ),
+                                                                fontFamily:
+                                                                'Lexend Deca',
+                                                                color: FlutterFlowTheme.of(
+                                                                    context)
+                                                                    .primaryText,
+                                                                fontSize:
+                                                                12,
+                                                              ),
                                                             ),
                                                           ),
                                                           Text(
@@ -253,13 +275,16 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                                                 listViewStoryCommentsRecord
                                                                     .timePosted),
                                                             style: FlutterFlowTheme
-                                                                    .of(context)
+                                                                .of(context)
                                                                 .bodyText2
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Lexend Deca',
-                                                                  fontSize: 12,
-                                                                ),
+                                                              fontFamily:
+                                                              'Lexend Deca',
+                                                              color: FlutterFlowTheme.of(
+                                                                  context)
+                                                                  .secondaryText,
+                                                              fontSize: 12,
+                                                            ),
                                                           ),
                                                         ],
                                                       ),
@@ -309,7 +334,7 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                             obscureText: false,
                             decoration: InputDecoration(
                               hintText: FFLocalizations.of(context).getText(
-                                'mu8xh6ye' /* Comment here... */,
+                                'mu8xh6ye' /* Escrever Comentário... */,
                               ),
                               hintStyle: FlutterFlowTheme.of(context).bodyText1,
                               enabledBorder: UnderlineInputBorder(
@@ -336,21 +361,22 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyText1
                                 .override(
-                                  fontFamily: 'Lexend Deca',
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryDark,
-                                ),
+                              fontFamily: 'Lexend Deca',
+                              color:
+                              FlutterFlowTheme.of(context).primaryDark,
+                            ),
+                            maxLines: 2,
                           ),
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 4, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 7, 0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             final storyCommentsCreateData =
-                                createStoryCommentsRecordData(
+                            createStoryCommentsRecordData(
                               storyAssociation:
-                                  columnUserStoriesRecord.reference,
+                              columnUserStoriesRecord.reference,
                               commentUser: currentUserReference,
                               comment: textController.text,
                               timePosted: getCurrentTimestamp,
@@ -366,20 +392,20 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                 .update(userStoriesUpdateData);
                           },
                           text: FFLocalizations.of(context).getText(
-                            '94rh264c' /* Post */,
+                            '94rh264c' /* Postar */,
                           ),
                           options: FFButtonOptions(
-                            width: 70,
+                            width: 100,
                             height: 40,
                             color: FlutterFlowTheme.of(context).tertiaryColor,
                             textStyle: FlutterFlowTheme.of(context)
                                 .subtitle2
                                 .override(
-                                  fontFamily: 'Lexend Deca',
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryColor,
-                                ),
-                            elevation: 0,
+                              fontFamily: 'Lexend Deca',
+                              color:
+                              FlutterFlowTheme.of(context).primaryColor,
+                            ),
+                            elevation: 5,
                             borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1,

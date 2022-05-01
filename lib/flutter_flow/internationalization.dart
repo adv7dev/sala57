@@ -145,7 +145,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'ycp68zco': {
-      'pt': 'Social',
+      'pt': 'Orações',
       'en': '',
     },
   },
@@ -288,7 +288,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'dywwzovd': {
-      'pt': 'Profile',
+      'pt': 'Perfil',
       'en': '',
     },
   },
@@ -357,7 +357,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '9xmla108': {
-      'pt': 'Profile',
+      'pt': 'Perfil',
       'en': '',
     },
   },
@@ -448,7 +448,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'c0fy3asd': {
-      'pt': 'Profile',
+      'pt': 'Perfil',
       'en': '',
     },
   },
@@ -470,7 +470,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '3qig93fq': {
-      'pt': 'Messages',
+      'pt': 'Mensagens',
       'en': '',
     },
   },

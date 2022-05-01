@@ -24,19 +24,22 @@ class _AllChatsPageWidgetState extends State<AllChatsPageWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
         title: Text(
           FFLocalizations.of(context).getText(
-            '80ko590x' /* Mensagens */,
+            '80ko590x' /* Grupos de Oração */,
           ),
-          style: FlutterFlowTheme.of(context).title2,
+          style: FlutterFlowTheme.of(context).title2.override(
+            fontFamily: 'Lexend Deca',
+            color: FlutterFlowTheme.of(context).primaryText,
+          ),
         ),
         actions: [],
         centerTitle: false,
         elevation: 0,
       ),
-      backgroundColor: FlutterFlowTheme.of(context).background,
+      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           await Navigator.push(
@@ -96,7 +99,7 @@ class _AllChatsPageWidgetState extends State<AllChatsPageWidget> {
                 itemCount: listViewChatsRecordList.length,
                 itemBuilder: (context, listViewIndex) {
                   final listViewChatsRecord =
-                      listViewChatsRecordList[listViewIndex];
+                  listViewChatsRecordList[listViewIndex];
                   return StreamBuilder<FFChatInfo>(
                     stream: FFChatManager.instance
                         .getChatInfo(chatRecord: listViewChatsRecord),
@@ -106,21 +109,21 @@ class _AllChatsPageWidgetState extends State<AllChatsPageWidget> {
                       return FFChatPreview(
                         onTap: chatInfo != null
                             ? () => Navigator.push(
-                                  context,
-                                  PageTransition(
-                                    type: PageTransitionType.scale,
-                                    alignment: Alignment.bottomCenter,
-                                    duration: Duration(milliseconds: 500),
-                                    reverseDuration:
-                                        Duration(milliseconds: 500),
-                                    child: ChatPageWidget(
-                                      chatUser: chatInfo.otherUsers.length == 1
-                                          ? chatInfo.otherUsersList.first
-                                          : null,
-                                      chatRef: chatInfo.chatRecord.reference,
-                                    ),
-                                  ),
-                                )
+                          context,
+                          PageTransition(
+                            type: PageTransitionType.scale,
+                            alignment: Alignment.bottomCenter,
+                            duration: Duration(milliseconds: 500),
+                            reverseDuration:
+                            Duration(milliseconds: 500),
+                            child: ChatPageWidget(
+                              chatUser: chatInfo.otherUsers.length == 1
+                                  ? chatInfo.otherUsersList.first
+                                  : null,
+                              chatRef: chatInfo.chatRecord.reference,
+                            ),
+                          ),
+                        )
                             : null,
                         lastChatText: chatInfo.chatPreviewMessage(),
                         lastChatTime: listViewChatsRecord.lastMessageTime,
@@ -128,29 +131,29 @@ class _AllChatsPageWidgetState extends State<AllChatsPageWidget> {
                             .contains(currentUserReference),
                         title: chatInfo.chatPreviewTitle(),
                         userProfilePic: chatInfo.chatPreviewPic(),
-                        color: FlutterFlowTheme.of(context).tertiaryColor,
+                        color: FlutterFlowTheme.of(context).primaryBackground,
                         unreadColor: FlutterFlowTheme.of(context).primaryColor,
                         titleTextStyle: GoogleFonts.getFont(
                           'Lexend Deca',
-                          color: Colors.black,
+                          color: FlutterFlowTheme.of(context).primaryText,
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
                           fontStyle: FontStyle.normal,
                         ),
                         dateTextStyle: GoogleFonts.getFont(
                           'Lexend Deca',
-                          color: FlutterFlowTheme.of(context).grayIcon,
+                          color: FlutterFlowTheme.of(context).secondaryText,
                           fontWeight: FontWeight.normal,
                           fontSize: 14,
                         ),
                         previewTextStyle: GoogleFonts.getFont(
                           'Lexend Deca',
-                          color: FlutterFlowTheme.of(context).grayIcon,
+                          color: FlutterFlowTheme.of(context).primaryText,
                           fontWeight: FontWeight.normal,
                           fontSize: 14,
                         ),
                         contentPadding:
-                            EdgeInsetsDirectional.fromSTEB(12, 3, 3, 3),
+                        EdgeInsetsDirectional.fromSTEB(12, 3, 3, 3),
                         borderRadius: BorderRadius.circular(0),
                       );
                     },

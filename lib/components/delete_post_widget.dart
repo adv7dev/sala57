@@ -33,35 +33,37 @@ class _DeletePostWidgetState extends State<DeletePostWidget> {
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
-            FFButtonWidget(
-              onPressed: () async {
-                await widget.postParameters.reference.delete();
-                await Navigator.push(
-                  context,
-                  PageTransition(
-                    type: PageTransitionType.leftToRight,
-                    duration: Duration(milliseconds: 220),
-                    reverseDuration: Duration(milliseconds: 220),
-                    child: NavBarPage(initialPage: 'homePage'),
-                  ),
-                );
-              },
-              text: FFLocalizations.of(context).getText(
-                '4kpmr2x6' /* Delete Post */,
-              ),
-              options: FFButtonOptions(
-                width: double.infinity,
-                height: 60,
-                color: Color(0xFFE06666),
-                textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                      fontFamily: 'Lexend Deca',
-                      color: Colors.white,
+            Expanded(
+              child: FFButtonWidget(
+                onPressed: () async {
+                  await widget.postParameters.reference.delete();
+                  await Navigator.push(
+                    context,
+                    PageTransition(
+                      type: PageTransitionType.leftToRight,
+                      duration: Duration(milliseconds: 220),
+                      reverseDuration: Duration(milliseconds: 220),
+                      child: NavBarPage(initialPage: 'homePage'),
                     ),
-                borderSide: BorderSide(
-                  color: Colors.transparent,
-                  width: 1,
+                  );
+                },
+                text: FFLocalizations.of(context).getText(
+                  '4kpmr2x6' /* Deletar Pedido de Oração */,
                 ),
-                borderRadius: 40,
+                options: FFButtonOptions(
+                  width: double.infinity,
+                  height: 60,
+                  color: Color(0xFFE06666),
+                  textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                    fontFamily: 'Lexend Deca',
+                    color: Colors.white,
+                  ),
+                  borderSide: BorderSide(
+                    color: Colors.transparent,
+                    width: 1,
+                  ),
+                  borderRadius: 40,
+                ),
               ),
             ),
             Padding(
@@ -71,16 +73,16 @@ class _DeletePostWidgetState extends State<DeletePostWidget> {
                   Navigator.pop(context);
                 },
                 text: FFLocalizations.of(context).getText(
-                  'nvj12bf4' /* Cancel */,
+                  'nvj12bf4' /* Cancelar */,
                 ),
                 options: FFButtonOptions(
                   width: double.infinity,
                   height: 60,
                   color: FlutterFlowTheme.of(context).dark600,
                   textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                        fontFamily: 'Lexend Deca',
-                        color: Colors.white,
-                      ),
+                    fontFamily: 'Lexend Deca',
+                    color: Colors.white,
+                  ),
                   borderSide: BorderSide(
                     color: Colors.transparent,
                     width: 1,
