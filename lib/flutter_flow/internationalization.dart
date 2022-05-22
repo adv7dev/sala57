@@ -9,7 +9,7 @@ class FFLocalizations {
   static FFLocalizations of(BuildContext context) =>
       Localizations.of<FFLocalizations>(context, FFLocalizations);
 
-  static List<String> languages() => ['pt', 'en'];
+  static List<String> languages() => ['pt'];
 
   String get languageCode => locale.languageCode;
   int get languageIndex => languages().contains(languageCode)
@@ -267,7 +267,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'vbaahdnb': {
-      'pt': 'Minhas Experiências',
+      'pt': 'Meus Pedidos de Oração',
       'en': '',
     },
     'rvzh60az': {
@@ -295,15 +295,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // createPost
   {
     'o9v9sg2i': {
-      'pt': 'Publicar Experiência',
+      'pt': 'Pedir Oração',
       'en': '',
     },
     'mnrwdjj9': {
-      'pt': 'Comentário...',
+      'pt': 'Titulo da Oração',
       'en': '',
     },
     'zrp1kvg1': {
-      'pt': 'Publicar Experiência',
+      'pt': 'Enviar Pedido de Oração',
       'en': '',
     },
     '8pjo7crm': {
@@ -314,30 +314,30 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // postDetails
   {
     '3f87t3fr': {
-      'pt': 'Comments',
+      'pt': 'Comentários',
       'en': '',
     },
     'by6tbhrb': {
-      'pt': 'Posted',
+      'pt': 'Postado: ',
       'en': '',
     },
     'luqdjm70': {
-      'pt': 'Comment here...',
+      'pt': 'Comentar',
       'en': '',
     },
     'osy1bzhp': {
-      'pt': 'Post',
+      'pt': 'Publicar',
       'en': '',
     },
     'pyl32c16': {
-      'pt': 'Home',
+      'pt': 'Início',
       'en': '',
     },
   },
   // editSettings
   {
     's4rc4p54': {
-      'pt': 'Configurações da cnta',
+      'pt': 'Configurações da conta',
       'en': '',
     },
     'u0ab2zsq': {
@@ -395,11 +395,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // changePassword
   {
     'fk49gx15': {
-      'pt': 'Change Password',
+      'pt': 'Mudar senha',
       'en': '',
     },
     'jv4xylai': {
-      'pt': 'Enter your email',
+      'pt': 'Digite seu e-mail',
       'en': '',
     },
     'iy30awec': {
@@ -408,11 +408,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '92yfxidv': {
-      'pt': 'Send Reset Link',
+      'pt': 'Enviar link de redefinição',
       'en': '',
     },
     'lfuxxtiq': {
-      'pt': 'Home',
+      'pt': 'Início',
       'en': '',
     },
   },
@@ -427,7 +427,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'nu16yc6o': {
-      'pt': 'Experiências',
+      'pt': 'Pedidos de Oração',
       'en': '',
     },
     'yoz1wjk1': {
@@ -455,11 +455,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // chatPage
   {
     'o6ycg65w': {
-      'pt': 'Group Chat',
+      'pt': 'Grupo',
       'en': '',
     },
     '5nl10flt': {
-      'pt': 'Home',
+      'pt': 'Início',
       'en': '',
     },
   },
@@ -549,26 +549,26 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // comments
   {
     '9oufay6f': {
-      'pt': 'Comments',
-      'en': '',
+      'pt': 'Comentário',
+      'en': 'Comentário',
     },
     'vtdt28il': {
       'pt': 'Posted',
       'en': '',
     },
     'mu8xh6ye': {
-      'pt': 'Comment here...',
-      'en': '',
+      'pt': 'Comentar',
+      'en': 'Comentar',
     },
     '94rh264c': {
-      'pt': 'Post',
+      'pt': 'Publicar',
       'en': '',
     },
   },
   // createModal
   {
     'pmphyy23': {
-      'pt': 'Create Post',
+      'pt': 'Perdir Oração',
       'en': '',
     },
     'gukmr1o5': {
@@ -587,11 +587,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // deletePost
   {
     '4kpmr2x6': {
-      'pt': 'Delete Post',
+      'pt': 'Deletar Oração',
       'en': '',
     },
     'nvj12bf4': {
-      'pt': 'Cancel',
+      'pt': 'Cancelar',
       'en': '',
     },
   },

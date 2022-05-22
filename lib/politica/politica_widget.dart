@@ -1,6 +1,5 @@
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_web_view.dart';
@@ -42,6 +41,16 @@ class _PoliticaWidgetState extends State<PoliticaWidget> {
           appBar: AppBar(
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             automaticallyImplyLeading: false,
+            leading: InkWell(
+              onTap: () async {
+                Navigator.pop(context);
+              },
+              child: Icon(
+                Icons.close_sharp,
+                color: FlutterFlowTheme.of(context).primaryColor,
+                size: 30,
+              ),
+            ),
             title: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
               child: Text(
@@ -54,37 +63,22 @@ class _PoliticaWidgetState extends State<PoliticaWidget> {
                 ),
               ),
             ),
-            actions: [
-              FlutterFlowIconButton(
-                borderColor: Colors.transparent,
-                borderRadius: 30,
-                borderWidth: 1,
-                buttonSize: 60,
-                icon: Icon(
-                  Icons.close_rounded,
-                  color: Colors.black,
-                  size: 30,
-                ),
-                onPressed: () async {
-                  Navigator.pop(context);
-                },
-              ),
-            ],
+            actions: [],
             centerTitle: false,
             elevation: 0,
           ),
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-          body: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                FlutterFlowWebView(
-                  url: 'https://sites.google.com/view/app-sala-57/in%C3%ADcio',
-                  bypass: false,
-                  verticalScroll: false,
-                  horizontalScroll: false,
-                ),
-              ],
+          body: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height * 1,
+            decoration: BoxDecoration(
+              color: Color(0xFFEEEEEE),
+            ),
+            child: FlutterFlowWebView(
+              url: 'https://sites.google.com/view/app-sala-57/in%C3%ADcio',
+              bypass: false,
+              verticalScroll: false,
+              horizontalScroll: false,
             ),
           ),
         );

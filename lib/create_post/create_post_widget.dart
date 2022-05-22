@@ -104,6 +104,7 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                           controller: textController1,
                                           obscureText: false,
                                           decoration: InputDecoration(
+                                            labelText: 'Titulo da Oração',
                                             hintText:
                                             FFLocalizations.of(context)
                                                 .getText(
@@ -180,6 +181,7 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                           controller: textController2,
                                           obscureText: false,
                                           decoration: InputDecoration(
+                                            labelText: 'Texto da Oração',
                                             hintText:
                                             FFLocalizations.of(context)
                                                 .getText(
@@ -235,7 +237,7 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                             fontWeight: FontWeight.normal,
                                           ),
                                           textAlign: TextAlign.start,
-                                          maxLines: 4,
+                                          maxLines: 10,
                                         ),
                                       ),
                                     ),
@@ -271,15 +273,7 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                   await UserPostsRecord.collection
                       .doc()
                       .set(userPostsCreateData);
-                  await Navigator.push(
-                    context,
-                    PageTransition(
-                      type: PageTransitionType.leftToRight,
-                      duration: Duration(milliseconds: 250),
-                      reverseDuration: Duration(milliseconds: 250),
-                      child: NavBarPage(initialPage: 'homePage'),
-                    ),
-                  );
+                  Navigator.pop(context);
                 },
                 text: FFLocalizations.of(context).getText(
                   'zrp1kvg1' /* Publicar Pedido */,

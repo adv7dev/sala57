@@ -1,5 +1,6 @@
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
+import '../flutter_flow/flutter_flow_calendar.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -16,17 +17,20 @@ class AddMeditacaoWidget extends StatefulWidget {
 }
 
 class _AddMeditacaoWidgetState extends State<AddMeditacaoWidget> {
+  DateTimeRange calendarSelectedDay;
   TextEditingController textController1;
   TextEditingController textController2;
-  TextEditingController textController3;
   final formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
     super.initState();
+    calendarSelectedDay = DateTimeRange(
+      start: DateTime.now().startOfDay,
+      end: DateTime.now().endOfDay,
+    );
     textController1 = TextEditingController();
     textController2 = TextEditingController();
-    textController3 = TextEditingController();
   }
 
   @override
@@ -55,7 +59,9 @@ class _AddMeditacaoWidgetState extends State<AddMeditacaoWidget> {
                                 controller: textController1,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  hintText: 'Titulo',
+                                  hintText: FFLocalizations.of(context).getText(
+                                    'y3ri32zi' /* Titulo */,
+                                  ),
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0x00000000),
@@ -76,8 +82,16 @@ class _AddMeditacaoWidgetState extends State<AddMeditacaoWidget> {
                                       topRight: Radius.circular(4.0),
                                     ),
                                   ),
+                                  filled: true,
+                                  fillColor:
+                                  FlutterFlowTheme.of(context).dark600,
                                 ),
-                                style: FlutterFlowTheme.of(context).bodyText1,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                  fontFamily: 'Lexend Deca',
+                                  color: Colors.black,
+                                ),
                               ),
                             ),
                           ],
@@ -93,7 +107,9 @@ class _AddMeditacaoWidgetState extends State<AddMeditacaoWidget> {
                                 controller: textController2,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  hintText: 'Texto',
+                                  hintText: FFLocalizations.of(context).getText(
+                                    'jb7ezayb' /* Texto */,
+                                  ),
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Color(0x00000000),
@@ -114,6 +130,9 @@ class _AddMeditacaoWidgetState extends State<AddMeditacaoWidget> {
                                       topRight: Radius.circular(4.0),
                                     ),
                                   ),
+                                  filled: true,
+                                  fillColor:
+                                  FlutterFlowTheme.of(context).dark600,
                                 ),
                                 style: FlutterFlowTheme.of(context).bodyText1,
                                 maxLines: 10,
@@ -128,33 +147,30 @@ class _AddMeditacaoWidgetState extends State<AddMeditacaoWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Expanded(
-                              child: TextFormField(
-                                controller: textController3,
-                                obscureText: false,
-                                decoration: InputDecoration(
-                                  hintText: 'url',
-                                  enabledBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0x00000000),
-                                      width: 1,
-                                    ),
-                                    borderRadius: const BorderRadius.only(
-                                      topLeft: Radius.circular(4.0),
-                                      topRight: Radius.circular(4.0),
-                                    ),
-                                  ),
-                                  focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Color(0x00000000),
-                                      width: 1,
-                                    ),
-                                    borderRadius: const BorderRadius.only(
-                                      topLeft: Radius.circular(4.0),
-                                      topRight: Radius.circular(4.0),
-                                    ),
-                                  ),
+                              child: Container(
+                                width: 100,
+                                height:
+                                MediaQuery.of(context).size.height * 0.4,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFEEEEEE),
                                 ),
-                                style: FlutterFlowTheme.of(context).bodyText1,
+                                child: FlutterFlowCalendar(
+                                  color:
+                                  FlutterFlowTheme.of(context).primaryColor,
+                                  weekFormat: true,
+                                  weekStartsMonday: false,
+                                  onChange: (DateTimeRange newSelectedDate) {
+                                    setState(() =>
+                                    calendarSelectedDay = newSelectedDate);
+                                  },
+                                  titleStyle: TextStyle(),
+                                  dayOfWeekStyle: TextStyle(),
+                                  dateStyle: TextStyle(),
+                                  selectedDateStyle: TextStyle(),
+                                  inactiveDateStyle: TextStyle(),
+                                  locale:
+                                  FFLocalizations.of(context).languageCode,
+                                ),
                               ),
                             ),
                           ],
@@ -168,28 +184,29 @@ class _AddMeditacaoWidgetState extends State<AddMeditacaoWidget> {
                             FFButtonWidget(
                               onPressed: () async {
                                 final meditacaoCreateData =
-                                    createMeditacaoRecordData(
+                                createMeditacaoRecordData(
                                   titulo: textController1.text,
                                   texto: textController2.text,
-                                  img: textController3.text,
-                                  data: getCurrentTimestamp,
+                                  data: calendarSelectedDay.start,
                                 );
                                 await MeditacaoRecord.collection
                                     .doc()
                                     .set(meditacaoCreateData);
                               },
-                              text: 'ADD',
+                              text: FFLocalizations.of(context).getText(
+                                'luztij1l' /* ADD */,
+                              ),
                               options: FFButtonOptions(
                                 width: 130,
                                 height: 40,
                                 color:
-                                    FlutterFlowTheme.of(context).primaryColor,
+                                FlutterFlowTheme.of(context).primaryColor,
                                 textStyle: FlutterFlowTheme.of(context)
                                     .subtitle2
                                     .override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: Colors.white,
-                                    ),
+                                  fontFamily: 'Lexend Deca',
+                                  color: Colors.white,
+                                ),
                                 borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1,

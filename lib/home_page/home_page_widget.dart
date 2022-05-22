@@ -2,8 +2,8 @@ import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../components/add_meditacao_widget.dart';
 import '../components/add_video_widget.dart';
-import '../components/comments_widget.dart';
 import '../create_post/create_post_widget.dart';
+import '../edit_settings/edit_settings_widget.dart';
 import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -202,167 +202,300 @@ class _HomePageWidgetState extends State<HomePageWidget>
                     ),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(10, 20, 10, 10),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Expanded(
-                            child: Card(
-                              clipBehavior: Clip.antiAliasWithSaveLayer,
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    10, 10, 10, 10),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 10, 0),
-                                      child: Container(
-                                        width: 30,
-                                        height: 30,
-                                        clipBehavior: Clip.antiAlias,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: Image.asset(
-                                          'assets/images/pngwing.com.png',
+                      child: InkWell(
+                        onTap: () async {
+                          await Navigator.push(
+                            context,
+                            PageTransition(
+                              type: PageTransitionType.scale,
+                              alignment: Alignment.bottomCenter,
+                              duration: Duration(milliseconds: 500),
+                              reverseDuration: Duration(milliseconds: 500),
+                              child: MeditacoesWidget(),
+                            ),
+                          );
+                        },
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Expanded(
+                              child: Card(
+                                clipBehavior: Clip.antiAliasWithSaveLayer,
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      10, 10, 10, 10),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 0, 10, 0),
+                                        child: Container(
+                                          width: 30,
+                                          height: 30,
+                                          clipBehavior: Clip.antiAlias,
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: Image.asset(
+                                            'assets/images/pngwing.com.png',
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                    Expanded(
-                                      child: Text(
-                                        'MEDITAÇÕES',
-                                        style: FlutterFlowTheme.of(context)
-                                            .subtitle1
-                                            .override(
-                                          fontFamily: 'Lexend Deca',
-                                          color:
-                                          FlutterFlowTheme.of(context)
-                                              .primaryText,
+                                      Expanded(
+                                        child: Text(
+                                          FFLocalizations.of(context).getText(
+                                            'k0atl115' /* MEDITAÇÕES */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .subtitle1
+                                              .override(
+                                            fontFamily: 'Lexend Deca',
+                                            color:
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 10),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Expanded(
-                            child: Card(
-                              clipBehavior: Clip.antiAliasWithSaveLayer,
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    10, 10, 10, 10),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 10, 0),
-                                      child: Container(
-                                        width: 30,
-                                        height: 30,
-                                        clipBehavior: Clip.antiAlias,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: Image.asset(
-                                          'assets/images/pngwing.com_(1).png',
+                      child: InkWell(
+                        onTap: () async {
+                          await Navigator.push(
+                            context,
+                            PageTransition(
+                              type: PageTransitionType.scale,
+                              alignment: Alignment.bottomCenter,
+                              duration: Duration(milliseconds: 500),
+                              reverseDuration: Duration(milliseconds: 500),
+                              child: CreatePostWidget(),
+                            ),
+                          );
+                        },
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Expanded(
+                              child: Card(
+                                clipBehavior: Clip.antiAliasWithSaveLayer,
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      10, 10, 10, 10),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 0, 10, 0),
+                                        child: Container(
+                                          width: 30,
+                                          height: 30,
+                                          clipBehavior: Clip.antiAlias,
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: Image.asset(
+                                            'assets/images/pngwing.com_(1).png',
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                    Expanded(
-                                      child: Text(
-                                        'P.  DE ORAÇÃO',
-                                        style: FlutterFlowTheme.of(context)
-                                            .subtitle1
-                                            .override(
-                                          fontFamily: 'Lexend Deca',
-                                          color:
-                                          FlutterFlowTheme.of(context)
-                                              .primaryText,
+                                      Expanded(
+                                        child: Text(
+                                          FFLocalizations.of(context).getText(
+                                            '9b7lzisj' /* P.  DE ORAÇÃO */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .subtitle1
+                                              .override(
+                                            fontFamily: 'Lexend Deca',
+                                            color:
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 10),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Expanded(
-                            child: Card(
-                              clipBehavior: Clip.antiAliasWithSaveLayer,
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    10, 10, 10, 10),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 10, 0),
-                                      child: Container(
-                                        width: 30,
-                                        height: 30,
-                                        clipBehavior: Clip.antiAlias,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: Image.asset(
-                                          'assets/images/Logomarca_confeitaria_(1).png',
+                      child: InkWell(
+                        onTap: () async {
+                          await Navigator.push(
+                            context,
+                            PageTransition(
+                              type: PageTransitionType.scale,
+                              alignment: Alignment.bottomCenter,
+                              duration: Duration(milliseconds: 500),
+                              reverseDuration: Duration(milliseconds: 500),
+                              child: PageVideosSala57Widget(),
+                            ),
+                          );
+                        },
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Expanded(
+                              child: Card(
+                                clipBehavior: Clip.antiAliasWithSaveLayer,
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      10, 10, 10, 10),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 0, 10, 0),
+                                        child: Container(
+                                          width: 30,
+                                          height: 30,
+                                          clipBehavior: Clip.antiAlias,
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: Image.asset(
+                                            'assets/images/Logomarca_confeitaria_(1).png',
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                    Expanded(
-                                      child: Text(
-                                        'VÍDEOS SALA57',
-                                        style: FlutterFlowTheme.of(context)
-                                            .subtitle1
-                                            .override(
-                                          fontFamily: 'Lexend Deca',
-                                          color:
-                                          FlutterFlowTheme.of(context)
-                                              .primaryText,
+                                      Expanded(
+                                        child: Text(
+                                          FFLocalizations.of(context).getText(
+                                            'opy2bbch' /* VÍDEOS SALA57 */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .subtitle1
+                                              .override(
+                                            fontFamily: 'Lexend Deca',
+                                            color:
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
+                      ),
+                    ),
+                    Divider(
+                      height: 1,
+                      thickness: 1,
+                      color: FlutterFlowTheme.of(context).primaryColor,
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                      child: InkWell(
+                        onTap: () async {
+                          await Navigator.push(
+                            context,
+                            PageTransition(
+                              type: PageTransitionType.scale,
+                              alignment: Alignment.bottomCenter,
+                              duration: Duration(milliseconds: 500),
+                              reverseDuration: Duration(milliseconds: 500),
+                              child: EditSettingsWidget(),
+                            ),
+                          );
+                        },
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Expanded(
+                              child: Card(
+                                clipBehavior: Clip.antiAliasWithSaveLayer,
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      10, 10, 10, 10),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 0, 10, 0),
+                                        child: Icon(
+                                          Icons.info,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          size: 24,
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Text(
+                                          FFLocalizations.of(context).getText(
+                                            'af7v92ja' /* Informações */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .subtitle1
+                                              .override(
+                                            fontFamily: 'Lexend Deca',
+                                            color:
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                      child: Text(
+                        FFLocalizations.of(context).getText(
+                          'rlvyynu1' /* Mas recebereis a virtude do Es... */,
+                        ),
+                        textAlign: TextAlign.center,
+                        style: FlutterFlowTheme.of(context).bodyText1.override(
+                          fontFamily: 'Lexend Deca',
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          fontStyle: FontStyle.italic,
+                        ),
                       ),
                     ),
                   ],
@@ -388,7 +521,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                   height: 50,
                   child: SpinKitPumpingHeart(
                     color: FlutterFlowTheme.of(context).primaryColor,
-                    size: 50,
+                    size: 80,
                   ),
                 ),
               );
@@ -797,7 +930,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           return Center(
                             child: SizedBox(
                               width: 50,
-                              height: 50,
+                              height: 80,
                               child: SpinKitPumpingHeart(
                                 color:
                                 FlutterFlowTheme.of(context).primaryColor,
@@ -1109,6 +1242,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       child:
                                       StreamBuilder<List<UserPostsRecord>>(
                                         stream: queryUserPostsRecord(
+                                          queryBuilder: (userPostsRecord) =>
+                                              userPostsRecord.orderBy(
+                                                  'timePosted',
+                                                  descending: true),
                                           limit: 10,
                                         ),
                                         builder: (context, snapshot) {
@@ -1329,7 +1466,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                   ),
                                                                   Text(
                                                                     dateTimeFormat(
-                                                                        'relative',
+                                                                        'dd/MM/yy - HH:mm',
                                                                         listViewUserPostsRecord
                                                                             .timePosted),
                                                                     style: FlutterFlowTheme.of(

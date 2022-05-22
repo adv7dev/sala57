@@ -210,7 +210,7 @@ class _PostDetailsWidgetState extends State<PostDetailsWidget> {
                                           12, 0, 0, 0),
                                       child: Text(
                                         dateTimeFormat(
-                                            'relative',
+                                            'dd/MM/yy - HH:mm',
                                             postDetailsUserPostsRecord
                                                 .timePosted),
                                         style: FlutterFlowTheme.of(context)
@@ -656,7 +656,7 @@ class _PostDetailsWidgetState extends State<PostDetailsWidget> {
                                                                           child:
                                                                           Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              'by6tbhrb' /* Posted */,
+                                                                              'by6tbhrb' /* Postado:  */,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                               fontFamily: 'Lexend Deca',
@@ -667,7 +667,7 @@ class _PostDetailsWidgetState extends State<PostDetailsWidget> {
                                                                         ),
                                                                         Text(
                                                                           dateTimeFormat(
-                                                                              'relative',
+                                                                              'dd/MM/yy - HH:mm',
                                                                               commentListPostCommentsRecord.timePosted),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyText2

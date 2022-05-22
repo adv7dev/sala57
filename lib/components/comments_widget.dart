@@ -271,7 +271,7 @@ class _CommentsWidgetState extends State<CommentsWidget> {
                                                           ),
                                                           Text(
                                                             dateTimeFormat(
-                                                                'relative',
+                                                                'dd/MM/yy - HH:mm',
                                                                 listViewStoryCommentsRecord
                                                                     .timePosted),
                                                             style: FlutterFlowTheme

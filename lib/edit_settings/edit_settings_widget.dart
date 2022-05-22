@@ -1,6 +1,5 @@
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
-import '../change_password/change_password_widget.dart';
 import '../edit_user_profile/edit_user_profile_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -10,6 +9,7 @@ import '../login/login_widget.dart';
 import '../politica/politica_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class EditSettingsWidget extends StatefulWidget {
@@ -66,7 +66,7 @@ class _EditSettingsWidgetState extends State<EditSettingsWidget> {
                 buttonSize: 60,
                 icon: Icon(
                   Icons.close_rounded,
-                  color: Colors.black,
+                  color: FlutterFlowTheme.of(context).primaryText,
                   size: 30,
                 ),
                 onPressed: () async {
@@ -177,7 +177,6 @@ class _EditSettingsWidgetState extends State<EditSettingsWidget> {
                 ),
                 ListView(
                   padding: EdgeInsets.zero,
-                  primary: false,
                   shrinkWrap: true,
                   scrollDirection: Axis.vertical,
                   children: [
@@ -276,126 +275,39 @@ class _EditSettingsWidgetState extends State<EditSettingsWidget> {
                                 borderRadius: BorderRadius.circular(10),
                                 shape: BoxShape.rectangle,
                               ),
-                              child: InkWell(
-                                onTap: () async {
-                                  await Navigator.push(
-                                    context,
-                                    PageTransition(
-                                      type: PageTransitionType.scale,
-                                      alignment: Alignment.bottomCenter,
-                                      duration: Duration(milliseconds: 500),
-                                      reverseDuration:
-                                      Duration(milliseconds: 500),
-                                      child: ChangePasswordWidget(),
-                                    ),
-                                  );
-                                },
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          10, 0, 0, 0),
-                                      child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'mdlzf3fn' /* Mudar a Senha */,
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                          fontFamily: 'Lexend Deca',
-                                          color:
-                                          FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          fontSize: 17,
-                                          fontWeight: FontWeight.normal,
-                                        ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        10, 0, 0, 0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'mdlzf3fn' /* Mudar a Senha */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                        fontFamily: 'Lexend Deca',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.normal,
                                       ),
                                     ),
-                                    Expanded(
-                                      child: Align(
-                                        alignment: AlignmentDirectional(0.9, 0),
-                                        child: Icon(
-                                          Icons.arrow_forward_ios,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryColor,
-                                          size: 18,
-                                        ),
+                                  ),
+                                  Expanded(
+                                    child: Align(
+                                      alignment: AlignmentDirectional(0.9, 0),
+                                      child: Icon(
+                                        Icons.arrow_forward_ios,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryColor,
+                                        size: 18,
                                       ),
                                     ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Expanded(
-                          child: Padding(
-                            padding:
-                            EdgeInsetsDirectional.fromSTEB(10, 5, 10, 10),
-                            child: Container(
-                              width: MediaQuery.of(context).size.width * 0.95,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                borderRadius: BorderRadius.circular(10),
-                                shape: BoxShape.rectangle,
-                              ),
-                              child: InkWell(
-                                onTap: () async {
-                                  await Navigator.push(
-                                    context,
-                                    PageTransition(
-                                      type: PageTransitionType.scale,
-                                      alignment: Alignment.bottomCenter,
-                                      duration: Duration(milliseconds: 500),
-                                      reverseDuration:
-                                      Duration(milliseconds: 500),
-                                      child: PoliticaWidget(),
-                                    ),
-                                  );
-                                },
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          10, 0, 0, 0),
-                                      child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'fn68uqel' /* Politica de Privacidade */,
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                          fontFamily: 'Lexend Deca',
-                                          color:
-                                          FlutterFlowTheme.of(context)
-                                              .primaryColor,
-                                          fontSize: 17,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-                                    Expanded(
-                                      child: Align(
-                                        alignment: AlignmentDirectional(0.9, 0),
-                                        child: Icon(
-                                          Icons.arrow_forward_ios,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryColor,
-                                          size: 18,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
@@ -465,13 +377,157 @@ class _EditSettingsWidgetState extends State<EditSettingsWidget> {
                         ),
                       ),
                       Text(
-                        '1.0.0',
+                        '1.0.6',
                         style: FlutterFlowTheme.of(context).bodyText1.override(
                           fontFamily: 'Lexend Deca',
                           color: FlutterFlowTheme.of(context).secondaryText,
                         ),
                       ),
                     ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      InkWell(
+                        onTap: () async {
+                          await Navigator.push(
+                            context,
+                            PageTransition(
+                              type: PageTransitionType.scale,
+                              alignment: Alignment.bottomCenter,
+                              duration: Duration(milliseconds: 500),
+                              reverseDuration: Duration(milliseconds: 500),
+                              child: PoliticaWidget(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          'Politica de Privacidade',
+                          style: FlutterFlowTheme.of(context)
+                              .bodyText1
+                              .override(
+                            fontFamily: 'Lexend Deca',
+                            color:
+                            FlutterFlowTheme.of(context).primaryColor,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional(0.9, 0),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                          child: Icon(
+                            Icons.arrow_forward_ios,
+                            color: FlutterFlowTheme.of(context).primaryColor,
+                            size: 18,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: Text(
+                          'Esse Aplicativo foi desenvolvido na intenção de ajudar as pessoas a orar umas pelas outras. \n\n    Aplicativo baseado na SALA 57 - ESTAMOS EM MOVIMENTO. Para mais informações acesso o Canal oficial do Projeto.',
+                          style: FlutterFlowTheme.of(context)
+                              .bodyText1
+                              .override(
+                            fontFamily: 'Lexend Deca',
+                            color:
+                            FlutterFlowTheme.of(context).secondaryText,
+                            fontSize: 15,
+                            fontWeight: FontWeight.normal,
+                            fontStyle: FontStyle.italic,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                  child: InkWell(
+                    onTap: () async {
+                      await launchURL(
+                          'https://www.youtube.com/c/SALA57ESTAMOSEMMOVIMENTO/about');
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                          child: FaIcon(
+                            FontAwesomeIcons.youtube,
+                            color: FlutterFlowTheme.of(context).primaryColor,
+                            size: 24,
+                          ),
+                        ),
+                        Text(
+                          'YouTube',
+                          style: FlutterFlowTheme.of(context)
+                              .bodyText1
+                              .override(
+                            fontFamily: 'Lexend Deca',
+                            color:
+                            FlutterFlowTheme.of(context).secondaryText,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                            fontStyle: FontStyle.italic,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                  child: InkWell(
+                    onTap: () async {
+                      await launchURL(
+                          'https://wa.me/5511967926049?text=Ol%C3%A1%3F+Gost%C3%A1ria+de+saber+mais+sobre+o+aplicativo+da+SALA+57.');
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                          child: FaIcon(
+                            FontAwesomeIcons.whatsappSquare,
+                            color: Color(0xFF0D9908),
+                            size: 24,
+                          ),
+                        ),
+                        Text(
+                          'WhatsApp',
+                          style: FlutterFlowTheme.of(context)
+                              .bodyText1
+                              .override(
+                            fontFamily: 'Lexend Deca',
+                            color:
+                            FlutterFlowTheme.of(context).secondaryText,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                            fontStyle: FontStyle.italic,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],

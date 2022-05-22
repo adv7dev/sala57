@@ -26,7 +26,7 @@ T valueOrDefault<T>(T value, T defaultValue) =>
 
 String dateTimeFormat(String format, DateTime dateTime) {
   if (dateTime == null) {
-    return '';
+    return 'pt';
   }
   if (format == 'relative') {
     return timeago.format(dateTime);

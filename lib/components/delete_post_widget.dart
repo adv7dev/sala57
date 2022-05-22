@@ -2,7 +2,6 @@ import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -37,15 +36,7 @@ class _DeletePostWidgetState extends State<DeletePostWidget> {
               child: FFButtonWidget(
                 onPressed: () async {
                   await widget.postParameters.reference.delete();
-                  await Navigator.push(
-                    context,
-                    PageTransition(
-                      type: PageTransitionType.leftToRight,
-                      duration: Duration(milliseconds: 220),
-                      reverseDuration: Duration(milliseconds: 220),
-                      child: NavBarPage(initialPage: 'homePage'),
-                    ),
-                  );
+                  Navigator.pop(context);
                 },
                 text: FFLocalizations.of(context).getText(
                   '4kpmr2x6' /* Deletar Pedido de Oração */,
@@ -53,7 +44,7 @@ class _DeletePostWidgetState extends State<DeletePostWidget> {
                 options: FFButtonOptions(
                   width: double.infinity,
                   height: 60,
-                  color: Color(0xFFE06666),
+                  color: FlutterFlowTheme.of(context).primaryColor,
                   textStyle: FlutterFlowTheme.of(context).subtitle2.override(
                     fontFamily: 'Lexend Deca',
                     color: Colors.white,

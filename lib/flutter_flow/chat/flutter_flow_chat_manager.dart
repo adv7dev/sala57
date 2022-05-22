@@ -39,7 +39,7 @@ class FFChatInfo {
         chatRecord.lastMessageSentBy == currentUserReference;
     var lastChatText = chatRecord.lastMessage;
     if (userSentLastMessage && lastChatText.isNotEmpty) {
-      lastChatText = 'You: $lastChatText';
+      lastChatText = 'Você: $lastChatText';
     }
     return lastChatText;
   }

@@ -1,7 +1,7 @@
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
-import '../components/create_modal_widget.dart';
 import '../components/delete_post_widget.dart';
+import '../create_post/create_post_widget.dart';
 import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -127,18 +127,15 @@ class _SocialWidgetState extends State<SocialWidget>
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          await showModalBottomSheet(
-            isScrollControlled: true,
-            context: context,
-            builder: (context) {
-              return Padding(
-                padding: MediaQuery.of(context).viewInsets,
-                child: Container(
-                  height: 240,
-                  child: CreateModalWidget(),
-                ),
-              );
-            },
+          await Navigator.push(
+            context,
+            PageTransition(
+              type: PageTransitionType.scale,
+              alignment: Alignment.bottomCenter,
+              duration: Duration(milliseconds: 500),
+              reverseDuration: Duration(milliseconds: 500),
+              child: CreatePostWidget(),
+            ),
           );
         },
         backgroundColor: FlutterFlowTheme.of(context).primaryColor,
@@ -510,7 +507,7 @@ class _SocialWidgetState extends State<SocialWidget>
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
+                                              MainAxisAlignment.spaceEvenly,
                                               children: [
                                                 Row(
                                                   mainAxisSize: MainAxisSize.max,
@@ -690,7 +687,7 @@ class _SocialWidgetState extends State<SocialWidget>
                                                           .fromSTEB(0, 2, 8, 0),
                                                       child: Text(
                                                         dateTimeFormat(
-                                                            'relative',
+                                                            'dd/MM/yy - HH:mm',
                                                             socialFeedUserPostsRecord
                                                                 .timePosted),
                                                         style: FlutterFlowTheme.of(

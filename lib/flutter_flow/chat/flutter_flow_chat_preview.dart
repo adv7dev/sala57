@@ -118,7 +118,7 @@ String formattedDate(DateTime dateTime) {
     return DateFormat.jm().format(dateTime);
   }
   if (yesterday == day) {
-    return 'Yesterday';
+    return 'Ontem';
   }
-  return DateFormat.MMMMd().format(dateTime);
+  return DateFormat.MMMMd('pt').format(dateTime);
 }

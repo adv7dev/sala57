@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'auth/firebase_user_provider.dart';
 import 'auth/auth_util.dart';
 import 'backend/push_notifications/push_notifications_util.dart';
@@ -46,7 +47,7 @@ class _MyAppState extends State<MyApp> {
     userStream = sala57FirebaseUserStream()
       ..listen((user) => initialUser ?? setState(() => initialUser = user));
     Future.delayed(
-      Duration(seconds: 1),
+      Duration(seconds: 3),
       () => setState(() => displaySplashImage = false),
     );
   }
@@ -77,7 +78,6 @@ class _MyAppState extends State<MyApp> {
       locale: _locale,
       supportedLocales: const [
         Locale('pt', ''),
-        Locale('en', ''),
       ],
       theme: ThemeData(brightness: Brightness.light),
       darkTheme: ThemeData(brightness: Brightness.dark),
@@ -150,8 +150,8 @@ class _NavBarPageState extends State<NavBarPage> {
             tooltip: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.favorite,
+            icon: FaIcon(
+              FontAwesomeIcons.pray,
               size: 24,
             ),
             label: FFLocalizations.of(context).getText(
